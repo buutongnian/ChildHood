@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Childhood</string>
+   <!--actionbar name-->
+    <string name="main_title_name">童年</string>
+    <string name="my_title_name">我的</string>
+    <string name="my_content_title_name">个人信息</string>
+    <string-array name="presidents_array">
+        <item>121212121</item>
+        <item>131313131</item>
+        <item>141414141</item>
+        <item>151515151</item>
+        <item>161661661</item>
+        <item>171717171</item>
+    </string-array>
+</resources>

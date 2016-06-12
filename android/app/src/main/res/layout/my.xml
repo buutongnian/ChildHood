@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_background"
+    >
+        <RelativeLayout
+            android:id="@+id/my_myr1"
+           style="@style/title">
+            <ImageView
+               style="@style/title_image"
+                android:id="@+id/my_image1"
+                android:src="@drawable/texts"
+                />
+            <TextView
+                 style="@style/title_text"
+                android:text="@string/my_title_name"
+               />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/my_bar_color"
+            android:layout_below="@+id/my_myr1"
+            android:layout_marginTop="10dp"
+            android:id="@+id/my_myr2"
+
+           >
+            <ImageView
+                style="@style/title_image"
+                android:src="@drawable/texts"
+               />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="个人信息"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="50dp"
+                android:textColor="#000000"
+                android:textSize="26dp"/>
+            <ImageView
+                style="@style/my_r_image_right"
+                android:src="@drawable/texts"/>
+        </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/my_myr3"
+        android:orientation="vertical"
+        android:layout_below="@+id/my_myr2"
+        android:layout_marginTop="22dp"
+        >
+        <RelativeLayout
+           style="@style/my_r_layout"
+            android:id="@+id/my_myr5"
+            >
+            <ImageView
+                style="@style/my_r_image_left"
+                android:src="@drawable/texts"
+                />
+            <TextView
+                style="@style/my_r_text"
+                android:text="收藏"
+               />
+            <ImageView
+                style="@style/my_r_image_right"
+                android:src="@drawable/texts"/>
+        </RelativeLayout>
+        <View style="@style/PersonalLine" />
+        <RelativeLayout
+            style="@style/my_r_layout" >
+            <ImageView
+                style="@style/my_r_image_left"
+                android:src="@drawable/texts"/>
+            <TextView
+                style="@style/my_r_text"
+                android:text="提醒"
+               />
+            <ImageView
+                style="@style/my_r_image_right"
+                android:src="@drawable/texts"/>
+        </RelativeLayout>
+        <View style="@style/PersonalLine" />
+        <RelativeLayout
+            style="@style/my_r_layout" >
+            <ImageView
+                style="@style/my_r_image_left"
+                android:src="@drawable/texts"/>
+            <TextView
+                style="@style/my_r_text"
+                android:text="检查更新"
+               />
+            <ImageView
+                style="@style/my_r_image_right"
+                android:src="@drawable/texts"/>
+        </RelativeLayout>
+            <View style="@style/PersonalLine" />
+            <RelativeLayout
+                style="@style/my_r_layout"  >
+                <ImageView
+                   style="@style/my_r_image_left"
+                    android:src="@drawable/texts"/>
+                <TextView
+                    style="@style/my_r_text"
+                    android:text="关于我们"
+                  />
+                <ImageView
+                    style="@style/my_r_image_right"
+                    android:src="@drawable/texts"/>
+            </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout
+        style="@style/my_r_layout"
+        android:id="@+id/my_myr4"
+        android:layout_below="@+id/my_myr3"
+        android:layout_marginTop="22dp">
+        <ImageView
+            style="@style/my_r_image_left"
+            android:src="@drawable/texts"/>
+        <TextView
+            style="@style/my_r_text"
+            android:text="我的成就"
+            />
+        <ImageView
+            style="@style/my_r_image_right"
+            android:src="@drawable/texts"/>
+    </RelativeLayout>
+    <RelativeLayout
+        style="@style/my_r_layout"
+        android:layout_below="@+id/my_myr4"
+        android:layout_marginTop="22dp">
+        <ImageView
+            style="@style/my_r_image_left"
+            android:src="@drawable/texts"/>
+        <TextView
+            style="@style/my_r_text"
+            android:text="家长界面"
+            />
+        <ImageView
+            style="@style/my_r_image_right"
+            android:src="@drawable/texts"/>
+    </RelativeLayout>
+
+</RelativeLayout>

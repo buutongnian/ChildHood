@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_background">
+    <RelativeLayout
+        style="@style/title">
+        <ImageView
+        android:id="@+id/head_imageView1"
+        style="@style/title_image"
+        android:src="@drawable/texts"
+        />
+        <TextView
+            style="@style/title_text"
+            android:text="@string/my_title_name"
+            />
+        <ImageView
+            style="@style/my_r_image_right"
+            android:src="@drawable/texts"
+            android:onClick="onClick"
+
+            />
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/head_imageView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="65dp"
+        android:src="@drawable/texts"/>
+
+</LinearLayout>

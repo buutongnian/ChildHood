@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.lcc.childhood">
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+           <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+           </intent-filter>
+
+        </activity>
+        <activity
+            android:label="My Activity"
+            android:name="com.example.lcc.childhood.My">
+        </activity>
+        <activity
+            android:label="my_content"
+            android:name="com.example.lcc.childhood.My_content">
+        </activity>
+        <activity
+            android:label="head_pc"
+            android:name="com.example.lcc.childhood.Head_pc">
+        </activity>
+        <activity
+            android:label="collect"
+            android:name="com.example.lcc.childhood.Collect">
+        </activity>
+        <activity
+            android:label="guide"
+            android:name="com.example.lcc.childhood.Guide">
+        </activity>
+        <activity
+            android:label="main_interface"
+            android:name="com.example.lcc.childhood.Main_interface">
+        </activity>
+
+    </application>
+
+</manifest>

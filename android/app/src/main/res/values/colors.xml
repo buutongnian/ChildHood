@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#fe4c40</color>
+    <color name="colorAccent">#FF4081</color>
+    <!--my界面的颜色设置-->
+    <color name="my_bar_color">#f8f8f8</color>
+    <color name="my_background">#f0eff5</color>
+</resources>
