@@ -1,5 +1,7 @@
 package edu.buu.childhood.common;
 /*
+ * 2016/6/14
+ * @Auther Joe
  * 系统常量类
  */
 public final class C {
@@ -108,5 +110,65 @@ public final class C {
 		 * 系统中不可用标识符即'N'
 		 */
 		public static final char DISABLED = 'N';
+		/*
+		 * 2016/6/17
+		 * 在线:
+		 * 系统中在线标识符即"online"
+		 */
+		public static final String ONLINE = "online";
+		/*
+		 * 2016/6/17
+		 * 不在线:
+		 * 系统中不在线标识符即"offline"
+		 */
+		public static final String offline = "offline";
+		/*
+		 * 2016/6/17
+		 * 男性:
+		 * 系统中男性标识符即'm'
+		 */
+		public static final char MALE='m';
+		/*
+		 * 2016/6/17
+		 * 女性:
+		 * 系统中女性标识符即'f'
+		 */
+		public static final char FEMALE='f';
+		/*
+		 * 2016/6/17
+		 * 缺省值:
+		 * 系统中用户非必选项默认值，即为0
+		 */
+		public static final int DEFAULT=0;
+		/*
+		 * 2016/6/17
+		 * 一颗星:
+		 * 系统中游戏评分一颗星，即为'1'
+		 */
+		public static final char ONESTAR = '1';
+		/*
+		 * 2016/6/17
+		 * 两颗星:
+		 * 系统中游戏评分两颗星，即为'2'
+		 */
+		public static final char TWOSTARS = '2';
+		/*
+		 * 2016/6/17
+		 * 三颗星:
+		 * 系统中游戏评分三颗星，即为'3'
+		 */
+		public static final char THREESTARS = '3';
+		/*
+		 * 2016/6/17
+		 * 四颗星:
+		 * 系统中游戏评分四颗星，即为'4'
+		 */
+		public static final char FOURSTARS = '4';
+		/*
+		 * 2016/6/17
+		 * 五颗星:
+		 * 系统中游戏评分五颗星，即为'5'
+		 */
+		public static final char FIVESTARS = '5';
 	}
 }

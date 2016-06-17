@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.status.pojo.JoinedStatus" table="T_STATUS_JOINED">
+		<id name="gameId" column="GAME_ID">
+			<generator class="native" ></generator>
+		</id>
+		<!-- 注意：可更新字段更新前一定要先取出愿数据，存放在JavaBean中后再对相应JavaBean要修改字段进行赋值操作！ -->		
+		<property name="userName" column="USER_NAME"/>
+		<property name="gameScore" column="GAME_SCORE"/>
+		<property name="joinStatus" column="JOINED_STATUS"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.common.Province" table="T_PUB_PROVINCE">
+		<id name="provinceCode" column="PROVINCE_CODE">
+			<generator class="native" ></generator>
+		</id>		
+		<property name="belonging" column="BELONGING" update="false"/>
+		<property name="provinceName" column="PROVINCE_NAME" update="false"/>
+		<many-to-one name="area" class="edu.buu.childhood.common.Area" column="BELONGING" unique="true" cascade="all" />
+	</class>
+</hibernate-mapping>

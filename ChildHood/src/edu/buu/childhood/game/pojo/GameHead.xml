@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.game.pojo.GameHead" table="T_GAMERULE_HEAD">
+		<id name="gameCode" column="GAME_CODE">
+			<generator class="assigned" ></generator>
+		</id>
+		<!-- 注意：可更新字段更新前一定要先取出愿数据，存放在JavaBean中后再对相应JavaBean要修改字段进行赋值操作！ -->		
+		<property name="gametTitle" column="GAME_TITLE"/>
+		<property name="gameArea" column="GAME_AREA"/>
+		<property name="gameType" column="GAME_TYPE"/>
+		<property name="gameSynopsis" column="GAME_SYNOPSIS"/>
+		<property name="ageCode" column="AGE_CODE"/>
+		<property name="memnumCode" column="MEMNUM_CODE"/>
+		<property name="recommendCount" column="RECOMMENT_COUNT"/>
+		<property name="leastCount" column="LEAST_COUNT"/>
+		<property name="topCount" column="TOP_COUNT"/>
+		<property name="gameContributor" column="GAME_CONTRIBUTOR"/>
+		<property name="enable" column="ENABLE"/>
+	</class>
+</hibernate-mapping>

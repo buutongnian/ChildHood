@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.login.pojo.User" table="T_SYS_USER_INF">
+		<id name="userName" column="USER_NAME">
+			<generator class="assigned" ></generator>
+		</id>
+		<!-- 注意：可更新字段更新前一定要先取出愿数据，存放在JavaBean中后再对相应JavaBean要修改字段进行赋值操作！ -->		
+		<property name="userPwd" column="USER_PWD"/>
+		<property name="loginStatus" column="LOGIN_STATUS"/>
+	</class>
+</hibernate-mapping>
