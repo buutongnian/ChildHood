@@ -11,7 +11,7 @@ public class User {
 	
 	private String userName;
 	private String userPwd;
-	private String loginStatus=C.def.offline;
+	private String loginStatus=C.status.offline;
 	
 	public String getUserName() {
 		return userName;

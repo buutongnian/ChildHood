@@ -23,7 +23,7 @@ public class UserInf {
 	private String liveCommunity;
 	private String detailAddr;
 	private int parentInf;
-	private String loginStatus=C.def.offline;
+	private String loginStatus=C.status.offline;
 	
 	private UserRegInf userRegInf;
 	private ParentInf partenInf;

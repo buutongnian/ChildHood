@@ -81,6 +81,18 @@ public final class C {
 		 * 游戏参与者已正常参与完游戏过程，可对游戏进行评价打分，并且可以参加下一场游戏
 		 */
 		public static final String JOINED = "S011";
+		/*
+		 * 2016/6/17
+		 * 在线:
+		 * 系统中在线标识符即"online"
+		 */
+		public static final String ONLINE = "online";
+		/*
+		 * 2016/6/17
+		 * 不在线:
+		 * 系统中不在线标识符即"offline"
+		 */
+		public static final String offline = "offline";
 	}
 	/*
 	 * 映射类型常量
@@ -112,18 +124,6 @@ public final class C {
 		public static final char DISABLED = 'N';
 		/*
 		 * 2016/6/17
-		 * 在线:
-		 * 系统中在线标识符即"online"
-		 */
-		public static final String ONLINE = "online";
-		/*
-		 * 2016/6/17
-		 * 不在线:
-		 * 系统中不在线标识符即"offline"
-		 */
-		public static final String offline = "offline";
-		/*
-		 * 2016/6/17
 		 * 男性:
 		 * 系统中男性标识符即'm'
 		 */
@@ -140,6 +140,9 @@ public final class C {
 		 * 系统中用户非必选项默认值，即为0
 		 */
 		public static final int DEFAULT=0;
+	}
+	
+	public static final class game{
 		/*
 		 * 2016/6/17
 		 * 一颗星:

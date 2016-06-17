@@ -11,7 +11,7 @@ public class JoinedStatus {
 	
 	private int gameId;
 	private String userName;
-	private char gameScore=C.def.FIVESTARS;
+	private char gameScore=C.game.FIVESTARS;
 	private String joinStatus;
 
 	public int getGameId() {
