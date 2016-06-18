@@ -16,7 +16,7 @@ public class GameHead {
 	private int gameType;
 	private String gameSynopsis;
 	private int ageCode;
-	private int memnumCode;
+	private int memNumCode;
 	private int recommendCount;
 	private int leastCount;
 	private int topCount;
@@ -65,11 +65,11 @@ public class GameHead {
 	public void setAgeCode(int ageCode) {
 		this.ageCode = ageCode;
 	}
-	public int getMemnumCode() {
-		return memnumCode;
+	public int getMemNumCode() {
+		return memNumCode;
 	}
-	public void setMemnumCode(int memnumCode) {
-		this.memnumCode = memnumCode;
+	public void setMemNumCode(int memNumCode) {
+		this.memNumCode = memNumCode;
 	}
 	public int getRecommendCount() {
 		return recommendCount;

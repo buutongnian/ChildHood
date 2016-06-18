@@ -19,14 +19,14 @@
 		<property name="belongingDistrict" column="BELONGING_DISTRICT"/>
 		<property name="liveCommunity" column="LIVE_COMMUNITY"/>
 		<property name="detailAddr" column="DETAIL_ADDR"/>
-		<property name="parentInf" column="PARENT_INF"/>
 		<property name="loginStatus" column="LOGIN_STATUS"/>
-		<many-to-one name="userRegInf" class="edu.buu.childhood.my.pojo.UserRegInf" column="USER_NAME" unique="true" not-null="true"></many-to-one>
+		<many-to-one name="userRegInf" class="edu.buu.childhood.my.pojo.UserRegInf" column="USER_NAME" unique="true" not-null="true" insert="false" update="false"></many-to-one>
 		<many-to-one name="parentInf" class="edu.buu.childhood.my.pojo.ParentInf" column="PARENT_INF" unique="true" not-null="true"></many-to-one>
-		<list name="childInfList">
-			<key column="USER_NAME"></key>
-			<index column="CHILD_INF"></index>
+		<set name="childInfSet" table="T_SYS_CHILD_INF">
+			<key>
+				<column name="USER_NAME" not-null="true" />
+			</key>
 			<one-to-many class="edu.buu.childhood.my.pojo.ChildInf"/>
-		</list>
+		</set>
 	</class>
 </hibernate-mapping>

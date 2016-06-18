@@ -1,6 +1,6 @@
 package edu.buu.childhood.my.pojo;
 
-import java.util.List;
+import java.util.Set;
 
 import edu.buu.childhood.common.C;
 
@@ -22,12 +22,11 @@ public class UserInf {
 	private int belongingDistrict;
 	private String liveCommunity;
 	private String detailAddr;
-	private int parentInf;
 	private String loginStatus=C.status.offline;
 	
 	private UserRegInf userRegInf;
-	private ParentInf partenInf;
-	private List<ChildInf> childInfList;
+	private ParentInf parentInf;
+	private Set<ChildInf> childInfSet;
 	
 	public String getUserName() {
 		return userName;
@@ -95,12 +94,6 @@ public class UserInf {
 	public void setDetailAddr(String detailAddr) {
 		this.detailAddr = detailAddr;
 	}
-	public int getParentInf() {
-		return parentInf;
-	}
-	public void setParentInf(int parentInf) {
-		this.parentInf = parentInf;
-	}
 	public String getLoginStatus() {
 		return loginStatus;
 	}
@@ -113,16 +106,16 @@ public class UserInf {
 	public void setUserRegInf(UserRegInf userRegInf) {
 		this.userRegInf = userRegInf;
 	}
-	public ParentInf getPartenInf() {
-		return partenInf;
+	public ParentInf getParentInf() {
+		return parentInf;
 	}
-	public void setPartenInf(ParentInf partenInf) {
-		this.partenInf = partenInf;
+	public void setParentInf(ParentInf parentInf) {
+		this.parentInf = parentInf;
 	}
-	public List<ChildInf> getChildInfList() {
-		return childInfList;
+	public Set<ChildInf> getChildInfSet() {
+		return childInfSet;
 	}
-	public void setChildInfList(List<ChildInf> childInfList) {
-		this.childInfList = childInfList;
+	public void setChildInfSet(Set<ChildInf> childInfSet) {
+		this.childInfSet = childInfSet;
 	}
 }

@@ -1,11 +1,18 @@
 package edu.buu.childhood.status.pojo;
 
+import java.io.Serializable;
+
 /*
  * 2016/6/17
  * @Author Joe
  * 映射V_STATUS_USER_CANJOIN视图
  */
-public class UserCanJoin {
+public class UserCanJoin implements Serializable{
+	
+	/**
+	 * UserCanJoin类序列化唯一编码
+	 */
+	private static final long serialVersionUID = -5877537379976311980L;
 	
 	private String userName;
 	private double lastLatitude;

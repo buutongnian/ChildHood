@@ -38,6 +38,30 @@
 		<property name="mappingResources">
 			<list>
 				<!-- <value>xxx\xxx\xxx\xxx\xxx.hbm.xml</value> -->	
+				<value>edu\buu\childhood\common\Area.hbm.xml</value>
+				<value>edu\buu\childhood\common\Province.hbm.xml</value>
+				<value>edu\buu\childhood\common\City.hbm.xml</value>
+				<value>edu\buu\childhood\common\District.hbm.xml</value>
+				<value>edu\buu\childhood\common\School.hbm.xml</value>
+				<value>edu\buu\childhood\common\Community.hbm.xml</value>
+				<value>edu\buu\childhood\common\GameAge.hbm.xml</value>
+				<value>edu\buu\childhood\common\GameMemNum.hbm.xml</value>
+				<value>edu\buu\childhood\common\GameType.hbm.xml</value>
+				<value>edu\buu\childhood\common\Grade.hbm.xml</value>
+				<value>edu\buu\childhood\common\Education.hbm.xml</value>
+				<value>edu\buu\childhood\game\pojo\GameHead.hbm.xml</value>
+				<value>edu\buu\childhood\game\pojo\GameContent.hbm.xml</value>
+				<value>edu\buu\childhood\login\pojo\User.hbm.xml</value>
+				<value>edu\buu\childhood\my\pojo\UserRegInf.hbm.xml</value>
+				<value>edu\buu\childhood\my\pojo\UserInf.hbm.xml</value>
+				<value>edu\buu\childhood\my\pojo\ChildInf.hbm.xml</value>
+				<value>edu\buu\childhood\my\pojo\ParentInf.hbm.xml</value>
+				<value>edu\buu\childhood\rank\pojo\GameRank.hbm.xml</value>
+				<value>edu\buu\childhood\rank\pojo\UserRank.hbm.xml</value>
+				<value>edu\buu\childhood\status\pojo\GameCanJoin.hbm.xml</value>
+				<value>edu\buu\childhood\status\pojo\GameStatus.hbm.xml</value>
+				<value>edu\buu\childhood\status\pojo\JoinedStatus.hbm.xml</value>
+				<value>edu\buu\childhood\status\pojo\UserCanJoin.hbm.xml</value>
 			</list>
 		</property>
 	</bean>

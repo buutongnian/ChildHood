@@ -4,12 +4,12 @@
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 	
 <hibernate-mapping>
-	<class name="edu.buu.childhood.common.District" table="T_PUB_DISTRICT">
-		<id name="districtCode" column="DISTRICT_CODE">
+	<class name="edu.buu.childhood.common.School" table="T_PUB_SCHOOL">
+		<id name="schoolCode" column="SCHOOL_CODE">
 			<generator class="native" ></generator>
 		</id>		
 		<property name="belonging" column="BELONGING" insert="false" update="false"/>
-		<property name="districtName" column="CITY_NAME" update="false"/>
-		<many-to-one name="city" class="edu.buu.childhood.common.City" column="BELONGING" unique="true" cascade="all" />
+		<property name="schoolName" column="SCHOOL_NAME" update="false"/>
+		<many-to-one name="district" class="edu.buu.childhood.common.District" column="BELONGING" unique="true" cascade="all" />
 	</class>
 </hibernate-mapping>

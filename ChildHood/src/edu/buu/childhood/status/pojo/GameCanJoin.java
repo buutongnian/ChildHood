@@ -1,5 +1,6 @@
 package edu.buu.childhood.status.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /*
@@ -7,7 +8,12 @@ import java.util.Date;
  * @Author Joe
  * 映射V_STATUS_GAME_CANJOIN视图
  */
-public class GameCanJoin {
+public class GameCanJoin implements Serializable{
+	
+	/**
+	 * GameCanJoin类序列化唯一编码
+	 */
+	private static final long serialVersionUID = 2427770503872092998L;
 	
 	private int gameId;
 	private int gameCode;

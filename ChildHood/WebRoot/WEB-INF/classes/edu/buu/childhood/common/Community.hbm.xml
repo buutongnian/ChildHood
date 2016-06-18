@@ -8,7 +8,7 @@
 		<id name="communityCode" column="COMMUNITY_CODE">
 			<generator class="native" ></generator>
 		</id>		
-		<property name="belonging" column="BELONGING" update="false"/>
+		<property name="belonging" column="BELONGING" insert="false" update="false"/>
 		<property name="communityName" column="COMMUNITY_NAME" update="false"/>
 		<many-to-one name="district" class="edu.buu.childhood.common.District" column="BELONGING" unique="true" cascade="all" />
 	</class>

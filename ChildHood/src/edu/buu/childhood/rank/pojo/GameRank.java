@@ -1,5 +1,7 @@
 package edu.buu.childhood.rank.pojo;
 
+import java.io.Serializable;
+
 import edu.buu.childhood.game.pojo.GameHead;
 
 /*
@@ -7,7 +9,13 @@ import edu.buu.childhood.game.pojo.GameHead;
  * @Author Joe
  * 映射V_RANK_GAME视图
  */
-public class GameRank {
+public class GameRank implements Serializable{
+
+	
+	/**
+	 *GameRank类序列化唯一编码 
+	 */
+	private static final long serialVersionUID = 1461563658441718625L;
 	
 	private int gameCode;
 	private int gameHeat;

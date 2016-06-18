@@ -11,7 +11,7 @@
 		<property name="regDate" column="REG_DATE" update="false"/>
 		<property name="regLatitude" column="REG_LATITUDE" update="false"/>
 		<property name="regLongitude" column="REG_LONGITUDE" update="false"/>
-		<property name="belongingArea" column="REG_LATITUDE" update="false"/>
-		<property name="liveCommunity" column="REG_LONGITUDE" update="false"/>
+		<property name="belongingArea" column="BELONGING_AREA" update="false"/>
+		<property name="liveCommunity" column="LIVE_COMMUNITY" update="false"/>
 	</class>
 </hibernate-mapping>

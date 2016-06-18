@@ -8,7 +8,7 @@
 		<id name="provinceCode" column="PROVINCE_CODE">
 			<generator class="native" ></generator>
 		</id>		
-		<property name="belonging" column="BELONGING" update="false"/>
+		<property name="belonging" column="BELONGING" insert="false" update="false"/>
 		<property name="provinceName" column="PROVINCE_NAME" update="false"/>
 		<many-to-one name="area" class="edu.buu.childhood.common.Area" column="BELONGING" unique="true" cascade="all" />
 	</class>
