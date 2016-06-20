@@ -3,7 +3,7 @@ package edu.buu.childhood.my.pojo;
 import java.util.Date;
 import edu.buu.childhood.common.C;
 
-/*
+/**
  * 2016/6/17
  * @Author Joe
  * 映射T_SYS_CHILD_Inf表

@@ -2,7 +2,7 @@ package edu.buu.childhood.game.pojo;
 
 import edu.buu.childhood.common.C;
 
-/*
+/**
  * 2016/6/16
  * @Author Joe
  * 映射T_GAMERULE_HEAD表

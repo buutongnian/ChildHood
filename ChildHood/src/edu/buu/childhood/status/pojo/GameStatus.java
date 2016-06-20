@@ -2,7 +2,7 @@ package edu.buu.childhood.status.pojo;
 
 import java.util.Date;
 
-/*
+/**
  * 2016/6/17
  * @Author Joe
  * 映射T_STATUS_GAME表

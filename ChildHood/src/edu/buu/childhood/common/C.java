@@ -1,5 +1,5 @@
 package edu.buu.childhood.common;
-/*
+/**
  * 2016/6/14
  * @Auther Joe
  * 系统常量类

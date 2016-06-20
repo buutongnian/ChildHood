@@ -3,7 +3,7 @@ package edu.buu.childhood.status.pojo;
 import java.io.Serializable;
 import java.util.Date;
 
-/*
+/**
  * 2016/6/17
  * @Author Joe
  * 映射V_STATUS_GAME_CANJOIN视图

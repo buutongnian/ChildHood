@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import edu.buu.childhood.game.pojo.GameHead;
 
-/*
+/**
  * 2016/6/17
  * @Author Joe
  * 映射V_RANK_GAME视图

@@ -4,7 +4,7 @@ import java.util.Set;
 
 import edu.buu.childhood.common.C;
 
-/*
+/**
  * 2016/6/17
  * @Author Joe
  * 映射T_SYS_USER_Inf表

@@ -1,6 +1,6 @@
 package edu.buu.childhood.common;
 
-/*
+/**
  * 2016/6/17
  * @Author Joe
  * 映射T_PUB_PROVINCE表

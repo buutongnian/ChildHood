@@ -5,7 +5,7 @@ import java.io.Serializable;
 import edu.buu.childhood.my.pojo.UserInf;
 import edu.buu.childhood.my.pojo.UserRegInf;
 
-/*
+/**
  * 2016/6/17
  * @Author Joe
  * 映射T_RANK_USER表

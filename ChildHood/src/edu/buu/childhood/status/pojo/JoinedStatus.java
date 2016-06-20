@@ -2,7 +2,7 @@ package edu.buu.childhood.status.pojo;
 
 import edu.buu.childhood.common.C;
 
-/*
+/**
  * 2016/6/17
  * @Author Joe
  * 映射T_STATUS_JOINED表
