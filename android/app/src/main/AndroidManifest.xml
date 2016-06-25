@@ -1,46 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.lcc.childhood">
+    package="edu.buu.childhood">
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <!--百度地图的相关权限-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> >
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/> >
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> >
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/> >
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/> >
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> >
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!--百度地图的apk-->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="pXgrQzac2Zitr6rTawYgwDSvbWaUXYKM" />
+        <!--百度地图固定service-->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" >
+                </action>
+            </intent-filter>
+        </service>
         <activity android:name=".MainActivity">
-           <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-           </intent-filter>
+            </intent-filter>
 
         </activity>
         <activity
             android:label="My Activity"
-            android:name="com.example.lcc.childhood.My">
+            android:name="edu.buu.childhood.My">
         </activity>
         <activity
             android:label="my_content"
-            android:name="com.example.lcc.childhood.My_content">
+            android:name="edu.buu.childhood.My_content">
         </activity>
         <activity
             android:label="head_pc"
-            android:name="com.example.lcc.childhood.Head_pc">
+            android:name=".HeadPicture">
         </activity>
         <activity
             android:label="collect"
-            android:name="com.example.lcc.childhood.Collect">
+            android:name="edu.buu.childhood.Collect">
         </activity>
         <activity
             android:label="guide"
-            android:name="com.example.lcc.childhood.Guide">
+            android:name=".GuidePage">
         </activity>
         <activity
             android:label="main_interface"
-            android:name="com.example.lcc.childhood.Main_interface">
+            android:name="edu.buu.childhood.Main_interface">
         </activity>
+        <activity
+            android:label="game"
+            android:name=".GameRules">
+        </activity>
+        <activity
+            android:label="edite_name"
+            android:name="edu.buu.childhood.Edite_name">
+        </activity>
+        <activity
+            android:label="someWebview"
+            android:name="edu.buu.childhood.someWebview">
+        </activity>
+        <activity
+            android:label="datebase"
+            android:name="edu.buu.childhood.DatebaseActivity">
+        </activity>
+        <activity
+            android:label="login"
+            android:name="edu.buu.childhood.Login">
+        </activity>
+        <activity
+            android:label="register"
+            android:name="edu.buu.childhood.Register">
+        </activity>
+        <activity
+            android:label="baidumap"
+            android:name="edu.buu.childhood.baidumap.baiduMapActivity">
+        </activity>
+        <activity
+            android:label="rinking_list"
+            android:name="edu.buu.childhood.Ranking_list">
+        </activity>
+
 
     </application>
 

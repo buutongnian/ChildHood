@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/some_webView_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#fe4c40">
+
+            <Button
+                android:id="@+id/some_webView_back"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+              android:text="返回"/>
+            <TextView
+                android:id="@+id/some_webView_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+            <Button
+                android:id="@+id/some_webView_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_alignParentRight="true"
+                android:text="刷新" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/some_webView_webView"
+        android:layout_below="@+id/some_webView_linearlayout"
+        android:layout_gravity="center_horizontal" />
+</RelativeLayout>

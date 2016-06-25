@@ -52,8 +52,8 @@
         android:layout_marginTop="22dp"
         >
         <RelativeLayout
+            android:id="@+id/my_content_name"
             style="@style/my_r_layout"
-
             >
             <TextView
                 style="@style/my_r_text"

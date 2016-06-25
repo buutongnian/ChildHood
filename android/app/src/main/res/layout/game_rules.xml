@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/game_bar_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#fe4c40">
+
+            <ImageView
+                android:id="@+id/game_image1"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/texts" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/main_title_name"
+                android:textColor="#ffffff"
+                android:textSize="26dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/game_filtrate_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/game_bar_linearlayout"
+        android:orientation="horizontal">
+        <Spinner
+            android:id="@+id/game_spinner1"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:dropDownWidth="400dp"
+            android:spinnerMode="dropdown"
+            android:dropDownVerticalOffset="48dp"
+            android:layout_weight="1"/>
+        <Spinner
+            android:id="@+id/game_spinner2"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:dropDownWidth="400dp"
+            android:spinnerMode="dropdown"
+            android:dropDownVerticalOffset="48dp"
+            android:layout_weight="1"/>
+        <Spinner
+            android:id="@+id/game_spinner3"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:dropDownWidth="400dp"
+            android:spinnerMode="dropdown"
+            android:dropDownVerticalOffset="48dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/game_listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/game_filtrate_linearlayout"
+        />
+</RelativeLayout>
