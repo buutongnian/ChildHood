@@ -7,7 +7,7 @@ import edu.buu.childhood.common.C;
 /**
  * 2016/6/17
  * @Author Joe
- * 映射T_SYS_USER_Inf表
+ * @note 映射T_SYS_USER_Inf表
  */
 public class UserInf {
 	

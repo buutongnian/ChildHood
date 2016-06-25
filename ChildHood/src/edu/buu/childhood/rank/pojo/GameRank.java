@@ -7,7 +7,7 @@ import edu.buu.childhood.game.pojo.GameHead;
 /**
  * 2016/6/17
  * @Author Joe
- * 映射V_RANK_GAME视图
+ * @note 映射V_RANK_GAME视图
  */
 public class GameRank implements Serializable{
 

@@ -19,5 +19,10 @@
 			</result>
 			<result name="error" type="redirect">/error.jsp</result>
 		</action> -->
+		
+		<action name="login" class="loginAction">
+			<result name="MessagePage" type="redirect">/return.jsp</result>
+			<result name="error" type="redirect">/error.jsp</result>
+		</action>
 	</package>
 </struts>

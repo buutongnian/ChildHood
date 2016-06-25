@@ -8,7 +8,7 @@ import edu.buu.childhood.my.pojo.UserRegInf;
 /**
  * 2016/6/17
  * @Author Joe
- * 映射T_RANK_USER表
+ * @note 映射T_RANK_USER表
  */
 public class UserRank implements Serializable{
 	

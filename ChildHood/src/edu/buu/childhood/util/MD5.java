@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 /**
  * 2016/6/19
  * @author joe
- * MD5加密类
+ * @note MD5加密类
  */
 public abstract class MD5 {
 	final static char[] hexDigits={'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};

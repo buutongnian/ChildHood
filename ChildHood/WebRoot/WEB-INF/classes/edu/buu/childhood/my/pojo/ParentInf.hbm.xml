@@ -9,7 +9,7 @@
 			<generator class="native" ></generator>
 		</id>
 		<!-- 注意：可更新字段更新前一定要先取出愿数据，存放在JavaBean中后再对相应JavaBean要修改字段进行赋值操作！ -->		
-		<property name="fatherName" column="FATHER_NAME" update="false"/>
+		<property name="fatherName" column="FATHER_NAME"/>
 		<property name="matherName" column="MATHER_NAME"/>
 		<property name="fatherTel" column="FATHER_TEL"/>
 		<property name="matherTel" column="MATHER_TEL"/>

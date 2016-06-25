@@ -13,8 +13,9 @@ import org.jivesoftware.smack.roster.Roster;
 import org.jivesoftware.smack.tcp.XMPPTCPConnection;
 import org.jivesoftware.smack.tcp.XMPPTCPConnectionConfiguration;
 /**
- * Smack连接Openfire做推送工具类
+ * 2016/6/19
  * @Ahtuor Joe
+ * @note Smack连接Openfire做推送工具类
  * @param PROPER_FILE 配置文件存储路径
  * @param userName 登录到openfire服务器的用户名，默认用pushmaster登录
  * @param password 登录用户的密码

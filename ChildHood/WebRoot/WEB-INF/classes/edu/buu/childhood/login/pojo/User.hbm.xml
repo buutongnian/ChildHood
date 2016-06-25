@@ -9,7 +9,7 @@
 			<generator class="assigned" ></generator>
 		</id>
 		<!-- 注意：可更新字段更新前一定要先取出愿数据，存放在JavaBean中后再对相应JavaBean要修改字段进行赋值操作！ -->		
-		<property name="userPwd" column="USER_PWD"/>
+		<property name="userPwd" column="USER_PWD" update="false"/>
 		<property name="loginStatus" column="LOGIN_STATUS"/>
 	</class>
 </hibernate-mapping>

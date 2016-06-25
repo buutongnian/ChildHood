@@ -3,7 +3,7 @@ package edu.buu.childhood.common;
 /**
  * 2016/6/17
  * @Author Joe
- * 映射T_PUB_GAME_MEMNUM表
+ * @note 映射T_PUB_GAME_MEMNUM表
  */
 public class GameMemNum {
 	

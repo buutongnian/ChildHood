@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * 2016/6/17
  * @Author Joe
- * 映射T_STATUS_GAME表
+ * @note 映射T_STATUS_GAME表
  */
 public class GameStatus {
 	

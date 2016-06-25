@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * 2016/6/16
  * @Author Joe
- * 映射T_SYS_USER_REG表
+ * @note 映射T_SYS_USER_REG表
  */
 public class UserRegInf {
 	

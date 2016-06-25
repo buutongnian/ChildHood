@@ -5,7 +5,7 @@ import edu.buu.childhood.common.C;
 /**
  * 2016/6/17
  * @Author Joe
- * 映射T_STATUS_JOINED表
+ * @note 映射T_STATUS_JOINED表
  */
 public class JoinedStatus {
 	

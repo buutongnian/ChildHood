@@ -6,12 +6,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;  
 import java.util.Properties;
 /** 
- * 读取properties文件工具类 
+ * @note 读取properties文件工具类 
  */  
 public abstract class ProperUtil {  
       
 	/** 
-     * 获取指定路径下property文件中的某个字段(没有默认值) 
+     * @note 获取指定路径下property文件中的某个字段(没有默认值) 
      * @param key 字段 
      * @param filePath 属性文件 
      * @return 与key对应的value 
@@ -28,7 +28,7 @@ public abstract class ProperUtil {
     }  
       
     /** 
-     * 获取指定路径下property文件中的某个字段(可以设置默认值) 
+     * @note 获取指定路径下property文件中的某个字段(可以设置默认值) 
      * @param key 字段 
      * @param value 默认值 
      * @param filePath 属性文件 

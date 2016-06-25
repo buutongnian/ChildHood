@@ -3,7 +3,7 @@ package edu.buu.childhood.my.pojo;
 /**
  * 2016/6/17
  * @Author Joe
- * 映射T_SYS_PARENT_Inf表
+ * @note 映射T_SYS_PARENT_Inf表
  */
 public class ParentInf {
 	

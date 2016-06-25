@@ -5,7 +5,7 @@ import edu.buu.childhood.common.C;
 /**
  * 2016/6/17
  * @Author Joe
- * 映射T_SYS_USER_REG表中的USER_NAME、USER_PWD和LOGIN_STATUS字段
+ * @note 映射T_SYS_USER_REG表中的USER_NAME、USER_PWD和LOGIN_STATUS字段
  */
 public class User {
 	

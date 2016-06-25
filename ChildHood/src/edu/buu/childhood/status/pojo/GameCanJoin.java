@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * 2016/6/17
  * @Author Joe
- * 映射V_STATUS_GAME_CANJOIN视图
+ * @note 映射V_STATUS_GAME_CANJOIN视图
  */
 public class GameCanJoin implements Serializable{
 	

@@ -3,7 +3,7 @@ package edu.buu.childhood.common;
 /**
  * 2016/6/17
  * @Author Joe
- * 映射T_PUB_GAME_AGE表
+ * @note 映射T_PUB_GAME_AGE表
  */
 public class GameAge {
 	

@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 2016/6/17
  * @Author Joe
- * 映射V_STATUS_USER_CANJOIN视图
+ * @note 映射V_STATUS_USER_CANJOIN视图
  */
 public class UserCanJoin implements Serializable{
 	

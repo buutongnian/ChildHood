@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="OFF">
+<!-- status="OFF"，可以去掉，它的含义为是否记录log4j2本身的event信息，默认是OFF -->
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+    <RollingFile name="WarnErrorFile" fileName="logs/Warn_Error.log"
+                     filePattern="log/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+       <PatternLayout pattern="%d{yyyy-MM-dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
+       <SizeBasedTriggeringPolicy size="10MB"/>
+       <Filters>
+           <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+       </Filters>
+    </RollingFile>
+    <RollingFile name="AccountInfoFile" fileName="logs/Account_Info.log"
+                     filePattern="log/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+       <PatternLayout pattern="%d{yyyy-MM-dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
+       <SizeBasedTriggeringPolicy size="10MB"/>
+       <Filters>
+           <ThresholdFilter level="ERROR" onMatch="DENY" onMismatch="NEUTRAL"/>
+           <ThresholdFilter level="WARN" onMatch="DENY" onMismatch="NEUTRAL"/>
+           <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+       </Filters>
+    </RollingFile>
+    <RollingFile name="LoginInfoFile" fileName="logs/Login_Info.log"
+                     filePattern="log/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+       <PatternLayout pattern="%d{yyyy-MM-dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
+       <SizeBasedTriggeringPolicy size="10MB"/>
+       <Filters>
+           <ThresholdFilter level="ERROR" onMatch="DENY" onMismatch="NEUTRAL"/>
+           <ThresholdFilter level="WARN" onMatch="DENY" onMismatch="NEUTRAL"/>
+           <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+       </Filters>
+    </RollingFile>
+  </Appenders>
+  <Loggers>
+    <Root level="DEBUG">
+      <AppenderRef ref="Console"/>
+      <AppenderRef ref="WarnErrorFile"/>
+    </Root>
+    <Logger name="edu.buu.childhood.login.service" additivity="fasle">
+      <AppenderRef ref="AccountInfoFile"/>
+    </Logger>
+  </Loggers>
+</Configuration>

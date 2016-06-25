@@ -11,7 +11,11 @@
 	<context:component-scan base-package="edu.buu.childhood"></context:component-scan>
 
 	<!-- 配置各模块的 beans -->
-	
+	<!-- 配置LoginAction及LoginService -->
+	<bean id="loginAction" class="edu.buu.childhood.login.action.LoginAction" scope="prototype">
+		<property name="loginService" ref="loginService"></property>
+	</bean>
+	<bean id="loginService" class="edu.buu.childhood.login.service.LoginServiceImpl" scope="prototype"></bean>
 	
 	<!-- 配置数据源 -->
 	<!-- 导入资源文件 -->
@@ -85,6 +89,7 @@
 	<aop:config>
 		<!-- <aop:advisor pointcut="execution(* edu.buu.childhood.dao.xxx.*.*(..))"
 			advice-ref="txAdvice" /> -->
+			<aop:advisor pointcut="execution(* edu.buu.childhood.login.dao.*.*(..))" advice-ref="txAdvice"/>
 	</aop:config>
 
 </beans>

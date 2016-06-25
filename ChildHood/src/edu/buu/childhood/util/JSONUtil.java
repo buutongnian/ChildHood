@@ -6,7 +6,7 @@ import com.google.gson.reflect.TypeToken;
 /**
  * 2016/6/14
  * @author Joe
- * 将Gson封装为抽象类，方法写为静态方便调用，避免各模块中实例化Gson
+ * @note 将Gson封装为抽象类，方法写为静态方便调用，避免各模块中实例化Gson
  * @param typeToken：指定转换类型，其中可包含List<obj>形式，可取得List中对象
  */
 public abstract class JSONUtil{
