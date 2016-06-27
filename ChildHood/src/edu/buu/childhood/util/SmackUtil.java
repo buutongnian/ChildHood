@@ -26,27 +26,31 @@ public abstract class SmackUtil{
 	public static final String PROPER_FILE=System.getProperty("user.dir")+"\\Smack.property";
 	private static String userName;
 	private static String password;
+	private static String serviceName;
 	private static String host;
 	private static int port;
+	private static String resource;
 	private static AbstractXMPPConnection connection;
 	private static ChatManager chatManager;
 	
 	static{
 		try {
-			userName=ProperUtil.getProperties("push","pushmaster", PROPER_FILE);
-			password=ProperUtil.getProperties("code", PROPER_FILE);
+			userName=ProperUtil.getProperties("user", PROPER_FILE);
+			password=ProperUtil.getProperties("password", PROPER_FILE);
 			host=ProperUtil.getProperties("host","127.0.0.1", PROPER_FILE);
+			serviceName=ProperUtil.getProperties("service_name", host, PROPER_FILE);
 			port=Integer.valueOf(ProperUtil.getProperties("port","5222", PROPER_FILE));
+			resource=ProperUtil.getProperties("resource", PROPER_FILE);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		XMPPTCPConnectionConfiguration config =
 				XMPPTCPConnectionConfiguration.builder()
 				.setUsernameAndPassword(userName, password)
-				.setServiceName("childhood")
+				.setServiceName(serviceName)
 				.setHost(host)
 				.setPort(port)
-				.setResource("childhood")
+				.setResource(resource)
 				.setSecurityMode(SecurityMode.disabled)
 				.build();
 		connection = new XMPPTCPConnection(config);

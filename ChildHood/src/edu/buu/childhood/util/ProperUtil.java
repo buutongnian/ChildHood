@@ -20,7 +20,7 @@ public abstract class ProperUtil {
     public static String getProperties(String key,String filePath) throws Exception{  
         File file = new File(filePath);  
         if(!file.exists()){
-        	throw new Exception("Property file doesn't exist,please create!");
+        	throw new Exception("Property file doesn't exist,please create!"+filePath);
         }
         Properties props = new Properties();  
         props.load(new FileInputStream(file));  

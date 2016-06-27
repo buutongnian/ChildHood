@@ -17,6 +17,8 @@
 	</bean>
 	<bean id="loginService" class="edu.buu.childhood.login.service.LoginServiceImpl" scope="prototype"></bean>
 	
+	<bean id="loginStatusTask" class="edu.buu.childhood.login.task.LoginStatusTask" scope="singleton"></bean>
+	<bean id="taskDao" class="edu.buu.childhood.login.dao.TaskDaoImpl" scope="prototype"></bean>
 	<!-- 配置数据源 -->
 	<!-- 导入资源文件 -->
 	<context:property-placeholder location="classpath:db.properties" />
@@ -92,4 +94,37 @@
 			<aop:advisor pointcut="execution(* edu.buu.childhood.login.dao.*.*(..))" advice-ref="txAdvice"/>
 	</aop:config>
 
+	<!-- 4.配置Task定时任务 -->
+    <!-- 配置方法调用任务工厂(XXXJobDetailFactoryBean) -->  
+    <bean name="simpleJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="Durability" value="true"/>   
+    	<property name="jobClass" value="edu.buu.childhood.login.task.LoginStatusTask"/>
+   		<property name="jobDataAsMap">
+      	  <map>
+      	      <entry key="timeout" value="5"/>
+      	      <entry key="taskDao">
+      	      	<ref bean="taskDao" />
+      	      </entry>
+     	   </map>
+   		</property>
+	</bean>
+	<!-- 配置任务调度触发器 -->
+	<bean id="simpleTrigger"  class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">  
+   		<property name="jobDetail" ref="simpleJobDetail" />  
+    	<property name="startDelay" value="1000" />  
+    	<property name="repeatInterval" value="300000" />  
+	</bean>
+	<!-- 配置Scheduler Factory -->
+	<bean  class="org.springframework.scheduling.quartz.SchedulerFactoryBean"> 
+        <property name="jobDetails">  
+            <list>  
+                <ref bean="simpleJobDetail" />  
+            </list>  
+        </property>  
+        <property name="triggers">  
+            <list>  
+                <ref bean="simpleTrigger" />  
+            </list>  
+        </property>  
+    </bean>
 </beans>

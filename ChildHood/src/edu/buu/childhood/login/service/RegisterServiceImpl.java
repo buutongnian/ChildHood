@@ -1,14 +1,11 @@
 package edu.buu.childhood.login.service;
 
 import java.util.Date;
-
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-
 import edu.buu.childhood.common.C;
 import edu.buu.childhood.login.dao.RegisterDao;
-import edu.buu.childhood.login.pojo.User;
 import edu.buu.childhood.my.pojo.ChildInf;
 import edu.buu.childhood.my.pojo.ParentInf;
 import edu.buu.childhood.my.pojo.UserInf;
@@ -22,6 +19,7 @@ public class RegisterServiceImpl implements RegisterService {
 	private RegisterDao registerDao;
 	
 	@Override
+	@Transactional
 	public String register(String userName, String userPwd, double regLatitude,
 			double regLongitude, int liveCommunity, String userHeadImage,
 			String userNickname, int belongingProvince, int belongingCity,
