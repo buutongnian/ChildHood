@@ -1,12 +1,11 @@
 package edu.buu.childhood.login.dao;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import edu.buu.childhood.login.pojo.User;
 
 /**

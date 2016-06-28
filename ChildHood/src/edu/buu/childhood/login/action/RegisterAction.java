@@ -1,9 +1,7 @@
 package edu.buu.childhood.login.action;
 
 import java.util.Date;
-
 import com.opensymphony.xwork2.ActionSupport;
-
 import edu.buu.childhood.common.C;
 import edu.buu.childhood.login.service.RegisterService;
 

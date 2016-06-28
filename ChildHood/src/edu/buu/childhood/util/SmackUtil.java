@@ -23,7 +23,7 @@ import org.jivesoftware.smack.tcp.XMPPTCPConnectionConfiguration;
  * @param port 链接端口
  */
 public abstract class SmackUtil{
-	public static final String PROPER_FILE=System.getProperty("user.dir")+"\\Smack.property";
+	public static final String PROPER_FILE=SmackUtil.class.getResource("/").getPath()+"Smack.property";
 	private static String userName;
 	private static String password;
 	private static String serviceName;

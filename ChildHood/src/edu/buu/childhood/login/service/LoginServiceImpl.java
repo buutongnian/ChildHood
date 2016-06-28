@@ -1,6 +1,6 @@
 package edu.buu.childhood.login.service;
 
-import org.jboss.logging.Logger;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import edu.buu.childhood.common.C;
