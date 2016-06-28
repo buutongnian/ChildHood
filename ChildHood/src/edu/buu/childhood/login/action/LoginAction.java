@@ -1,16 +1,24 @@
 package edu.buu.childhood.login.action;
 
 import javax.servlet.http.HttpSession;
+
 import org.apache.struts2.ServletActionContext;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.opensymphony.xwork2.ActionSupport;
+
 import edu.buu.childhood.common.C;
-import edu.buu.childhood.login.pojo.LoginMessage;
+import edu.buu.childhood.common.Message;
 import edu.buu.childhood.login.service.LoginService;
 
 public class LoginAction extends ActionSupport{
 	
+	
+	/**
+	 * LoginAction序列化ID
+	 */
+	private static final long serialVersionUID = 302089185916002870L;
 	
 	private String webOrApp;//请求方式（Web端或App端），内容由C.java常量文件定义
 	private String userName;
@@ -86,7 +94,7 @@ public class LoginAction extends ActionSupport{
 				//将Json数据放入Session中，变量名为"JsonString"
 				HttpSession session=ServletActionContext.getRequest().getSession();
 				//TODO 2016/6/24 定义登录成功返回信息格式
-				session.setAttribute("JsonString", json.toJson(new LoginMessage("12345","12345abcde_/;中文测试"),new TypeToken<LoginMessage>(){}.getType()));
+				session.setAttribute("JsonString", json.toJson(new Message<String>("LoginSuccess","LoginSuccess"),new TypeToken<Message<String>>(){}.getType()));
 			}else if(C.LoginStatus.
 					PASSWORD_INCORRECT.
 					equals(loginService.
@@ -95,7 +103,7 @@ public class LoginAction extends ActionSupport{
 				//将Json数据放入Session中，变量名为"JsonString"
 				HttpSession session=ServletActionContext.getRequest().getSession();
 				//TODO 2016/6/24 定义密码错误返回信息格式
-				session.setAttribute("JsonString", json.toJson(new LoginMessage("",""),new TypeToken<LoginMessage>(){}.getType()));
+				session.setAttribute("JsonString", json.toJson(new Message<String>("LoginUnsuccess","PasswordIncorrect"),new TypeToken<Message<String>>(){}.getType()));
 			}else if(C.LoginStatus.
 					USER_NOT_EXIST.
 					equals(loginService.
@@ -103,12 +111,12 @@ public class LoginAction extends ActionSupport{
 				//将Json数据放入Session中，变量名为"JsonString"
 				HttpSession session=ServletActionContext.getRequest().getSession();
 				//TODO 2016/6/24 定义用户不存在返回信息格式
-				session.setAttribute("JsonString", json.toJson(new LoginMessage("",""),new TypeToken<LoginMessage>(){}.getClass()));
+				session.setAttribute("JsonString", json.toJson(new Message<String>("LoginUnsuccess","UserNotExist"),new TypeToken<Message<String>>(){}.getClass()));
 			}else{
 				//将Json数据放入Session中，变量名为"JsonString"
 				HttpSession session=ServletActionContext.getRequest().getSession();
 				//TODO 2016/6/25 定义错误返回信息格式
-				session.setAttribute("JsonString", json.toJson(new LoginMessage("",""),new TypeToken<LoginMessage>(){}.getType()));
+				session.setAttribute("JsonString", json.toJson(new Message<String>("",""),new TypeToken<Message<String>>(){}.getType()));
 			}
 			return "MessagePage";
 			default:return ERROR;

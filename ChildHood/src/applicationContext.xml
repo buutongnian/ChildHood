@@ -16,7 +16,21 @@
 		<property name="loginService" ref="loginService"></property>
 	</bean>
 	<bean id="loginService" class="edu.buu.childhood.login.service.LoginServiceImpl" scope="prototype"></bean>
+	<!-- 配置RegisterAction及RegisterService -->
+	<bean id="registerAction" class="edu.buu.childhood.login.action.RegisterAction" scope="prototype">
+		<property name="registerService" ref="registerService"></property>
+	</bean>
+	<bean id="registerService" class="edu.buu.childhood.login.service.RegisterServiceImpl" scope="prototype"></bean>
+	<!-- 配置GameHeadAction、GameContentAction及GameService -->
+	<bean id="gameHeadAction" class="edu.buu.childhood.game.action.GameHeadAction" scope="prototype">
+		<property name="gameService" ref="gameService"></property>
+	</bean>
+	<bean id="gameContentAction" class="edu.buu.childhood.game.action.GameContentAction" scope="prototype">
+		<property name="gameService" ref="gameService"></property>
+	</bean>
+	<bean id="gameService" class="edu.buu.childhood.game.service.GameServiceImpl" scope="prototype"></bean>
 	
+	<!-- 配置Task及TaskDao，执行定时任务 -->
 	<bean id="loginStatusTask" class="edu.buu.childhood.login.task.LoginStatusTask" scope="singleton"></bean>
 	<bean id="taskDao" class="edu.buu.childhood.login.dao.TaskDaoImpl" scope="prototype"></bean>
 	<!-- 配置数据源 -->

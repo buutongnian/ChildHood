@@ -7,12 +7,14 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import edu.buu.childhood.common.C;
 import edu.buu.childhood.common.Page;
 import edu.buu.childhood.game.pojo.GameContent;
 import edu.buu.childhood.game.pojo.GameHead;
 
+@Repository
 public class GameDaoImpl implements GameDao {
 	
 	@Autowired

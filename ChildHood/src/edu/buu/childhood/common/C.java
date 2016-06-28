@@ -156,6 +156,12 @@ public final class C {
 		 * 标志请求发送端，API请求是从APP端发出，根据不同标志确定Action不同转发路径
 		 */
 		public static final String APP_REQUEST = "app";
+		/**
+		 * 2016/6/28
+		 * @note 分页大小：
+		 * 各模块分页大小，暂定10条目每页
+		 */
+		public static final int PAGE_SIZE = 10;
 	}
 	
 	public static final class game{
