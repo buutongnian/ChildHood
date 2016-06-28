@@ -18,6 +18,7 @@ public class UserRank implements Serializable{
 	private static final long serialVersionUID = 8591872515045105387L;
 	
 	private String userName;
+	private int belongingArea;
 	private int likeCount;
 	
 	private UserRegInf userRegInf;
@@ -28,6 +29,12 @@ public class UserRank implements Serializable{
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+	public int getBelongingArea() {
+		return belongingArea;
+	}
+	public void setBelongingArea(int belongingArea) {
+		this.belongingArea = belongingArea;
 	}
 	public int getLikeCount() {
 		return likeCount;

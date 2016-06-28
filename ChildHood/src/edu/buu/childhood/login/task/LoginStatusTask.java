@@ -46,6 +46,7 @@ public class LoginStatusTask extends QuartzJobBean{
     		}else{
     			try{
     				taskDao.update(user.getUserName(), openfireStatus);
+    				logger.info("["+user.getUserName()+"]修改登录状态为："+openfireStatus);
     			}catch(Exception e){
     				logger.error(e.getClass());
     			}

@@ -2,6 +2,7 @@ package edu.buu.childhood.game.service;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import edu.buu.childhood.common.C;
 import edu.buu.childhood.common.Page;
@@ -17,6 +18,7 @@ public class GameServiceImpl implements GameService {
 	private GameDao gameDao;
 
 	@Override
+	@Transactional
 	public Page<GameHead> getGameHeadPage(int gameArea, int ageCode,
 			int memNumCode, int pageNum) {
 		StringBuffer where=new StringBuffer("");
@@ -33,8 +35,9 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
+	@Transactional
 	public GameContent getGameConntent(int gameCode) {
-		logger.info("游戏编码："+gameCode+"被访问详情");
+		logger.info("游戏编码：["+gameCode+"]被访问详情");
 		return gameDao.queryGameContentById(gameCode);
 	}
 

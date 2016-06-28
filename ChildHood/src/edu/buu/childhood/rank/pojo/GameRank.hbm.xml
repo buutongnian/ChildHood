@@ -10,6 +10,6 @@
 		<key-property name="belongingArea" column="BELONGING_AREA"></key-property>
 		<key-property name="gameHeat" column="GAME_HEAT"></key-property>
 	</composite-id>
-	<many-to-one name="gameHead" class="edu.buu.childhood.game.pojo.GameHead" column="GAME_CODE" unique="true" insert="false" update="false"></many-to-one>
+	<many-to-one name="gameHead" class="edu.buu.childhood.game.pojo.GameHead" column="GAME_CODE" unique="true" insert="false" update="false" lazy="false"></many-to-one>
 	</class>
 </hibernate-mapping>

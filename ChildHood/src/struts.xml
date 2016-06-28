@@ -34,5 +34,15 @@
 			<result name="MessagePage" type="redirect">/return.jsp</result>
 			<result name="error" type="redirect">/error.jsp</result>
 		</action>
+		
+		<action name="gameRank" class="gameRankAction">
+			<result name="MessagePage" type="redirect">/return.jsp</result>
+			<result name="error" type="redirect">/error.jsp</result>
+		</action>
+		
+		<action name="userRank" class="userRankAction">
+			<result name="MessagePage" type="redirect">/return.jsp</result>
+			<result name="error" type="redirect">/error.jsp</result>
+		</action>
 	</package>
 </struts>

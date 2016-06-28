@@ -34,11 +34,13 @@ public class GameDaoImpl implements GameDao {
 				String hql="From GameHead where enable=:enable"+where;
 				Query query=session.createQuery(hql);
 				query.setCharacter("enable", C.def.ENABLED);
+				query.setFirstResult((pageNum-1)*pageSize);
+				query.setMaxResults(pageSize);
 				List<GameHead> pageList=query.list();
 				String countHql="select count(*) from GameHead where enable=:enable"+where;
 				Query countQuery=session.createQuery(countHql);
 				countQuery.setCharacter("enable", C.def.ENABLED);
-				int recordsCount=(int) countQuery.uniqueResult();
+				int recordsCount=((Long) countQuery.uniqueResult()).intValue();
 				return new Page<GameHead>(recordsCount,pageNum,pageSize,pageList);
 		}catch(Exception e){
 			logger.error(e.getMessage());
@@ -52,6 +54,7 @@ public class GameDaoImpl implements GameDao {
 			Session session=getSession();
 			String hql="From GameContent where gameCode=:gameCode and enable=:enable";
 			Query query=session.createQuery(hql);
+			query.setInteger("gameCode", gameCode);
 			query.setCharacter("enable", C.def.ENABLED);
 			return (GameContent) query.uniqueResult();
 		}catch(Exception e){

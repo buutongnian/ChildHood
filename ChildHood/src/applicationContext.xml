@@ -29,6 +29,14 @@
 		<property name="gameService" ref="gameService"></property>
 	</bean>
 	<bean id="gameService" class="edu.buu.childhood.game.service.GameServiceImpl" scope="prototype"></bean>
+	<!-- 配置gameRankAction以及RankService -->
+	<bean id="gameRankAction" class="edu.buu.childhood.rank.action.GameRankAction">
+		<property name="rankService" ref="rankService"></property>
+	</bean>
+	<bean id="userRankAction" class="edu.buu.childhood.rank.action.UserRankAction">
+		<property name="rankService" ref="rankService"></property>
+	</bean>
+	<bean id="rankService" class="edu.buu.childhood.rank.service.RankServiceImpl" scope="prototype"></bean>
 	
 	<!-- 配置Task及TaskDao，执行定时任务 -->
 	<bean id="loginStatusTask" class="edu.buu.childhood.login.task.LoginStatusTask" scope="singleton"></bean>
@@ -106,6 +114,8 @@
 		<!-- <aop:advisor pointcut="execution(* edu.buu.childhood.dao.xxx.*.*(..))"
 			advice-ref="txAdvice" /> -->
 			<aop:advisor pointcut="execution(* edu.buu.childhood.login.dao.*.*(..))" advice-ref="txAdvice"/>
+			<aop:advisor pointcut="execution(* edu.buu.childhood.game.dao.*.*(..))" advice-ref="txAdvice"/>
+			<aop:advisor pointcut="execution(* edu.buu.childhood.rank.dao.*.*(..))" advice-ref="txAdvice"/>
 	</aop:config>
 
 	<!-- 4.配置Task定时任务 -->

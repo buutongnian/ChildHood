@@ -15,7 +15,7 @@
 		<property name="gameSynopsis" column="GAME_SYNOPSIS"/>
 		<property name="ageCode" column="AGE_CODE"/>
 		<property name="memNumCode" column="MEMNUM_CODE"/>
-		<property name="recommendCount" column="RECOMMENT_COUNT"/>
+		<property name="recommendCount" column="RECOMMEND_COUNT"/>
 		<property name="leastCount" column="LEAST_COUNT"/>
 		<property name="topCount" column="TOP_COUNT"/>
 		<property name="gameContributor" column="GAME_CONTRIBUTOR"/>

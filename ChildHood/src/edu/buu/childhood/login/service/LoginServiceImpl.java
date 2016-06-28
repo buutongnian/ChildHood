@@ -69,7 +69,7 @@ public class LoginServiceImpl implements LoginService {
 			user.setLoginStatus(loginStatus);
 			loginDao.update(user);
 			//记录登录状态修改日志
-			logger.info(userName+"修改登录状态为："+loginStatus);
+			logger.info("["+userName+"]修改登录状态为："+loginStatus);
 			return true;
 		}catch(Exception e){
 			return false;
