@@ -14,6 +14,13 @@ import edu.buu.childhood.common.Page;
 import edu.buu.childhood.game.pojo.GameHead;
 import edu.buu.childhood.game.service.GameService;
 
+/**
+ * 2016/6/28
+ * 游戏头信息Action API接口，主要用于App端按筛选条件请求游戏列表，后期可加入WEB端支持，作为WEB端游戏列表展现数据请求接口
+ * 保留webOrApp标志位，为后期添加WEB端支持留下接口
+ * @author joe
+ *
+ */
 public class GameHeadAction extends ActionSupport{
 	
 	/**

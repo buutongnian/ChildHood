@@ -13,6 +13,13 @@ import edu.buu.childhood.common.Message;
 import edu.buu.childhood.game.pojo.GameContent;
 import edu.buu.childhood.game.service.GameService;
 
+/**
+ * 2016/6/28
+ * 游戏详情Action API接口，用于App端或WEB端请求游戏详情信息
+ * 保留webOrApp标志位，为后期添加WEB端支持留下接口
+ * @author joe
+ *
+ */
 public class GameContentAction extends ActionSupport{
 	
 	/**

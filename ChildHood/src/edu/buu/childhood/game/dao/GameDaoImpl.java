@@ -13,7 +13,12 @@ import edu.buu.childhood.common.C;
 import edu.buu.childhood.common.Page;
 import edu.buu.childhood.game.pojo.GameContent;
 import edu.buu.childhood.game.pojo.GameHead;
-
+/**
+ * 2016/6/28
+ * 游戏规则请求数据库操作接口
+ * @author joe
+ *
+ */
 @Repository
 public class GameDaoImpl implements GameDao {
 	
@@ -26,6 +31,13 @@ public class GameDaoImpl implements GameDao {
 		return sessionFactory.getCurrentSession();
 	}
 	
+	/**
+	 * 分页查询游戏头信息
+	 * @param where 查询筛选条件子句，由Service层生成并传入，作为筛选条件
+	 * @param pageNum 请求页码，分页使用
+	 * @param pageSize 分页大小，由C.java中系统常量定义
+	 * @return 含有分页信息的游戏头信息
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public Page<GameHead> queryGameHeadInf(String where, int pageNum, int pageSize) {
@@ -48,6 +60,11 @@ public class GameDaoImpl implements GameDao {
 		}
 	}
 
+	/**
+	 * 查询游戏详细内容信息
+	 * @param gameCode 游戏编号
+	 * @return 游戏详细内容信息
+	 */
 	@Override
 	public GameContent queryGameContentById(int gameCode) {
 		try{

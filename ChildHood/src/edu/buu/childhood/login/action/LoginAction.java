@@ -12,6 +12,13 @@ import edu.buu.childhood.common.C;
 import edu.buu.childhood.common.Message;
 import edu.buu.childhood.login.service.LoginService;
 
+/**
+ * 2016/6/28
+ * 登录Action API接口，用于App端或Web端登录
+ * 保留webOrApp标志位，为后期添加WEB端支持留下接口
+ * @author joe
+ *
+ */
 public class LoginAction extends ActionSupport{
 	
 	
