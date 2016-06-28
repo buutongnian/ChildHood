@@ -15,9 +15,10 @@ public class GameRank implements Serializable{
 	/**
 	 *GameRank类序列化唯一编码 
 	 */
-	private static final long serialVersionUID = 1461563658441718625L;
+	private static final long serialVersionUID = -8564684209353066653L;
 	
 	private int gameCode;
+	private int belongingArea;
 	private int gameHeat;
 	
 	private GameHead gameHead;
@@ -30,6 +31,14 @@ public class GameRank implements Serializable{
 		this.gameCode = gameCode;
 	}
 
+	public int getBelongingArea() {
+		return belongingArea;
+	}
+	
+	public void setBelongingArea(int belongingArea) {
+		this.belongingArea = belongingArea;
+	}
+	
 	public int getGameHeat() {
 		return gameHeat;
 	}
@@ -45,4 +54,5 @@ public class GameRank implements Serializable{
 	public void setGameHead(GameHead gameHead) {
 		this.gameHead = gameHead;
 	}
+
 }

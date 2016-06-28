@@ -7,6 +7,7 @@
 	<class name="edu.buu.childhood.rank.pojo.GameRank" table="V_RANK_GAME">
 	<composite-id>
 		<key-property name="gameCode" column="GAME_CODE"></key-property>
+		<key-property name="blongingArea" column="BELONGING_AREA"></key-property>
 		<key-property name="gameHeat" column="GAME_HEAT"></key-property>
 	</composite-id>
 	<many-to-one name="gameHead" class="edu.buu.childhood.game.pojo.GameHead" column="GAME_CODE" unique="true" insert="false" update="false"></many-to-one>

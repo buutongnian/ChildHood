@@ -1,24 +1,23 @@
 package edu.buu.childhood.common;
 
-/**
- * 分页类，提供分页相关计数
- * @author joe
- *
- */
-public class Page {
+import java.util.List;
+
+public class Page<T> {
 	private int pageSize; // 每页记录的大小
 	private int currentPage;// 当前第几页数据
 	private int totalRecords;// 一共有多少条记录
 	private int totalPage;// 一共有多少页
+	private List<T> dataList;// 要显示的数据
 
 	public Page() {
 		super();
 	}
 
-	public Page(int pageRecords, int pageNum, int pageSize) {
+	public Page(int pageRecords, int pageNum, int pageSize, List<T> list) {
 		this.totalRecords=pageRecords;
 		this.currentPage=pageNum;
 		this.pageSize=pageSize;
+		this.dataList=list;
 		totalPage=pageRecords/pageSize;
 		if(pageRecords%pageSize==0){
 			totalPage=pageRecords/pageSize;
@@ -27,12 +26,14 @@ public class Page {
 		}
 	}
 
-	public Page(int pageSize, int currentPage, int totalRecords, int totalPage) {
+	public Page(int pageSize, int currentPage, int totalRecords, int totalPage,
+			List<T> dataList) {
 		super();
 		this.pageSize = pageSize;
 		this.currentPage = currentPage;
 		this.totalRecords = totalRecords;
 		this.totalPage = totalPage;
+		this.dataList = dataList;
 	}
 
 	public int getPageSize() {
@@ -66,4 +67,13 @@ public class Page {
 	public void setTotalPage(int totalPage) {
 		this.totalPage = totalPage;
 	}
+
+	public List<T> getDataList() {
+		return dataList;
+	}
+
+	public void setDataList(List<T> dataList) {
+		this.dataList = dataList;
+	}
+
 }
