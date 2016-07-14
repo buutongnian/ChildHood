@@ -5,6 +5,11 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <!-- Network State Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Internet Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <!--百度地图的相关权限-->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> >
@@ -20,9 +25,11 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo3"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -40,7 +47,7 @@
                 </action>
             </intent-filter>
         </service>
-        <activity android:name=".MainActivity">
+        <activity android:name=".mainui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -48,62 +55,79 @@
 
         </activity>
         <activity
-            android:label="My Activity"
-            android:name="edu.buu.childhood.My">
-        </activity>
-        <activity
             android:label="my_content"
-            android:name="edu.buu.childhood.My_content">
+            android:name=".my.activity.My_content">
         </activity>
         <activity
             android:label="head_pc"
-            android:name=".HeadPicture">
+            android:name=".my.activity.HeadPicture">
         </activity>
         <activity
             android:label="collect"
-            android:name="edu.buu.childhood.Collect">
+            android:name=".my.activity.Collect">
         </activity>
         <activity
             android:label="guide"
-            android:name=".GuidePage">
+            android:name=".mainui.activity.GuidePage">
         </activity>
         <activity
             android:label="main_interface"
-            android:name="edu.buu.childhood.Main_interface">
+            android:name=".mainui.activity.Main_interface">
         </activity>
-        <activity
-            android:label="game"
-            android:name=".GameRules">
-        </activity>
+
         <activity
             android:label="edite_name"
-            android:name="edu.buu.childhood.Edite_name">
+            android:name=".my.activity.Edit_name">
         </activity>
-        <activity
-            android:label="someWebview"
-            android:name="edu.buu.childhood.someWebview">
-        </activity>
+
         <activity
             android:label="datebase"
             android:name="edu.buu.childhood.DatebaseActivity">
         </activity>
         <activity
             android:label="login"
-            android:name="edu.buu.childhood.Login">
+            android:name=".login.activity.Login">
         </activity>
         <activity
             android:label="register"
-            android:name="edu.buu.childhood.Register">
+            android:name=".register.activity.Register">
         </activity>
         <activity
-            android:label="baidumap"
-            android:name="edu.buu.childhood.baidumap.baiduMapActivity">
+            android:label="mainbaidu"
+            android:name=".baidumap.activity.MainBaidu">
         </activity>
         <activity
-            android:label="rinking_list"
-            android:name="edu.buu.childhood.Ranking_list">
+            android:label="functionmenu"
+            android:name=".rank.activity.MainRank">
         </activity>
-
+        <activity
+            android:label="genderChange"
+            android:name=".my.activity.GenderChange">
+        </activity>
+        <activity
+            android:label="my"
+            android:name=".my.activity.My">
+        </activity>
+        <activity
+            android:label="somewebview"
+            android:name=".forum.someWebview">
+        </activity>
+        <activity
+            android:label="gamerules"
+            android:name=".game.activity.GameRules">
+        </activity>
+        <activity
+            android:label="chatteam"
+            android:name=".baidumap.activity.chatTeam">
+        </activity>
+        <activity
+            android:label="teamername"
+            android:name=".baidumap.activity.teamerName">
+        </activity>
+        <activity
+            android:label="mysignature"
+            android:name=".my.activity.mySignature">
+        </activity>
 
     </application>
 

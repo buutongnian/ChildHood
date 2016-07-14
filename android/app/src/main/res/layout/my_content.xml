@@ -9,7 +9,7 @@
         <ImageView
             style="@style/title_image"
             android:id="@+id/my_content_image6"
-            android:src="@drawable/texts"
+            android:src="@drawable/pre"
             />
         <TextView
             style="@style/title_text"
@@ -27,12 +27,12 @@
         <ImageView
             style="@style/title_image"
             android:layout_toLeftOf="@+id/my_content_image1"
-            android:src="@drawable/texts"
+            android:src="@drawable/pre"
             />
         <ImageView
             android:id="@+id/my_content_image1"
           style="@style/my_r_image_right"
-            android:src="@drawable/texts"
+            android:src="@drawable/pre"
            />
         <TextView
             android:layout_width="wrap_content"
@@ -61,6 +61,7 @@
                 android:text="昵称"
                 />
             <TextView
+                android:id="@+id/my_content_inName"
                 style="@style/my_r_text"
                 android:layout_alignRight="@+id/my_content_image2"
                 android:layout_marginRight="30dp"
@@ -69,10 +70,11 @@
             <ImageView
                 style="@style/my_r_image_right"
                 android:id="@+id/my_content_image2"
-                android:src="@drawable/texts"/>
+                android:src="@drawable/pre"/>
         </RelativeLayout>
         <View style="@style/PersonalLine" />
         <RelativeLayout
+            android:id="@+id/my_content_gender"
             style="@style/my_r_layout" >
             <TextView
                 style="@style/my_r_text"
@@ -80,6 +82,7 @@
                 android:text="性别"
                 />
             <TextView
+                android:id="@+id/my_content_gendertext"
                 style="@style/my_r_text"
                 android:paddingLeft="10dp"
                 android:text="性别"
@@ -89,10 +92,11 @@
             <ImageView
                 style="@style/my_r_image_right"
                 android:id="@+id/my_content_image3"
-                android:src="@drawable/texts"/>
+                android:src="@drawable/pre"/>
         </RelativeLayout>
         <View style="@style/PersonalLine" />
         <RelativeLayout
+            android:id="@+id/my_content_signature"
             style="@style/my_r_layout" >
             <TextView
                 style="@style/my_r_text"
@@ -109,7 +113,7 @@
             <ImageView
                 style="@style/my_r_image_right"
                 android:id="@+id/my_content_image4"
-                android:src="@drawable/texts"/>
+                android:src="@drawable/pre"/>
         </RelativeLayout>
         <View style="@style/PersonalLine" />
 
@@ -134,9 +138,10 @@
         <ImageView
             style="@style/my_r_image_right"
             android:id="@+id/my_content_image5"
-            android:src="@drawable/texts"/>
+            android:src="@drawable/pre"/>
     </RelativeLayout>
     <RelativeLayout
+        android:id="@+id/my_content_exit"
         style="@style/my_r_layout"
         android:layout_below="@+id/my_content_r4"
         android:layout_marginTop="22dp"

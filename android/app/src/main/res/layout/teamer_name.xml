@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_bar_color">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fe4c40">
+        <ImageView
+            android:id="@+id/teamer_name_image"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/pre"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="成员信息"
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff"
+            android:textSize="26dp"/>
+    </RelativeLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/teamer_name_listview" />
+
+</LinearLayout>

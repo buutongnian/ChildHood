@@ -2,12 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#fff0f0f0" >
+    android:background="@drawable/login_background" >
 
     <LinearLayout
         android:id="@+id/login_first"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
         android:orientation="vertical"
         android:paddingBottom="10.0dip" >
 
@@ -26,22 +27,13 @@
                 android:layout_marginTop="22.0dip" >
 
                 <ImageView
-                    android:layout_width="57.0dip"
-                    android:layout_height="57.0dip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:adjustViewBounds="true"
                     android:contentDescription="@null"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/pre" />
-
-                <ImageView
-                    android:layout_width="66.0dip"
-                    android:layout_height="66.0dip"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:contentDescription="@null"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/text_gamelistview"
+                    android:src="@drawable/touxiang"
                     android:visibility="visible" />
             </FrameLayout>
 

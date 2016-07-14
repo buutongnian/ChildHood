@@ -4,18 +4,31 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
     <RelativeLayout
-        android:id="@+id/rl1"
+        android:id="@+id/game_rules_listview_rl1"
         android:layout_width="match_parent"
         android:layout_height="180dp" >
 
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/text_gamelistview" />
+        <TextView
+            android:id="@+id/game_rules_listview_num"
+            android:layout_margin="12dp"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:text="12"
+            android:textAlignment="center"
+            android:padding="5dp"
+            />
+        <TextView
+            android:layout_below="@+id/game_rules_listview_num"
+            android:id="@+id/game_rules_listview_old"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:text="8-17"
+            android:textAlignment="center"
+            android:padding="5dp"
+            android:textColor="#000000"/>
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/game_rules_listview_conent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -23,22 +36,14 @@
             android:text="TextView"
             android:textColor="#000000"/>
 
-        <TextView
-            android:id="@+id/textView2"
+        <ImageView
+            android:id="@+id/game_rules_listview_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:text="TextView"
-            android:textColor="#000000"/>
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:text="TextView"
+            android:src="@drawable/game_icon"
             android:textColor="#000000"/>
 
 

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    >
+    android:background="#ffffff">
 
     <LinearLayout
         android:id="@+id/game_bar_linearlayout"
@@ -17,9 +17,10 @@
 
             <ImageView
                 android:id="@+id/game_image1"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/texts" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/pre" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -37,36 +38,52 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/game_bar_linearlayout"
         android:orientation="horizontal">
+
         <Spinner
             android:id="@+id/game_spinner1"
-            android:layout_width="wrap_content"
+            android:layout_width="360dp"
             android:layout_height="48dp"
-            android:dropDownWidth="400dp"
-            android:spinnerMode="dropdown"
+            android:layout_weight="1"
+            android:background="@drawable/gamerule_spinner_selector"
             android:dropDownVerticalOffset="48dp"
-            android:layout_weight="1"/>
+            android:dropDownWidth="400dp"
+            android:spinnerMode="dropdown" />
+
         <Spinner
             android:id="@+id/game_spinner2"
-            android:layout_width="wrap_content"
+            android:layout_width="360dp"
             android:layout_height="48dp"
-            android:dropDownWidth="400dp"
-            android:spinnerMode="dropdown"
+            android:layout_weight="1"
+            android:background="@drawable/gamerule_spinner_selector1"
             android:dropDownVerticalOffset="48dp"
-            android:layout_weight="1"/>
+            android:dropDownWidth="400dp"
+            android:spinnerMode="dropdown" />
+
         <Spinner
             android:id="@+id/game_spinner3"
-            android:layout_width="wrap_content"
+            android:layout_width="360dp"
             android:layout_height="48dp"
-            android:dropDownWidth="400dp"
-            android:spinnerMode="dropdown"
+            android:layout_weight="1"
+            android:background="@drawable/gamerule_spinner_selector2"
             android:dropDownVerticalOffset="48dp"
-            android:layout_weight="1"/>
+            android:dropDownWidth="400dp"
+            android:spinnerMode="dropdown" />
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/game_listView"
+
+    <edu.buu.childhood.game.refresh.RefreshListView
+        android:id="@+id/refreshlistview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/game_filtrate_linearlayout">
+    </edu.buu.childhood.game.refresh.RefreshListView>
+    <ImageView
+        android:id="@+id/game_rules_imagewifi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="100dp"
         android:layout_below="@+id/game_filtrate_linearlayout"
-        />
+        android:src="@drawable/error"
+        android:visibility="gone"/>
 </RelativeLayout>

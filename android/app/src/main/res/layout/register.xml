@@ -9,7 +9,7 @@
         <ImageView
             style="@style/title_image"
             android:id="@+id/register_barImage"
-            android:src="@drawable/texts"
+            android:src="@drawable/pre"
             android:onClick="registerBack"
             />
         <TextView
@@ -36,7 +36,7 @@
         <ImageView
             style="@style/my_r_image_right"
             android:id="@+id/register_accountImage"
-            android:src="@drawable/texts"/>
+            android:src="@drawable/pre"/>
     </RelativeLayout>
     <View style="@style/PersonalLine" />
     <RelativeLayout
@@ -58,7 +58,7 @@
         <ImageView
             style="@style/my_r_image_right"
             android:id="@+id/register_nameImage"
-            android:src="@drawable/texts"/>
+            android:src="@drawable/pre"/>
     </RelativeLayout>
     <View style="@style/PersonalLine" />
     <RelativeLayout
@@ -80,7 +80,7 @@
         <ImageView
             style="@style/my_r_image_right"
             android:id="@+id/register_secretImage"
-            android:src="@drawable/texts"/>
+            android:src="@drawable/pre"/>
     </RelativeLayout>
     <View style="@style/PersonalLine" />
     <RelativeLayout
@@ -102,7 +102,7 @@
         <ImageView
             style="@style/my_r_image_right"
             android:id="@+id/register_touxiangImage"
-            android:src="@drawable/texts"/>
+            android:src="@drawable/pre"/>
     </RelativeLayout>
     <View style="@style/PersonalLine" />
     <LinearLayout
@@ -157,7 +157,7 @@
         <ImageView
             style="@style/my_r_image_right"
             android:id="@+id/register_detailPlotImage"
-            android:src="@drawable/texts"/>
+            android:src="@drawable/pre"/>
     </RelativeLayout>
     <View style="@style/PersonalLine" />
     <RelativeLayout
@@ -179,7 +179,7 @@
         <ImageView
             style="@style/my_r_image_right"
             android:id="@+id/register_plotImage"
-            android:src="@drawable/texts"/>
+            android:src="@drawable/pre"/>
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/register_parent"
@@ -201,7 +201,7 @@
         <ImageView
             style="@style/my_r_image_right"
             android:id="@+id/register_parentImage"
-            android:src="@drawable/texts"/>
+            android:src="@drawable/pre"/>
     </RelativeLayout>
     <View style="@style/PersonalLine" />
     <RelativeLayout
@@ -223,7 +223,7 @@
         <ImageView
             style="@style/my_r_image_right"
             android:id="@+id/register_childImage"
-            android:src="@drawable/texts"/>
+            android:src="@drawable/pre"/>
     </RelativeLayout>
     <Button
         android:layout_width="250dp"

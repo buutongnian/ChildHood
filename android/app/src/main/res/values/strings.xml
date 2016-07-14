@@ -4,12 +4,23 @@
     <string name="main_title_name">童年</string>
     <string name="my_title_name">我的</string>
     <string name="my_content_title_name">个人信息</string>
-    <string-array name="presidents_array">
-        <item>121212121</item>
-        <item>131313131</item>
-        <item>141414141</item>
-        <item>151515151</item>
-        <item>161661661</item>
-        <item>171717171</item>
+    <string-array name="gender_array">
+        <item>女</item>
+        <item>男</item>
     </string-array>
+    <!--MainRank/mainbaidu-->
+    <style name="tab_menu_item">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/tab_menu_bg</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:textColor">@drawable/tab_menu_text</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+<!-- chatroom-->
+    <item name="Tag_APP" type="id"></item>
+    <item name="Tag_Book" type="id"></item>
 </resources>

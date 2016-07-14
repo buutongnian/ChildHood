@@ -14,9 +14,8 @@
             android:background="#fe4c40">
             <ImageView
                 android:id="@+id/edite_name_image"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/texts"
+               style="@style/title_bar_image"
+                android:src="@drawable/pre"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -32,7 +31,8 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/edite_bar"
-        android:background="@color/my_bar_color"/>
+        android:background="@color/my_bar_color"
+        android:textColor="#000000"/>
     　　
     <Button
         android:id="@+id/edite_name_button"

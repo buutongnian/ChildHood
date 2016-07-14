@@ -14,6 +14,13 @@
         <item name="android:layout_height">1dp</item>
         <item name="android:layout_gravity">center</item>
     </style>
+    <!--dialog_分割线-->
+    <style name="dialogLine">
+        <item name="android:background">#bfbfbf</item>
+        <item name="android:layout_width">240dp</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
     <!--my界面LinearLayout中RelativeLayout的style-->
     <style name="my_r_layout">
         <item name="android:layout_height">48dp</item>
@@ -51,10 +58,11 @@
         <item name="android:layout_height">50dp</item>
         <item name="android:background">@color/colorPrimaryDark</item>
     </style>
-    <!--标题栏图片的style-->
+    <!--My第一栏图片文字的style-->
     <style name="title_image">
-        <item name="android:layout_width">48dp</item>
-        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">15dp</item>
         <item name="android:layout_centerVertical">true</item>
     </style>
     <style name="title_text">
@@ -64,5 +72,48 @@
         <item name="android:textSize">26dp</item>
         <item name="android:textColor">#ffffff</item>
     </style>
+
+
+    <!--dialog_model-->
+    <style name="sdw_white">
+        <item name="android:shadowColor">#7fffffff</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.65</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+    <!--chat_room_item-->
+    <style name="sdw_79351b">
+        <item name="android:shadowColor">#ff79351b</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+    <style name="dialog_model_text" parent="@style/sdw_79351b">
+        <item name="android:textSize">17.0dip</item>
+        <item name="android:textColor">#ff666666</item>
+    </style>
+    <style name="dialog_model_buttonOk" parent="@style/sdw_79351b">
+        <item name="android:textSize">15.0dip</item>
+        <item name="android:textColor">#ff666666</item>
+    </style>
+
+    <style name="dialog_model_buttonCancel" parent="@style/sdw_white">
+        <item name="android:textSize">15.0dip</item>
+        <item name="android:textColor">#ff666666</item>
+    </style>
+    <!--弹框样式-->
+    <style name="Dialog" parent="android:style/Theme.Dialog">
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <!--标题图片-->
+    <style name="title_bar_image">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
 
 </resources>

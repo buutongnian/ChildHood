@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main1"
-    tools:context="edu.buu.childhood.MainActivity">
+    tools:context=".mainui.activity.MainActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp">
@@ -13,9 +13,10 @@
             android:layout_height="50dp"
             android:background="#fe4c40">
             <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/texts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/pre"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -32,7 +33,7 @@
         android:layout_height="wrap_content"
         android:text="New Button"
         android:id="@+id/main_button"
-        android:background="@drawable/texts"
+        android:background="@drawable/touxiang"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="20dp"
         android:layout_alignBottom="@+id/button3"
@@ -45,7 +46,7 @@
         android:layout_height="wrap_content"
         android:text="New Button"
         android:id="@+id/button2"
-        android:background="@drawable/texts"
+        android:background="@drawable/touxiang"
         android:layout_above="@+id/button5"
         android:layout_centerHorizontal="true"
         android:onClick="gameClick"/>
@@ -56,7 +57,7 @@
         android:text="New Button"
         android:id="@+id/button3"
         android:onClick="dateCclick"
-        android:background="@drawable/texts"
+        android:background="@drawable/touxiang"
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/main_button"
         android:layout_toRightOf="@+id/main_button" />
@@ -66,7 +67,7 @@
         android:layout_height="wrap_content"
         android:text="New Button"
         android:id="@+id/button4"
-        android:background="@drawable/texts"
+        android:background="@drawable/touxiang"
         android:layout_below="@+id/button2"
         android:layout_alignParentEnd="true"
         android:onClick="myClick"
@@ -77,7 +78,7 @@
         android:layout_height="wrap_content"
         android:text="New Button"
         android:id="@+id/button5"
-        android:background="@drawable/texts"
+        android:background="@drawable/touxiang"
         android:layout_above="@+id/button3"
         android:layout_toStartOf="@+id/button4"
         android:onClick="mapClick"

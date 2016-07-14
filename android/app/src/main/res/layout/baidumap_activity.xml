@@ -4,8 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    >
+    <RelativeLayout
+        android:id="@+id/baidumap_r1"
+        style="@style/title">
+        <ImageView
+            android:id="@+id/baidumap_back"
+            style="@style/title_bar_image"
+            android:src="@drawable/pre"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            style="@style/title_text"
+            android:text="一键呼唤" />
 
+    </RelativeLayout>
     <com.baidu.mapapi.map.MapView
+        android:layout_below="@+id/baidumap_r1"
         android:id="@+id/bmapView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
