@@ -13,22 +13,18 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#fe4c40">
+            android:background="@color/colorPrimaryDark">
 
             <ImageView
                 android:id="@+id/game_image1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
+                style="@style/title_image"
                 android:src="@drawable/pre" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:id="@+id/game_rules_title_text"
+                style="@style/title_text"
                 android:text="@string/main_title_name"
-                android:textColor="#ffffff"
-                android:textSize="26dp" />
+               />
         </RelativeLayout>
     </LinearLayout>
 
@@ -42,7 +38,7 @@
         <Spinner
             android:id="@+id/game_spinner1"
             android:layout_width="360dp"
-            android:layout_height="48dp"
+            android:layout_height="38dp"
             android:layout_weight="1"
             android:background="@drawable/gamerule_spinner_selector"
             android:dropDownVerticalOffset="48dp"
@@ -52,7 +48,7 @@
         <Spinner
             android:id="@+id/game_spinner2"
             android:layout_width="360dp"
-            android:layout_height="48dp"
+            android:layout_height="38dp"
             android:layout_weight="1"
             android:background="@drawable/gamerule_spinner_selector1"
             android:dropDownVerticalOffset="48dp"
@@ -62,7 +58,7 @@
         <Spinner
             android:id="@+id/game_spinner3"
             android:layout_width="360dp"
-            android:layout_height="48dp"
+            android:layout_height="38dp"
             android:layout_weight="1"
             android:background="@drawable/gamerule_spinner_selector2"
             android:dropDownVerticalOffset="48dp"

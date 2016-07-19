@@ -29,7 +29,7 @@
            >
             <ImageView
                 android:id="@+id/my_info_image"
-                style="@style/title_image"
+                style="@style/my_title_image"
                 android:src="@drawable/touxiang"
                />
             <TextView
@@ -63,12 +63,12 @@
                 android:src="@drawable/parent_info"
                 />
             <TextView
-                style="@style/my_r_text"
+                style="@style/my_l_text"
                 android:text="家长信息"
                />
             <ImageView
                 style="@style/my_r_image_right"
-                android:src="@drawable/next"/>
+                android:src="@drawable/next_hei"/>
         </RelativeLayout>
         <View style="@style/PersonalLine" />
         <RelativeLayout
@@ -77,12 +77,12 @@
                 style="@style/my_r_image_left"
                 android:src="@drawable/update"/>
             <TextView
-                style="@style/my_r_text"
+                style="@style/my_l_text"
                 android:text="检查更新"
                />
             <ImageView
                 style="@style/my_r_image_right"
-                android:src="@drawable/next"/>
+                android:src="@drawable/next_hei"/>
         </RelativeLayout>
             <View style="@style/PersonalLine" />
             <RelativeLayout
@@ -91,12 +91,12 @@
                    style="@style/my_r_image_left"
                     android:src="@drawable/about_wo"/>
                 <TextView
-                    style="@style/my_r_text"
+                    style="@style/my_l_text"
                     android:text="关于我们"
                   />
                 <ImageView
                     style="@style/my_r_image_right"
-                    android:src="@drawable/next"/>
+                    android:src="@drawable/next_hei"/>
             </RelativeLayout>
     </LinearLayout>
     <RelativeLayout
@@ -108,12 +108,12 @@
             style="@style/my_r_image_left"
             android:src="@drawable/grade"/>
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_l_text"
             android:text="我的成就"
             />
         <ImageView
             style="@style/my_r_image_right"
-            android:src="@drawable/next"/>
+            android:src="@drawable/next_hei"/>
     </RelativeLayout>
     <RelativeLayout
         style="@style/my_r_layout"
@@ -123,12 +123,12 @@
             style="@style/my_r_image_left"
             android:src="@drawable/parent_interface"/>
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_l_text"
             android:text="家长界面"
             />
         <ImageView
             style="@style/my_r_image_right"
-            android:src="@drawable/next"/>
+            android:src="@drawable/next_hei"/>
     </RelativeLayout>
 
 </RelativeLayout>

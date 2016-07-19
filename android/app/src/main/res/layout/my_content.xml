@@ -1,159 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/my_background">
+    android:background="@color/my_background"
+    android:orientation="vertical">
+
     <RelativeLayout
         android:id="@+id/my_content_r1"
         style="@style/title">
+
         <ImageView
-            style="@style/title_image"
             android:id="@+id/my_content_image6"
-            android:src="@drawable/pre"
-            />
+            style="@style/title_image"
+            android:src="@drawable/pre" />
+
         <TextView
             style="@style/title_text"
-            android:text="@string/my_title_name"
-            />
+            android:text="个人信息" />
     </RelativeLayout>
+
     <RelativeLayout
+        android:id="@+id/my_content_r2"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@color/my_bar_color"
         android:layout_below="@+id/my_content_r1"
         android:layout_marginTop="10dp"
-        android:id="@+id/my_content_r2"
-        >
+        android:background="@color/my_bar_color">
+
         <ImageView
             style="@style/title_image"
             android:layout_toLeftOf="@+id/my_content_image1"
-            android:src="@drawable/pre"
-            />
+            android:src="@drawable/pre" />
+
         <ImageView
             android:id="@+id/my_content_image1"
-          style="@style/my_r_image_right"
-            android:src="@drawable/pre"
-           />
+            style="@style/my_r_image_right"
+            android:src="@drawable/pre" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="头像"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
+            android:text="头像"
             android:textColor="#000000"
-            android:textSize="26dp"/>
+            android:textSize="48px" />
     </RelativeLayout>
+
     <LinearLayout
+        android:id="@+id/my_content_r3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/my_content_r3"
-        android:orientation="vertical"
         android:layout_below="@+id/my_content_r2"
         android:layout_marginTop="22dp"
-        >
+        android:orientation="vertical">
+
         <RelativeLayout
             android:id="@+id/my_content_name"
-            style="@style/my_r_layout"
-            >
+            style="@style/my_r_layout">
+
             <TextView
-                style="@style/my_r_text"
+                style="@style/my_content_l_text"
                 android:paddingLeft="10dp"
-                android:text="昵称"
-                />
+                android:text="昵称" />
+
             <TextView
                 android:id="@+id/my_content_inName"
-                style="@style/my_r_text"
+                style="@style/my_content_r_text"
                 android:layout_alignRight="@+id/my_content_image2"
                 android:layout_marginRight="30dp"
-                android:text="昵称"
-                />
+                android:text="昵称" />
+
             <ImageView
-                style="@style/my_r_image_right"
                 android:id="@+id/my_content_image2"
-                android:src="@drawable/pre"/>
-        </RelativeLayout>
-        <View style="@style/PersonalLine" />
-        <RelativeLayout
-            android:id="@+id/my_content_gender"
-            style="@style/my_r_layout" >
-            <TextView
-                style="@style/my_r_text"
-                android:paddingLeft="10dp"
-                android:text="性别"
-                />
-            <TextView
-                android:id="@+id/my_content_gendertext"
-                style="@style/my_r_text"
-                android:paddingLeft="10dp"
-                android:text="性别"
-                android:layout_alignRight="@+id/my_content_image3"
-                android:layout_marginRight="30dp"
-                />
-            <ImageView
                 style="@style/my_r_image_right"
-                android:id="@+id/my_content_image3"
-                android:src="@drawable/pre"/>
+                android:src="@drawable/next_hei" />
         </RelativeLayout>
-        <View style="@style/PersonalLine" />
-        <RelativeLayout
-            android:id="@+id/my_content_signature"
-            style="@style/my_r_layout" >
-            <TextView
-                style="@style/my_r_text"
-                android:paddingLeft="10dp"
-                android:text="签名"
-                />
-            <TextView
-                style="@style/my_r_text"
-                android:paddingLeft="10dp"
-                android:text="签名"
-                android:layout_alignRight="@+id/my_content_image4"
-                android:layout_marginRight="30dp"
-                />
-            <ImageView
-                style="@style/my_r_image_right"
-                android:id="@+id/my_content_image4"
-                android:src="@drawable/pre"/>
-        </RelativeLayout>
+
         <View style="@style/PersonalLine" />
 
+        <RelativeLayout
+            android:id="@+id/my_content_gender"
+            style="@style/my_r_layout">
+
+            <TextView
+                style="@style/my_content_l_text"
+                android:paddingLeft="10dp"
+                android:text="性别" />
+
+            <TextView
+                android:id="@+id/my_content_gendertext"
+                style="@style/my_content_r_text"
+                android:layout_alignRight="@+id/my_content_image3"
+                android:layout_marginRight="30dp"
+                android:paddingLeft="10dp"
+                android:text="性别" />
+
+            <ImageView
+                android:id="@+id/my_content_image3"
+                style="@style/my_r_image_right"
+                android:src="@drawable/next_hei" />
+        </RelativeLayout>
+
+        <View style="@style/PersonalLine" />
+
+        <RelativeLayout
+            android:id="@+id/my_content_signature"
+            style="@style/my_r_layout">
+
+            <TextView
+                style="@style/my_content_l_text"
+                android:paddingLeft="10dp"
+                android:text="生日" />
+
+            <TextView
+                android:id="@+id/my_content_birthday"
+                style="@style/my_content_r_text"
+                android:layout_alignRight="@+id/my_content_image4"
+                android:layout_marginRight="30dp"
+                android:paddingLeft="10dp"
+                android:text="签名" />
+
+            <ImageView
+                android:id="@+id/my_content_image4"
+                style="@style/my_r_image_right"
+                android:src="@drawable/next_hei" />
+        </RelativeLayout>
+
     </LinearLayout>
+
     <RelativeLayout
-        style="@style/my_r_layout"
         android:id="@+id/my_content_r4"
+        style="@style/my_r_layout"
         android:layout_below="@+id/my_content_r3"
         android:layout_marginTop="22dp">
+
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_content_l_text"
             android:paddingLeft="10dp"
-            android:text="小区"
-            />
+            android:text="小区" />
+
         <TextView
-            style="@style/my_r_text"
-            android:paddingLeft="10dp"
-            android:text="小区"
+            android:id="@+id/my_content_address"
+            style="@style/my_content_r_text"
             android:layout_alignRight="@+id/my_content_image5"
             android:layout_marginRight="30dp"
-            />
+            android:paddingLeft="10dp"
+            android:text="小区" />
+
         <ImageView
-            style="@style/my_r_image_right"
             android:id="@+id/my_content_image5"
-            android:src="@drawable/pre"/>
+            style="@style/my_r_image_right"
+            android:src="@drawable/next_hei" />
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/my_content_exit"
         style="@style/my_r_layout"
         android:layout_below="@+id/my_content_r4"
         android:layout_marginTop="22dp"
-        android:background="@color/colorPrimaryDark">
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_centerInParent="true"
-            android:textSize="25dp"
-            android:text="退出登录"
+        android:background="#ffffff">
 
-            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="退出登录"
+            android:textColor="#000000"
+            android:textSize="25dp" />
     </RelativeLayout>
 
 </RelativeLayout>

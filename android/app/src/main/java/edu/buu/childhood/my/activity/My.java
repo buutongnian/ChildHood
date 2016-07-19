@@ -31,7 +31,7 @@ public class My extends Activity {
         findViewById(R.id.my_image1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.exit(0);
+                finish();
             }
         });
 

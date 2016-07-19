@@ -4,6 +4,7 @@ package edu.buu.childhood.game.adapter;
  * Created by lcc on 2016/6/16.
  */
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,6 @@ import edu.buu.childhood.R;
 public class GameRules_Adapter extends BaseAdapter{
     private LayoutInflater mLayoutInflater;
     private List<ItemBean> mDataList;
-
     public GameRules_Adapter(Context findListener, List<ItemBean> list) {
         mLayoutInflater = LayoutInflater.from(findListener);
         mDataList = list;

@@ -11,7 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@drawable/yuanjiao"
+        android:background="@drawable/dialog_yuanjiao"
         android:orientation="vertical">
 
         <ImageView
@@ -46,6 +46,7 @@
                     style="@style/dialog_model_text"
                     android:text="*****"/>
             </LinearLayout>
+            <View style="@style/dialogLine" />
             <LinearLayout
                 android:layout_marginLeft="40dp"
                 android:layout_width="match_parent"
@@ -83,6 +84,7 @@
                     style="@style/dialog_model_text"
                     android:text="*****"/>
             </LinearLayout>
+            <View style="@style/dialogLine" />
             <LinearLayout
                 android:layout_marginLeft="40dp"
                 android:layout_width="match_parent"
@@ -119,7 +121,6 @@
                     style="@style/dialog_model_text"
                     android:text="*****"/>
             </LinearLayout>
-            <View style="@style/dialogLine" />
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="18dp"
@@ -163,7 +164,7 @@
                 android:layout_height="40.0dip"
                 android:background="@color/my_bar_color"
                 android:gravity="center"
-                android:text="ok" />
+                android:text="加入" />
 
             <Button
                 android:id="@+id/map_dialog_negativeButton"
@@ -173,7 +174,7 @@
                 android:background="@color/my_bar_color"
                 android:layout_marginLeft="20.0dip"
                 android:gravity="center"
-                android:text="cancel" />
+                android:text="取消" />
         </LinearLayout>
     </LinearLayout>
 

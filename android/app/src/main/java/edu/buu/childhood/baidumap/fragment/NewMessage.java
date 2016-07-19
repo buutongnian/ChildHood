@@ -23,7 +23,7 @@ public class NewMessage extends Fragment {
         View view = inflater.inflate(R.layout.new_message,container,false);
         listView=(ListView)view.findViewById(R.id.new_message_listView);
         newsDatalist = new ArrayList<NewMessage_ItemBean>();
-        newsDatalist.add(new NewMessage_ItemBean(R.drawable.pre,"刘诚诚","我是刘诚诚","添加","已添加"));
+        newsDatalist.add(new NewMessage_ItemBean(R.drawable.touxiang,"刘诚诚","我是刘诚诚","添加","已添加"));
         listView.setAdapter(new NewMessage_Adapter(getActivity(),newsDatalist));
         return view;
     }

@@ -18,29 +18,26 @@
                 android:src="@drawable/pre"
                 />
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/main_title_name"
-                android:layout_centerInParent="true"
-                android:textColor="#ffffff"
-                android:textSize="26dp"/>
+                style="@style/title_text"
+                android:text="昵称"
+                />
+            <TextView
+                android:id="@+id/edite_name_save"
+                style="@style/title_bar_image"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="14dp"
+                android:text="保存"
+                android:textColor="#ffffff"/>
         </RelativeLayout>
     </LinearLayout>
 
     <EditText android:id="@+id/edite_name_editText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginTop="14dp"
         android:layout_below="@+id/edite_bar"
         android:background="@color/my_bar_color"
         android:textColor="#000000"/>
     　　
-    <Button
-        android:id="@+id/edite_name_button"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edite_name_editText"
-        android:layout_centerInParent="true"
-        android:text="确定"
-        />
     　　
     　　</RelativeLayout>

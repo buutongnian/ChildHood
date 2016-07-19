@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Childhood</string>
    <!--actionbar name-->
-    <string name="main_title_name">童年</string>
+    <string name="main_title_name">童 年</string>
     <string name="my_title_name">我的</string>
     <string name="my_content_title_name">个人信息</string>
     <string-array name="gender_array">
@@ -12,8 +12,8 @@
     <style name="tab_menu_item">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:background">@drawable/tab_menu_bg</item>
+        <item name="android:layout_height">47dp</item>
+        <item name="android:background">#f7f7f7</item>
         <item name="android:button">@null</item>
         <item name="android:gravity">center</item>
         <item name="android:paddingTop">3dp</item>

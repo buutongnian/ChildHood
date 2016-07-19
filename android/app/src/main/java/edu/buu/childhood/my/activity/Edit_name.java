@@ -5,18 +5,19 @@ package edu.buu.childhood.my.activity;
  */
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.util.Log;
+import android.widget.TextView;
 
 import edu.buu.childhood.R;
 
 public class Edit_name extends Activity {
-
-   private Button m_button;
+   private TextView save;
    private EditText m_editText;
    private String backname;
    public Edit_name() {
@@ -33,14 +34,14 @@ public class Edit_name extends Activity {
      findViewById(R.id.edite_name_image).setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-       System.exit(0);
+      finish();
       }
      });//返回键
-     m_button = (Button)findViewById(R.id.edite_name_button);
      m_editText = (EditText)findViewById(R.id.edite_name_editText);
      m_editText.selectAll();
      m_editText.setText(backname);
-     m_button.setOnClickListener(new ButtonListener());
+     save= (TextView) findViewById(R.id.edite_name_save);
+     save.setOnClickListener(new ButtonListener());
     }
     class ButtonListener implements OnClickListener {
     public void onClick(View v) {

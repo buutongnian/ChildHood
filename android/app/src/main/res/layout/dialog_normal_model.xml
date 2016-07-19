@@ -11,7 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@drawable/yuanjiao"
+        android:background="@drawable/dialog_yuanjiao"
         android:orientation="vertical">
 
         <ImageView
@@ -163,7 +163,7 @@
                 android:layout_height="40.0dip"
                 android:background="@color/my_bar_color"
                 android:gravity="center"
-                android:text="ok" />
+                android:text="开始" />
 
             <Button
                 android:id="@+id/negativeButton"
@@ -173,7 +173,7 @@
                 android:background="@color/my_bar_color"
                 android:layout_marginLeft="20.0dip"
                 android:gravity="center"
-                android:text="cancel" />
+                android:text="取消" />
         </LinearLayout>
     </LinearLayout>
 

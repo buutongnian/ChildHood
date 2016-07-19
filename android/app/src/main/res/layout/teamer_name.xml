@@ -10,17 +10,13 @@
         android:background="#fe4c40">
         <ImageView
             android:id="@+id/teamer_name_image"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            style="@style/title_image"
             android:src="@drawable/pre"
             />
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/title_text"
             android:text="成员信息"
-            android:layout_centerInParent="true"
-            android:textColor="#ffffff"
-            android:textSize="26dp"/>
+          />
     </RelativeLayout>
 
     <ListView

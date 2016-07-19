@@ -12,11 +12,11 @@
         />
         <TextView
             style="@style/title_text"
-            android:text="@string/my_title_name"
+            android:text="头像"
             />
         <ImageView
             style="@style/my_r_image_right"
-            android:src="@drawable/pre"
+            android:src="@drawable/jiahao"
             android:onClick="onClick"
 
             />

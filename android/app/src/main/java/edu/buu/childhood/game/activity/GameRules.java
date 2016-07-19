@@ -2,6 +2,7 @@ package edu.buu.childhood.game.activity;
 
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,7 +61,8 @@ public class GameRules extends Activity implements OnItemClickListener, CallBack
     private boolean pageCompare;
     private boolean firstPageCompare;
     private ImageView imageWifi;
-
+    private TextView titleText;
+    //Typeface tf = Typeface.createFromAsset(getAssets(), "font/方正卡通简体.ttf");
     public GameRules() {
     }
 
@@ -68,6 +70,9 @@ public class GameRules extends Activity implements OnItemClickListener, CallBack
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_rules);
+        titleText= (TextView) findViewById(R.id.game_rules_title_text);
+       // titleText.setTypeface(tf);
+        //titleText.setEnabled(false);
         //测试网络
         ConnectionDetector cd = new ConnectionDetector(getApplicationContext());
         Boolean isInternetPresent = cd.isConnectingToInternet();
@@ -135,7 +140,6 @@ public class GameRules extends Activity implements OnItemClickListener, CallBack
         mySpinner.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long arg3) {
                 String areaValues = (String) mySpinner.getItemAtPosition(position);
-                Toast.makeText(getApplicationContext(), areaValues + "", Toast.LENGTH_SHORT).show();
                 if (!"请选择".equals(areaValues)) {
                     int areaCode = areaMap.get(areaValues);
                     provinceMap = dbOprate.getProvince(areaCode);//调用数据库筛选类
@@ -150,7 +154,6 @@ public class GameRules extends Activity implements OnItemClickListener, CallBack
                     mySpinner1.setAdapter(list1Adapter);
                 }
 
-                Toast.makeText(getApplicationContext(), "你点击了第" + (position + 1) + "个item", Toast.LENGTH_SHORT).show();
                 arg0.setVisibility(View.VISIBLE);
             }
 

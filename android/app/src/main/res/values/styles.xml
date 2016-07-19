@@ -10,7 +10,7 @@
     <!--界面横线-->
     <style name="PersonalLine">
         <item name="android:background">#bfbfbf</item>
-        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_width">350dp</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:layout_gravity">center</item>
     </style>
@@ -35,13 +35,35 @@
         <item name="android:layout_centerVertical">true</item>
     </style>
     <!--my界面LinearLayout中左边文本的style-->
-    <style name="my_r_text">
+    <style name="my_l_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+    <!--my_content界面、登录界面LinearLayout中左边文本的style-->
+    <style name="my_content_l_text">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:paddingLeft">40dp</item>
         <item name="android:textSize">18dp</item>
         <item name="android:textColor">#000000</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
+    <!--my_content界面\注册界面LinearLayout中右边文本的style-->
+    <style name="my_content_r_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:paddingLeft">40dp</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:layout_marginRight">30dp</item>
+        <item name="android:textColor">#898989</item>
         <item name="android:typeface">monospace</item>
     </style>
     <!--my界面LinearLayout(my_content\head_pc中右边图像)中右边图片的style-->
@@ -58,10 +80,17 @@
         <item name="android:layout_height">50dp</item>
         <item name="android:background">@color/colorPrimaryDark</item>
     </style>
-    <!--My第一栏图片文字的style-->
+    <!--我的信息 第一栏图片文字的style-->
     <style name="title_image">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginLeft">15dp</item>
+    <item name="android:layout_centerVertical">true</item>
+</style>
+    <!--My 第一栏图片文字的style-->
+    <style name="my_title_image">
+        <item name="android:layout_width">62dp</item>
+        <item name="android:layout_height">62dp</item>
         <item name="android:layout_marginLeft">15dp</item>
         <item name="android:layout_centerVertical">true</item>
     </style>
@@ -69,7 +98,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerInParent">true</item>
-        <item name="android:textSize">26dp</item>
+        <item name="android:textSize">25dp</item>
         <item name="android:textColor">#ffffff</item>
     </style>
 
@@ -112,6 +141,7 @@
     <style name="title_bar_image">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">14dp</item>
         <item name="android:layout_centerVertical">true</item>
     </style>
 

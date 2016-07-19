@@ -23,20 +23,19 @@
         android:layout_below="@+id/register_actionbar"
         >
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_content_l_text"
             android:paddingLeft="10dp"
             android:text="账号"
             />
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_content_r_text"
             android:layout_alignRight="@+id/register_accountImage"
-            android:layout_marginRight="30dp"
             android:text="账号"
             />
         <ImageView
             style="@style/my_r_image_right"
             android:id="@+id/register_accountImage"
-            android:src="@drawable/pre"/>
+            android:src="@drawable/next_hei"/>
     </RelativeLayout>
     <View style="@style/PersonalLine" />
     <RelativeLayout
@@ -45,12 +44,12 @@
         android:layout_below="@+id/register_accountBar"
         >
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_content_l_text"
             android:paddingLeft="10dp"
             android:text="昵称"
             />
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_content_r_text"
             android:layout_alignRight="@+id/register_nameImage"
             android:layout_marginRight="30dp"
             android:text="昵称"
@@ -58,7 +57,7 @@
         <ImageView
             style="@style/my_r_image_right"
             android:id="@+id/register_nameImage"
-            android:src="@drawable/pre"/>
+            android:src="@drawable/next_hei"/>
     </RelativeLayout>
     <View style="@style/PersonalLine" />
     <RelativeLayout
@@ -67,12 +66,12 @@
         android:layout_below="@+id/register_nameBar"
         >
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_content_l_text"
             android:paddingLeft="10dp"
             android:text="密码"
             />
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_content_r_text"
             android:layout_alignRight="@+id/register_secretImage"
             android:layout_marginRight="30dp"
             android:text="密码"
@@ -80,7 +79,7 @@
         <ImageView
             style="@style/my_r_image_right"
             android:id="@+id/register_secretImage"
-            android:src="@drawable/pre"/>
+            android:src="@drawable/next_hei"/>
     </RelativeLayout>
     <View style="@style/PersonalLine" />
     <RelativeLayout
@@ -89,12 +88,12 @@
         android:layout_below="@+id/register_secretBar"
         >
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_content_l_text"
             android:paddingLeft="10dp"
             android:text="头像"
             />
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_content_r_text"
             android:layout_alignRight="@+id/register_touxiangImage"
             android:layout_marginRight="30dp"
             android:text="头像"
@@ -102,7 +101,7 @@
         <ImageView
             style="@style/my_r_image_right"
             android:id="@+id/register_touxiangImage"
-            android:src="@drawable/pre"/>
+            android:src="@drawable/next_hei"/>
     </RelativeLayout>
     <View style="@style/PersonalLine" />
     <LinearLayout
@@ -144,12 +143,12 @@
         android:layout_below="@+id/register_plot"
         >
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_content_l_text"
             android:paddingLeft="10dp"
             android:text="详细地址"
             />
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_content_r_text"
             android:layout_alignRight="@+id/register_detailPlotImage"
             android:layout_marginRight="30dp"
             android:text="详细地址"
@@ -157,7 +156,7 @@
         <ImageView
             style="@style/my_r_image_right"
             android:id="@+id/register_detailPlotImage"
-            android:src="@drawable/pre"/>
+            android:src="@drawable/next_hei"/>
     </RelativeLayout>
     <View style="@style/PersonalLine" />
     <RelativeLayout
@@ -166,12 +165,12 @@
         android:layout_below="@+id/register_spinnerL"
         >
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_content_l_text"
             android:paddingLeft="10dp"
             android:text="我的小区"
             />
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_content_r_text"
             android:layout_alignRight="@+id/register_plotImage"
             android:layout_marginRight="30dp"
             android:text="我的小区"
@@ -179,7 +178,7 @@
         <ImageView
             style="@style/my_r_image_right"
             android:id="@+id/register_plotImage"
-            android:src="@drawable/pre"/>
+            android:src="@drawable/next_hei"/>
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/register_parent"
@@ -188,12 +187,12 @@
         android:layout_marginTop="20dp"
         >
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_content_l_text"
             android:paddingLeft="10dp"
             android:text="家长信息"
             />
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_content_r_text"
             android:layout_alignRight="@+id/register_parentImage"
             android:layout_marginRight="30dp"
             android:text="家长信息"
@@ -201,7 +200,7 @@
         <ImageView
             style="@style/my_r_image_right"
             android:id="@+id/register_parentImage"
-            android:src="@drawable/pre"/>
+            android:src="@drawable/next_hei"/>
     </RelativeLayout>
     <View style="@style/PersonalLine" />
     <RelativeLayout
@@ -210,12 +209,12 @@
         android:layout_below="@+id/register_parent"
         >
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_content_l_text"
             android:paddingLeft="10dp"
             android:text="孩子信息"
             />
         <TextView
-            style="@style/my_r_text"
+            style="@style/my_content_r_text"
             android:layout_alignRight="@+id/register_childImage"
             android:layout_marginRight="30dp"
             android:text="孩子信息"
@@ -223,7 +222,7 @@
         <ImageView
             style="@style/my_r_image_right"
             android:id="@+id/register_childImage"
-            android:src="@drawable/pre"/>
+            android:src="@drawable/next_hei"/>
     </RelativeLayout>
     <Button
         android:layout_width="250dp"

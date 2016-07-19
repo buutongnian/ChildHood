@@ -3,14 +3,11 @@ package edu.buu.childhood.forum;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import edu.buu.childhood.R;
 
@@ -20,8 +17,8 @@ import edu.buu.childhood.R;
  */
 public class someWebview extends Activity {
     private WebView webView;
-    private Button back;
-    private Button refresh;
+    private ImageView back;
+    private ImageView refresh;
     private TextView titleview;
 
     @Override
@@ -30,8 +27,8 @@ public class someWebview extends Activity {
     setContentView(R.layout.some_webview);
 
     webView=(WebView)findViewById(R.id.some_webView_webView);
-        back=(Button)findViewById(R.id.some_webView_back);
-        refresh=(Button)findViewById(R.id.some_webView_refresh);
+        back=(ImageView) findViewById(R.id.some_webView_back);
+        refresh=(ImageView)findViewById(R.id.some_webView_refresh);
         titleview=(TextView)findViewById(R.id.some_webView_title);
         webView.loadUrl("http://www.baidu.com");
         webView.setWebChromeClient(new WebChromeClient(){

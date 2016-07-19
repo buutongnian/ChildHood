@@ -13,11 +13,13 @@
             android:layout_height="50dp"
             android:background="#fe4c40">
 
-            <Button
+            <ImageView
                 android:id="@+id/some_webView_back"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-              android:text="返回"/>
+                android:src="@drawable/pre"
+                android:layout_marginLeft="14dp"
+              />
             <TextView
                 android:id="@+id/some_webView_title"
                 android:layout_width="wrap_content"
@@ -25,12 +27,14 @@
                 android:layout_centerInParent="true"
                 android:textColor="#ffffff"
                 android:textSize="12dp" />
-            <Button
+            <ImageView
                 android:id="@+id/some_webView_refresh"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_alignParentRight="true"
-                android:text="刷新" />
+                android:layout_marginRight="14dp"
+                android:src="@drawable/update"
+               />
         </RelativeLayout>
     </LinearLayout>
 
