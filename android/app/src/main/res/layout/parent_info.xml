@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/parent_info"
+        style="@style/title">
+
+        <ImageView
+            android:id="@+id/parent_info_image1"
+            style="@style/title_image"
+            android:src="@drawable/pre" />
+
+        <TextView
+            style="@style/title_text"
+            android:text="家长信息" />
+        <TextView
+            android:id="@+id/parent_info_save"
+            style="@style/title_bar_image"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="14dp"
+            android:text="修改"
+            android:textColor="#ffffff"
+           />
+
+    </RelativeLayout>
+
+    <LinearLayout
+    android:id="@+id/parent_info_l1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+        android:layout_marginTop="23dp"
+    android:background="@color/my_bar_color">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="妈妈姓名"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:layout_marginLeft="30dp"/>
+    <EditText
+        android:id="@+id/parent_info_motherName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:text="123"
+        android:textSize="18dp"
+        android:textColor="#000000"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/parent_info_l2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/my_bar_color">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="爸爸姓名"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:layout_marginLeft="30dp"/>
+        <EditText
+            android:id="@+id/parent_info_fatherName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="123"
+            android:textSize="18dp"
+            android:textColor="#000000"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/parent_info_l3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="23dp"
+        android:background="@color/my_bar_color">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="妈妈电话"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:layout_marginLeft="30dp"/>
+        <EditText
+            android:id="@+id/parent_info_motherPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="123"
+            android:textSize="18dp"
+            android:textColor="#000000"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/parent_info_l4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/my_bar_color">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="爸爸电话"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:layout_marginLeft="30dp"/>
+        <EditText
+            android:id="@+id/parent_info_fatherPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="123"
+            android:textSize="18dp"
+            android:textColor="#000000"/>
+    </LinearLayout>
+</LinearLayout>

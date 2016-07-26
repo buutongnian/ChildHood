@@ -12,6 +12,15 @@ public class myContentItem {
     private String userDetailAddr;
     private Date userBirthday;
     private String select;
+    private int childId;
+
+    public int getChildId() {
+        return childId;
+    }
+
+    public void setChildId(int childId) {
+        this.childId = childId;
+    }
 
     public String getSelect() {
         return select;

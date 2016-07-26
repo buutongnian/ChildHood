@@ -105,7 +105,7 @@
         <View style="@style/PersonalLine" />
 
         <RelativeLayout
-            android:id="@+id/my_content_signature"
+            android:id="@+id/my_content_birthdayChange"
             style="@style/my_r_layout">
 
             <TextView

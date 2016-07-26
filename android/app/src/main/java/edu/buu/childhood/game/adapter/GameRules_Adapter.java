@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import edu.buu.childhood.common.C;
 import edu.buu.childhood.game.pojo.ItemBean;
 import edu.buu.childhood.R;
 
@@ -65,7 +66,23 @@ public class GameRules_Adapter extends BaseAdapter{
         holder.tv1.setText(bean.ageRank);
         holder.tv2.setText(bean.memNumSize);
         holder.tv3.setText(bean.gameSynopsis);
-        holder.img.setImageResource(bean.Image);
+       // holder.img.setImageResource(bean.Image);
+          if(bean.Image== C.score.ONESTAR){
+            holder.img.setImageResource(R.drawable.one_star);
+        }
+        if(bean.Image== C.score.TWOSTARS){
+            holder.img.setImageResource(R.drawable.two_star);
+        }
+        if(bean.Image== C.score.THREESTARS){
+            holder.img.setImageResource(R.drawable.three_star);
+        }
+        if(bean.Image== C.score.FOURSTARS){
+            holder.img.setImageResource(R.drawable.four_star);
+        }
+        if(bean.Image== C.score.FIVESTARS){
+            holder.img.setImageResource(R.drawable.five);
+        }
+
         //holder.rl.setb
        holder.rl.setBackgroundDrawable(bean.background);
         return convertView;

@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import edu.buu.childhood.R;
 import edu.buu.childhood.baidumap.adapter.selectGameAdapter;
 import edu.buu.childhood.baidumap.poj.selectGameItemBean;
@@ -28,9 +29,10 @@ public class selectGame extends Dialog {
         super(context);
     }
 
-    public selectGame(Context context,int theme) {
-        super(context,theme);
+    public selectGame(Context context, int theme) {
+        super(context, theme);
     }
+
     public static class Builder {
         private Context context;
         private String message;
@@ -41,6 +43,7 @@ public class selectGame extends Dialog {
         private List<selectGameItemBean> list;
         private DialogInterface.OnClickListener positiveButtonClickListener;
         private DialogInterface.OnClickListener negativeButtonClickListener;
+
         public Builder(Context context) {
             this.context = context;
         }
@@ -49,6 +52,7 @@ public class selectGame extends Dialog {
             this.message = message;
             return this;
         }
+
         /**
          * Set the Dialog message from resource
          */
@@ -56,6 +60,7 @@ public class selectGame extends Dialog {
             this.contentView = v;
             return this;
         }
+
         /**
          * Set the positive button resource and it's listener
          */
@@ -65,12 +70,14 @@ public class selectGame extends Dialog {
             this.positiveButtonClickListener = listener;
             return this;
         }
+
         public Builder setNegativeButton(String negativeButtonText,
                                          DialogInterface.OnClickListener listener) {
             this.negativeButtonText = negativeButtonText;
             this.negativeButtonClickListener = listener;
             return this;
         }
+
         public selectGame create() {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             // instantiate the dialog with the Theme
@@ -78,12 +85,12 @@ public class selectGame extends Dialog {
             View layout = inflater.inflate(R.layout.select_game, null);
             dialog.addContentView(layout, new ViewGroup.LayoutParams(
                     ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-            listView= (ListView) layout.findViewById(R.id.select_game_listView);
-            list=new ArrayList<selectGameItemBean>();
-            list.add(new selectGameItemBean(R.drawable.game_icon,R.drawable.game_icon,R.drawable.game_icon));
-            list.add(new selectGameItemBean(R.drawable.game_icon,R.drawable.game_icon,R.drawable.game_icon));
-            list.add(new selectGameItemBean(R.drawable.game_icon,R.drawable.game_icon,R.drawable.game_icon));
-            listView.setAdapter(new selectGameAdapter(context,list));
+            listView = (ListView) layout.findViewById(R.id.select_game_listView);
+            list = new ArrayList<selectGameItemBean>();
+            list.add(new selectGameItemBean(R.drawable.game_icon, R.drawable.game_icon, R.drawable.game_icon));
+            list.add(new selectGameItemBean(R.drawable.game_icon, R.drawable.game_icon, R.drawable.game_icon));
+            list.add(new selectGameItemBean(R.drawable.game_icon, R.drawable.game_icon, R.drawable.game_icon));
+            listView.setAdapter(new selectGameAdapter(context, list));
             // set the dialog title
             //((TextView) layout.findViewById(R.id.title)).setText(title);
             // set the confirm button

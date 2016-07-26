@@ -13,6 +13,7 @@ import edu.buu.childhood.forum.someWebview;
 import edu.buu.childhood.game.activity.GameRules;
 import edu.buu.childhood.my.activity.My;
 import edu.buu.childhood.rank.activity.MainRank;
+import edu.buu.childhood.register.activity.Register;
 
 
 public class Main_interface extends AppCompatActivity {
@@ -39,7 +40,7 @@ public class Main_interface extends AppCompatActivity {
         buttonforum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Main_interface.this,someWebview.class));
+                startActivity(new Intent(Main_interface.this,Register.class));
             }
         });
         buttonmap.setOnClickListener(new View.OnClickListener() {

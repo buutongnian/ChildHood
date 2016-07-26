@@ -164,7 +164,7 @@
                 android:layout_height="40.0dip"
                 android:background="@color/my_bar_color"
                 android:gravity="center"
-                android:text="加入" />
+                android:text="开始" />
 
             <Button
                 android:id="@+id/map_dialog_negativeButton"

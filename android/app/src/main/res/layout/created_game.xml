@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:clickable="true"
     android:orientation="vertical"
-    android:padding="45.0dip"
     >
 
     <LinearLayout
@@ -30,16 +29,18 @@
            <LinearLayout
                android:layout_marginLeft="40dp"
                android:layout_width="match_parent"
-               android:layout_height="wrap_content">
+               android:layout_height="30dp">
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical"
                    style="@style/dialog_model_text"
                    android:text="游戏名称:  "/>
                <TextView
-                   android:id="@+id/dialog_model_game"
+                   android:id="@+id/gameName"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical"
                    style="@style/dialog_model_text"
                    android:text="*****"/>
            </LinearLayout>
@@ -47,15 +48,18 @@
            <LinearLayout
                android:layout_marginLeft="40dp"
                android:layout_width="match_parent"
-               android:layout_height="wrap_content">
+               android:layout_height="30dp">
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical"
                    style="@style/dialog_model_text"
                    android:text="发起人:  "/>
                <TextView
+                   android:id="@+id/createdName"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical"
                    style="@style/dialog_model_text"
                    android:text="*****"/>
            </LinearLayout>
@@ -63,15 +67,19 @@
            <LinearLayout
                android:layout_marginLeft="40dp"
                android:layout_width="match_parent"
-               android:layout_height="wrap_content">
+               android:layout_height="30dp">
                <TextView
+
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical"
                    style="@style/dialog_model_text"
                    android:text="游戏地点:  "/>
                <TextView
+                   android:id="@+id/play_place"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical"
                    style="@style/dialog_model_text"
                    android:text="*****"/>
            </LinearLayout>
@@ -79,15 +87,38 @@
            <LinearLayout
                android:layout_marginLeft="40dp"
                android:layout_width="match_parent"
-               android:layout_height="wrap_content">
+               android:layout_height="30dp">
+               <TextView
+
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical"
+                   style="@style/dialog_model_text"
+                   android:text="开始时间:  "/>
+               <TextView
+                   android:id="@+id/playTime"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical"
+                   style="@style/dialog_model_text"
+                   android:text="*****"/>
+           </LinearLayout>
+           <View style="@style/dialogLine" />
+           <LinearLayout
+               android:layout_marginLeft="40dp"
+               android:layout_width="match_parent"
+               android:layout_height="30dp">
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    style="@style/dialog_model_text"
+                   android:layout_gravity="center_vertical"
                    android:text="队伍成员:  "/>
                <TextView
+                   android:id="@+id/playJoiner"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical"
                    style="@style/dialog_model_text"
                    android:text="*****"/>
            </LinearLayout>
@@ -95,15 +126,18 @@
            <LinearLayout
                android:layout_marginLeft="40dp"
                android:layout_width="match_parent"
-               android:layout_height="wrap_content">
+               android:layout_height="30dp">
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical"
                    style="@style/dialog_model_text"
                    android:text="当前人数:  "/>
                <TextView
+                   android:id="@+id/playCount"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical"
                    style="@style/dialog_model_text"
                    android:text="*****"/>
            </LinearLayout>
@@ -111,18 +145,22 @@
            <LinearLayout
                android:layout_marginLeft="40dp"
                android:layout_width="match_parent"
-               android:layout_height="wrap_content">
+               android:layout_height="30dp">
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical"
                    style="@style/dialog_model_text"
                    android:text="推荐人数:  "/>
                <TextView
+                   android:id="@+id/referrals"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical"
                    style="@style/dialog_model_text"
                    android:text="*****"/>
            </LinearLayout>
+
            <View
                android:layout_width="wrap_content"
                android:layout_height="18dp"
@@ -134,9 +172,11 @@
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical"
                    style="@style/dialog_model_text"
                    android:text="游戏简介:  "/>
                <TextView
+                   android:id="@+id/gameContent"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    style="@style/dialog_model_text"
@@ -163,7 +203,7 @@
                 android:layout_height="40.0dip"
                 android:background="@color/my_bar_color"
                 android:gravity="center"
-                android:text="开始" />
+                android:text="加入" />
 
             <Button
                 android:id="@+id/negativeButton"
@@ -177,4 +217,4 @@
         </LinearLayout>
     </LinearLayout>
 
-</FrameLayout>
+</LinearLayout>

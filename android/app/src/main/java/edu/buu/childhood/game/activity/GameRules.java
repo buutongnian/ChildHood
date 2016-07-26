@@ -37,7 +37,8 @@ import edu.buu.childhood.util.URLUtil;
  * Created by lcc on 2016/6/13.
  */
 
-public class GameRules extends Activity implements OnItemClickListener, CallBack, OnRefreshListener {
+public class
+GameRules extends Activity implements OnItemClickListener, CallBack, OnRefreshListener {
     private List<ItemBean> datalist = new ArrayList<ItemBean>();
     private Boolean first = true;
     private RefreshListView listview;
@@ -55,6 +56,7 @@ public class GameRules extends Activity implements OnItemClickListener, CallBack
     private Spinner mySpinner2;
     private Map<String, Integer> areaMap = new HashMap<String, Integer>();
     private Map<String, Integer> provinceMap = new HashMap<String, Integer>();
+    private Map<String, Integer> cityMap = new HashMap<String, Integer>();
     private DBOprate dbOprate;
     private CreateDatabase createDatabase = new CreateDatabase();
     private int pageNum = 1;
@@ -167,10 +169,10 @@ public class GameRules extends Activity implements OnItemClickListener, CallBack
                 String provinceValues = (String) mySpinner1.getItemAtPosition(position);
                 if (!"请选择".equals(provinceValues)) {
                     int provinceCode = provinceMap.get(provinceValues);
-                    Map<String, Integer> provinceMap = dbOprate.getCity(provinceCode);//调用数据库筛选类
+                    cityMap = dbOprate.getCity(provinceCode);//调用数据库筛选类
                     list2.clear();//清空list1第一次选择的数据
                     list2.add("请选择");
-                    for (Map.Entry<String, Integer> entry : provinceMap.entrySet()) {
+                    for (Map.Entry<String, Integer> entry : cityMap.entrySet()) {
                         list2.add(entry.getKey());
                     }
                     GameRules_Spinner_Adapter list2Adapter = new GameRules_Spinner_Adapter(getApplicationContext(),

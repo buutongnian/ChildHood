@@ -14,7 +14,7 @@
             />
         <TextView
             style="@style/title_text"
-            android:text="@string/my_title_name"
+            android:text="注册"
             />
     </RelativeLayout>
     <RelativeLayout
@@ -27,7 +27,8 @@
             android:paddingLeft="10dp"
             android:text="账号"
             />
-        <TextView
+        <EditText
+            android:id="@+id/register_userName"
             style="@style/my_content_r_text"
             android:layout_alignRight="@+id/register_accountImage"
             android:text="账号"
@@ -48,7 +49,8 @@
             android:paddingLeft="10dp"
             android:text="昵称"
             />
-        <TextView
+        <EditText
+            android:id="@+id/resigter_userNickName"
             style="@style/my_content_r_text"
             android:layout_alignRight="@+id/register_nameImage"
             android:layout_marginRight="30dp"
@@ -70,7 +72,8 @@
             android:paddingLeft="10dp"
             android:text="密码"
             />
-        <TextView
+        <EditText
+            android:id="@+id/resigter_userPwd"
             style="@style/my_content_r_text"
             android:layout_alignRight="@+id/register_secretImage"
             android:layout_marginRight="30dp"
@@ -135,6 +138,15 @@
             android:spinnerMode="dropdown"
             android:dropDownVerticalOffset="48dp"
             android:layout_weight="1"/>
+        <Spinner
+            android:id="@+id/register_spinner4"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:dropDownWidth="400dp"
+            android:spinnerMode="dropdown"
+            android:dropDownVerticalOffset="48dp"
+            android:layout_weight="1"
+            />
     </LinearLayout>
     <View style="@style/PersonalLine" />
     <RelativeLayout
@@ -145,13 +157,14 @@
         <TextView
             style="@style/my_content_l_text"
             android:paddingLeft="10dp"
-            android:text="详细地址"
+            android:text="邮箱"
             />
-        <TextView
+        <EditText
+            android:id="@+id/resigter_email"
             style="@style/my_content_r_text"
             android:layout_alignRight="@+id/register_detailPlotImage"
             android:layout_marginRight="30dp"
-            android:text="详细地址"
+            android:text="邮箱"
             />
         <ImageView
             style="@style/my_r_image_right"
@@ -169,7 +182,8 @@
             android:paddingLeft="10dp"
             android:text="我的小区"
             />
-        <TextView
+        <EditText
+            android:id="@+id/resigter_liveCommunity"
             style="@style/my_content_r_text"
             android:layout_alignRight="@+id/register_plotImage"
             android:layout_marginRight="30dp"
@@ -225,6 +239,7 @@
             android:src="@drawable/next_hei"/>
     </RelativeLayout>
     <Button
+        android:id="@+id/register_button"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_child"

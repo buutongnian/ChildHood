@@ -41,7 +41,7 @@ public class GameServiceImpl implements GameService {
                 itemBean.setAgeRank(gameHead.getAgeCode() + "");
                 itemBean.setGameSynopsis(gameHead.getGameSynopsis() + "");
                 itemBean.setMemNumSize(gameHead.getMemNumCode() + "");
-                // itemBean.setImage(R.drawable.game_icon);
+                itemBean.setImage(gameHead.getGameScore());
                 byte[] bytes=new HttpUtil(gameHead.getGameImage()).getHttpData();
                 Bitmap bitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
                 BitmapDrawable bd=new BitmapDrawable(bitmap);

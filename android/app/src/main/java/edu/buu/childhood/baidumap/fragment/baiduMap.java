@@ -1,15 +1,18 @@
 package edu.buu.childhood.baidumap.fragment;
 
 
+import android.app.Dialog;
 import android.app.Fragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -31,17 +34,25 @@ import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.model.LatLng;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.buu.childhood.R;
-import edu.buu.childhood.baidumap.dialog.gameDialog;
-import edu.buu.childhood.baidumap.dialog.mapDialog;
+import edu.buu.childhood.baidumap.dialog.CreatingGameDialog;
 import edu.buu.childhood.baidumap.dialog.selectGame;
-import edu.buu.childhood.baidumap.poj.baiduItemBean;
+import edu.buu.childhood.baidumap.poj.MarkItem;
+import edu.buu.childhood.baidumap.service.GameInfoServiceImpl;
 import edu.buu.childhood.baidumap.service.LocationService;
+import edu.buu.childhood.baidumap.service.PersonInfoServiceImpl;
+import edu.buu.childhood.common.CallBackPage;
+import edu.buu.childhood.util.CallBack;
+import edu.buu.childhood.util.HttpUtil;
+import edu.buu.childhood.util.NetAsyncTask;
+import edu.buu.childhood.util.URLUtil;
 
-public class baiduMap extends Fragment {
+public class baiduMap extends Fragment implements CallBack {
     MapView mMapView = null;
     BaiduMap baiduMap;
     private LatLng myPoint;
@@ -51,20 +62,43 @@ public class baiduMap extends Fragment {
     private BitmapDescriptor bitmapDescriptor;//自定义定位图标
     private Marker marker;
     private View view;
-    public static List<baiduItemBean> infos = new ArrayList<baiduItemBean>();
+    private List<MarkItem> personInfo = new ArrayList<MarkItem>();
+    private List<MarkItem> gameInfo = new ArrayList<MarkItem>();
+    private List<MarkItem> unPersonInfo = new ArrayList<MarkItem>();
+    private String url1;
+    private String url2;
+    private String url3;
+    private String gatherPlace;
+    private Integer customCount;
+    private Date startTime;
+    private int gameCode;
+    private String userNickname;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         SDKInitializer.initialize(getActivity().getApplicationContext());
         view = inflater.inflate(R.layout.baidumap_activity, container, false);
-        infos.add(new baiduItemBean(39.998397, 116.357981, "健健小朋友"));
-        infos.add(new baiduItemBean(39.998597, 116.367897,  "涛涛小朋友" ));
-        infos.add(new baiduItemBean(34.245152, 108.971972,  "嘉铭小朋友" ));
-        infos.add(new baiduItemBean(34.242152, 108.971971, "楚嫣小朋友"));
-        infos.add(new baiduItemBean(39.998618, 116.436457, "诚诚小朋友"));
+
         //获取地图控件引用
         initMap();
         initLocation();
-        addMarker();
+        jianting();
+        Map args = new HashMap();
+        args.put("userName", "lcc");
+        url2 = URLUtil.getURL("userCanInvite", args);
+        new NetAsyncTask(this).execute(url2);
+
+        Map args2 = new HashMap();
+        args2.put("userName", "lcc");
+        url1 = URLUtil.getURL("gameCanJoin", args2);
+        new NetAsyncTask(this).execute(url1);
+
+
+//            Map args3 = new HashMap();
+//            args3.put("userName", "oytt");
+//            url3 = URLUtil.getURL("amUserList", args3);
+//            new NetAsyncTask(this).execute(url3);
+
         return view;
     }
 
@@ -77,103 +111,165 @@ public class baiduMap extends Fragment {
         bitmapDescriptor = BitmapDescriptorFactory.fromResource(R.drawable.icon_mark);//初始化自定义定位图标
     }
 
-    private void addMarker() {
-        Marker marker=null;
-        LatLng point=null;
-        OverlayOptions option=null;
+    public void addMarker() {
+        Marker marker = null;
+        LatLng point = null;
+        OverlayOptions option = null;
         BitmapDescriptor bitmap = BitmapDescriptorFactory
                 .fromResource(R.drawable.icon_mark);
+        BitmapDescriptor bitmap2 = BitmapDescriptorFactory
+                .fromResource(R.drawable.game_icon);
         //定义Maker坐标点
-        for (baiduItemBean info : infos)
-        {
+        for (MarkItem info : personInfo) {
+            int index = 0;
             // 位置
-             point= new LatLng(info.getLatitude(), info.getLongitude());
+            point = new LatLng(info.getLastLatitude(), info.getLastLongitude());
             // 图标
             //构建Marker图标
-            Log.i("info",info.toString());
-
             //构建MarkerOption，用于在地图上添加Marker
-           option = new MarkerOptions()
+            option = new MarkerOptions()
                     .position(point)
                     .icon(bitmap);
             //在地图上添加Marker，并显示
-            marker = (Marker)(baiduMap.addOverlay(option));
+            marker = (Marker) (baiduMap.addOverlay(option));
+            marker.setZIndex(index);
             Bundle bundle = new Bundle();
             bundle.putSerializable("info", info);
             marker.setExtraInfo(bundle);
         }
+        for (MarkItem info : gameInfo) {
+            int index = 1;
+            // 位置
+            point = new LatLng(info.getGameLatitude(), info.getGameLongitude());
+            gatherPlace = info.getGatherPlace();
+            customCount = info.getCustomCount();
+            startTime = info.getStartTime();
+            gameCode = info.getGameCode();
+            userNickname = info.getUserNickname();
+            Log.d("PERSON1", point + "");
 
+            // 图标
+            //构建Marker图标
+            //构建MarkerOption，用于在地图上添加Marker
+            option = new MarkerOptions()
+                    .position(point)
+                    .icon(bitmap2);
+            //在地图上添加Marker，并显示
+            marker = (Marker) (baiduMap.addOverlay(option));
+            marker.setZIndex(index);
+
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("info", info);
+            marker.setExtraInfo(bundle);
+        }
+    }
+
+    public void jianting() {
         baiduMap.setOnMarkerClickListener(new BaiduMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                baiduItemBean info = (baiduItemBean) marker.getExtraInfo().get("info");
-                Toast.makeText(getActivity(),info.getName()+"",Toast.LENGTH_SHORT).show();
-                // 生成一个TextView用户在地图中显示InfoWindow
-                TextView location = new TextView(getActivity().getApplicationContext());
-                location.setBackgroundResource(R.color.my_bar_color);
-                location.setPadding(30, 20, 30, 50);
-                location.setText(info.getName());
-                LatLng point= marker.getPosition();
-                InfoWindow mInfoWindow = new InfoWindow(location, point, -47);
-                baiduMap.showInfoWindow(mInfoWindow);
+                if (marker.getZIndex() == 0) {
+                    MarkItem info = (MarkItem) marker.getExtraInfo().get("info");
+                    // 生成一个TextView用户在地图中显示InfoWindow
+                    TextView location = new TextView(getActivity().getApplicationContext());
+                    location.setBackgroundResource(R.color.my_bar_color);
+                    location.setPadding(30, 20, 30, 50);
+                    location.setText(info.getUserNickname());
+                    LatLng point = marker.getPosition();
+                    InfoWindow mInfoWindow = new InfoWindow(location, point, -47);
+                    baiduMap.showInfoWindow(mInfoWindow);
+                } else if (marker.getZIndex() == 2) {
+                    //dialog
+                    final CreatingGameDialog dialog = new CreatingGameDialog(getActivity(), R.style.Dialog);
+                    dialog.setListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            switch (view.getId()) {
+                                case R.id.map_dialog_game:
+                                    selectGame.Builder builder = new selectGame.Builder(getActivity());
+                                    //builder.setMessage("这个就是自定义的提示框");
+                                    //builder.setTitle("提示");
+                                    builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                            //设置你的操作事项
+                                        }
+                                    });
+                                    builder.setNegativeButton("取消",
+                                            new android.content.DialogInterface.OnClickListener() {
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                    dialog.dismiss();
+                                                }
+                                            });
 
-                //dialog
-
-                final mapDialog dialog = new mapDialog(getActivity(), R.style.Dialog);
-                dialog.setListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        switch (view.getId()) {
-                            case R.id.map_dialog_game:
-
-
-                                selectGame.Builder builder = new selectGame.Builder(getActivity());
-                                //builder.setMessage("这个就是自定义的提示框");
-                                //builder.setTitle("提示");
-                                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dialog.dismiss();
-                                        //设置你的操作事项
-                                    }
-                                });
-
-                                builder.setNegativeButton("取消",
-                                        new android.content.DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                dialog.dismiss();
-                                            }
-                                        });
-
-                                builder.create().show();
-                                break;
-                            case R.id.map_dialog_playsite:
-
-                                break;
-                            case R.id.map_dialog_defingame:
-
-                                break;
-                            case R.id.map_dialog_game_text:
+                                    builder.create().show();
 
 
-                            case R.id.map_dialog_positiveButton:
+                                    break;
+                                case R.id.map_dialog_playsite:
 
-                                break;
-                            case R.id.map_dialog_negativeButton:
-                                dialog.dismiss();
-                                break;
-                            default:
-                                break;
+                                    break;
+                                case R.id.map_dialog_defingame:
+
+                                    break;
+                                case R.id.map_dialog_game_text:
+
+
+                                case R.id.map_dialog_positiveButton:
+
+                                    break;
+                                case R.id.map_dialog_negativeButton:
+                                    dialog.dismiss();
+                                    break;
+                                default:
+                                    break;
+                            }
                         }
-                    }
-                });
-                dialog.show();
+                    });
+                    dialog.show();
+                } else {
+                    LayoutInflater inflater = LayoutInflater.from(getActivity());
+                    LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.created_game, null);
+                    final Dialog dialog1 = new AlertDialog.Builder(getActivity()).create();
+                    dialog1.setCancelable(false);
+                    dialog1.show();
+                    dialog1.getWindow().setContentView(layout);
+                    TextView palyPlace = (TextView) layout.findViewById(R.id.play_place);
+                    palyPlace.setText(gatherPlace);
+                    TextView palyCount = (TextView) layout.findViewById(R.id.playCount);
+                    palyCount.setText(String.valueOf(customCount));
+                    TextView palyTime = (TextView) layout.findViewById(R.id.playTime);
+                    palyTime.setText((CharSequence) startTime);
+                    TextView gameName = (TextView) layout.findViewById(R.id.gameName);
+                    gameName.setText(String.valueOf(gameCode));
+                    TextView createdName = (TextView) layout.findViewById(R.id.createdName);
+                    createdName.setText(userNickname);
 
 
+                    Button btnOK = (Button) layout.findViewById(R.id.positiveButton);
+                    btnOK.setOnClickListener(new View.OnClickListener() {
+
+                        @Override
+                        public void onClick(View v) {
+                            dialog1.dismiss();
+                        }
+                    });
+                    Button btnCancel = (Button) layout.findViewById(R.id.negativeButton);
+                    btnCancel.setOnClickListener(new View.OnClickListener() {
+
+                        @Override
+                        public void onClick(View v) {
+                            dialog1.dismiss();
+                        }
+                    });
+
+                }
                 return true;
 
 
             }
         });
+
         baiduMap.setOnMapClickListener(new BaiduMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng latLng) {
@@ -189,7 +285,6 @@ public class baiduMap extends Fragment {
 
     public void initMap() {
         mMapView = (MapView) view.findViewById(R.id.bmapView);
-        Log.d("baidumap", baiduMap + "");
         baiduMap = mMapView.getMap();
         MapStatusUpdate msu = MapStatusUpdateFactory.zoomTo(15.0f);//设置地图默认显示比例
         baiduMap.setMapStatus(msu);
@@ -246,6 +341,7 @@ public class baiduMap extends Fragment {
     *
      */
     private class MyLocationListener implements BDLocationListener {
+        private int index = 2;
 
         @Override
         public void onReceiveLocation(BDLocation Location) {
@@ -263,14 +359,16 @@ public class baiduMap extends Fragment {
             myPoint = new LatLng(Location.getLatitude(), Location.getLongitude());
 
             BitmapDescriptor bitmap = BitmapDescriptorFactory
-                    .fromResource(R.drawable.icon_mark);
+                    .fromResource(R.drawable.start);
             OverlayOptions myOption = new MarkerOptions()
                     .position(myPoint)
                     .icon(bitmap);
             marker = (Marker) baiduMap.addOverlay(myOption);
+            marker.setZIndex(index);
             //设置自定义图标
             MyLocationConfiguration config = new MyLocationConfiguration(MyLocationConfiguration.LocationMode.NORMAL, true, bitmapDescriptor);
             baiduMap.setMyLocationConfigeration(config);
+
             // Toast.makeText(getActivity().getApplicationContext(),Location.getLatitude()+"222",Toast.LENGTH_SHORT).show();
             if (isFirstIn) {
                 LatLng latLng = new LatLng(Location.getLatitude(), Location.getLongitude());
@@ -280,9 +378,43 @@ public class baiduMap extends Fragment {
             }
 
 
-            //  Toast.makeText(getActivity().getApplicationContext(), String.valueOf(Location.getLocType()), Toast.LENGTH_SHORT).show();
+            //  Toast.makeText(getActivity().getApplicationContext(), String.valueOf(Location.getLocType()), Toast.LENGTH_SHORT).show();        }
 
         }
+    }
+
+    /*请求数据*/
+    @Override
+    public void getResult(CallBackPage result) {
+        MarkItem bean = (MarkItem) result.getDatalist().get(0);
+        if (bean.getSelect().equals("2")) {
+            personInfo.addAll(result.getDatalist());
+
+        } else if (bean.getSelect().equals("1")) {
+            gameInfo.addAll(result.getDatalist());
+        } else if (bean.getSelect().equals("3")) {
+            unPersonInfo.addAll(result.getDatalist());
+        }
+        addMarker();
+    }
+
+
+    @Override
+    public CallBackPage doInBackground(String url) {
+        if (url == url2) {
+            HttpUtil httpUtil2 = new HttpUtil(url2);
+            PersonInfoServiceImpl service = new PersonInfoServiceImpl();
+            return service.getPersonInfoHeadInf(new String(httpUtil2.getHttpData()));
+        } else {
+            HttpUtil httpUtil1 = new HttpUtil(url1);
+            GameInfoServiceImpl service = new GameInfoServiceImpl();
+            return service.getGameInfoHeadInf(new String(httpUtil1.getHttpData()));
+        }
+//         else {
+//            HttpUtil httpUtil3 = new HttpUtil(url3);
+//            UnPersonInfoServiceImpl service = new UnPersonInfoServiceImpl();
+//            return service.getUnPersonInfoHeadInf(new String(httpUtil3.getHttpData()));
+//        }
     }
 
 }

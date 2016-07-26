@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import edu.buu.childhood.R;
 
-public class mapDialog extends Dialog{
+public class CreatingGameDialog extends Dialog{
 
     private Context context;
     private LinearLayout gameSelect,playSite,definGame;
@@ -25,13 +25,13 @@ public class mapDialog extends Dialog{
         public void onClick(View view);
     }*/
 
-    public mapDialog(Context context) {
+    public CreatingGameDialog(Context context) {
         super(context);
         // TODO Auto-generated constructor stub
         this.context = context;
     }
 
-    public mapDialog(Context context,int theme) {
+    public CreatingGameDialog(Context context, int theme) {
         super(context,theme);
         // TODO Auto-generated constructor stub
         this.context = context;
@@ -58,10 +58,4 @@ public class mapDialog extends Dialog{
         nButton.setOnClickListener(listener);
         pButton.setOnClickListener(listener);
     }
-
-  /*  @Override
-    public void onClick(View v) {
-        // TODO Auto-generated method stub
-        listener.onClick(v);
-    }*/
 }

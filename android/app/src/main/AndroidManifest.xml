@@ -47,7 +47,8 @@
                 </action>
             </intent-filter>
         </service>
-        <activity android:name=".mainui.activity.MainActivity">
+        <activity android:name=".mainui.activity.MainActivity"
+           >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -61,10 +62,6 @@
         <activity
             android:label="head_pc"
             android:name=".my.activity.HeadPicture">
-        </activity>
-        <activity
-            android:label="collect"
-            android:name=".my.activity.Collect">
         </activity>
         <activity
             android:label="guide"
@@ -125,8 +122,24 @@
             android:name=".baidumap.activity.teamerName">
         </activity>
         <activity
-            android:label="mysignature"
+            android:label="my_signature"
             android:name=".my.activity.mySignature">
+        </activity>
+        <activity
+            android:label="parent_info"
+            android:name=".my.activity.ParentInfo">
+        </activity>
+        <activity
+            android:label="parent_lock"
+            android:name=".my.activity.ParentLock">
+        </activity>
+        <activity
+            android:label="change_password"
+            android:name=".my.activity.ChangePassword">
+        </activity>
+        <activity
+            android:label="parent_layout"
+            android:name=".my.activity.ParentLayout">
         </activity>
 
     </application>

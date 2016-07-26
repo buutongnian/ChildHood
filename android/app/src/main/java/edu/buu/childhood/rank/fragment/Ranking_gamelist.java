@@ -38,7 +38,7 @@ public class Ranking_gamelist extends Fragment implements CallBack {
         listView = (ListView) view.findViewById(R.id.ranking_gamelist_listview);
         rankDatalist = new ArrayList<ranking_gamelist_itembean>();
         Map args = new HashMap();
-        args.put("userName", "lcc");
+        args.put("userName", "oytt");
         args.put("pageNum", 1);
         url = URLUtil.getURL("gameRank", args);
         new NetAsyncTask(this).execute(url);
@@ -49,7 +49,6 @@ public class Ranking_gamelist extends Fragment implements CallBack {
     public void getResult(CallBackPage result) {
 
         rankDatalist.addAll(result.getDatalist());
-        Log.d("page++",rankDatalist+"");
         Ranking_gamelist_listview_Adapter gameRank_adapter = new Ranking_gamelist_listview_Adapter(getActivity(), rankDatalist);
         //datalist = new GameServiceImpl().getGameHeadInf(new String(result));
         if (result != null) {

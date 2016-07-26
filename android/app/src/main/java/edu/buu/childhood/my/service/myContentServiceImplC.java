@@ -19,10 +19,11 @@ import edu.buu.childhood.my.pojo.myContentItem;
 /**
  * Created by lcc on 2016/7/15.
  */
-public class myContentServiceImplC implements MyContentServiceC{
+public class myContentServiceImplC implements MyContentServiceC {
     Gson json = new Gson();
+
     public CallBackPage<myContentItem> getmyContentHeadInfC(String result) {
-        Message<ArrayList<ChildInf>>message = json.fromJson(result, new TypeToken<Message<ArrayList<ChildInf>>>() {
+        Message<ArrayList<ChildInf>> message = json.fromJson(result, new TypeToken<Message<ArrayList<ChildInf>>>() {
         }.getType());
         if (C.my.CHILD_INF_QUERY_SUCCESS.equals(message.getMessageCode())) {
             CallBackPage<myContentItem> callBackPage = new CallBackPage<myContentItem>();
@@ -30,19 +31,21 @@ public class myContentServiceImplC implements MyContentServiceC{
             List<myContentItem> list = new ArrayList<myContentItem>();
             Iterator iter = page.iterator();
             while (iter.hasNext()) {
-            myContentItem userInfo=new myContentItem();
+                myContentItem userInfo = new myContentItem();
                 ChildInf child = (ChildInf) iter.next();
-                userInfo.setUserGender(child.getChildSex()+"");
-            userInfo.setUserBirthday(child.getChildBirthday());
-            userInfo.setSelect("c");
-            list.add(userInfo);
-           }
+                userInfo.setUserGender(child.getChildSex() + "");
+                userInfo.setUserBirthday(child.getChildBirthday());
+                userInfo.setChildId(child.getChildInf());
+                userInfo.setSelect("c");
+                list.add(userInfo);
+            }
             callBackPage.setDatalist(list);
 
-        return callBackPage;
+            return callBackPage;
+        }
+        return null;
     }
-    return null;
-    }
+
     public String getmyContentContentInfC() {
         return null;
     }

@@ -116,6 +116,7 @@
             android:src="@drawable/next_hei"/>
     </RelativeLayout>
     <RelativeLayout
+        android:id="@+id/my_parent"
         style="@style/my_r_layout"
         android:layout_below="@+id/my_myr4"
         android:layout_marginTop="22dp">

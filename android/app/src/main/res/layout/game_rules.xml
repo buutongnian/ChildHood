@@ -80,6 +80,6 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="100dp"
         android:layout_below="@+id/game_filtrate_linearlayout"
-        android:src="@drawable/error"
+        android:src="@drawable/errorlock"
         android:visibility="gone"/>
 </RelativeLayout>

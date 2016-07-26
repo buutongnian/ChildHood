@@ -40,7 +40,7 @@ public class Ranking_personlist extends Fragment implements CallBack{
         listView=(ListView)view.findViewById(R.id.ranking_personlist_listview);
         rankDatalist = new ArrayList<ranking_personlist_itembean>();
         Map args = new HashMap();
-        args.put("userName", "lcc");
+        args.put("userName", "oytt");
         args.put("pageNum", 1);
         url = URLUtil.getURL("userRank", args);
         new NetAsyncTask(this).execute(url);

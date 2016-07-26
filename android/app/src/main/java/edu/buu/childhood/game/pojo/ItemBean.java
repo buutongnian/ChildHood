@@ -7,17 +7,17 @@ import android.graphics.drawable.BitmapDrawable;
  * Created by lcc on 2016/6/16.
  */
 public class ItemBean {
-    public int Image;
+    public char Image;
     public BitmapDrawable background;
     public String memNumSize;
     public String ageRank;
     public String  gameSynopsis;
 
-    public int getImage() {
+    public char getImage() {
         return Image;
     }
 
-    public void setImage(int image) {
+    public void setImage(char image) {
         Image = image;
     }
 

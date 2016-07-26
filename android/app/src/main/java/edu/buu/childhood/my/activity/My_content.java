@@ -4,10 +4,6 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.text.format.DateFormat;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -18,12 +14,10 @@ import java.util.Map;
 
 import edu.buu.childhood.R;
 import edu.buu.childhood.common.CallBackPage;
+import edu.buu.childhood.my.data.DateTimePickDialogUtil;
 import edu.buu.childhood.my.pojo.myContentItem;
-import edu.buu.childhood.my.service.MyContentService;
 import edu.buu.childhood.my.service.myContentServiceImpl;
 import edu.buu.childhood.my.service.myContentServiceImplC;
-import edu.buu.childhood.rank.adapter.Ranking_gamelist_listview_Adapter;
-import edu.buu.childhood.rank.service.GameRankServiceImpl;
 import edu.buu.childhood.util.CallBack;
 import edu.buu.childhood.util.HttpUtil;
 import edu.buu.childhood.util.NetAsyncTask;
@@ -36,9 +30,7 @@ public class My_content extends Activity implements CallBack {
     private RelativeLayout relativeLayout;
     private RelativeLayout relativeLayout_name;
     private RelativeLayout relativeLayout_gender;
-    private RelativeLayout getRelativeLayout_signature;
-    private String genderString;
-    private String nameString;
+    private RelativeLayout birthdayChange;
     private TextView gender;
     private TextView name;
     private TextView address;
@@ -46,22 +38,20 @@ public class My_content extends Activity implements CallBack {
     private RelativeLayout exit;
     private String urlC;
     private String urlU;
-
+    private String initDateTime;
+    int request_code=1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_content);
-        //接收数据
-        Intent intent=getIntent();
-        genderString=intent.getStringExtra("extra");
-        nameString=intent.getStringExtra("name");
 
-        gender=(TextView)findViewById(R.id.my_content_gendertext);
-        name= (TextView) findViewById(R.id.my_content_inName);
-        address= (TextView) findViewById(R.id.my_content_address);
-        birthday= (TextView) findViewById(R.id.my_content_birthday);
-        exit= (RelativeLayout)findViewById(R.id.my_content_exit);
+        gender = (TextView) findViewById(R.id.my_content_gendertext);
+        name = (TextView) findViewById(R.id.my_content_inName);
+        address = (TextView) findViewById(R.id.my_content_address);
+        birthday = (TextView) findViewById(R.id.my_content_birthday);
+//退出
+        exit = (RelativeLayout) findViewById(R.id.my_content_exit);
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,17 +68,18 @@ public class My_content extends Activity implements CallBack {
                 }
             }
         });
-        gender.setText(genderString);
-        name.setText(nameString);
 
         relativeLayout = (RelativeLayout) findViewById(R.id.my_content_r2);
         relativeLayout_name = (RelativeLayout) findViewById(R.id.my_content_name);
-        getRelativeLayout_signature= (RelativeLayout) findViewById(R.id.my_content_signature);
-        relativeLayout_gender= (RelativeLayout) findViewById(R.id.my_content_gender);
-        getRelativeLayout_signature.setOnClickListener(new View.OnClickListener() {
+        birthdayChange = (RelativeLayout) findViewById(R.id.my_content_birthdayChange);
+        relativeLayout_gender = (RelativeLayout) findViewById(R.id.my_content_gender);
+        birthdayChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(My_content.this, mySignature.class));
+                initDateTime = (String) birthday.getText();
+                DateTimePickDialogUtil dateTimePicKDialog = new DateTimePickDialogUtil(
+                        My_content.this, initDateTime);
+                dateTimePicKDialog.dateTimePicKDialog(birthday);
             }
         });
         relativeLayout.setOnClickListener(new View.OnClickListener() {
@@ -108,16 +99,17 @@ public class My_content extends Activity implements CallBack {
             public void onClick(View v) {
                 //发送数据
                 Intent intent=new Intent();
-                intent.putExtra("name",nameString);
+                //intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                intent.putExtra("name",name.getText());
                 intent.setClass(My_content.this, Edit_name.class);
-                My_content.this.startActivity(intent);
+                My_content.this.startActivityForResult(intent,request_code);
             }
         });
         findViewById(R.id.my_content_image6).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // startActivity(new Intent(My_content.this, My.class));
                 finish();
-
             }
         });
 
@@ -135,32 +127,40 @@ public class My_content extends Activity implements CallBack {
 
 
     @Override
-    public void getResult(CallBackPage result) {
-        myContentItem bean= (myContentItem) result.getDatalist().get(0);
-        if(bean.getSelect()=="c"){
-            SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd");
-            String bir=df.format(bean.getUserBirthday());
-            birthday.setText(bir);
+            public void getResult(CallBackPage result) {
+                myContentItem bean = (myContentItem) result.getDatalist().get(0);
+                if (bean.getSelect() == "c") {
+                    SimpleDateFormat df = new SimpleDateFormat("yyyy年MM月dd日");
+                    String bir = df.format(bean.getUserBirthday());
+                    birthday.setText(bir);
 
-            gender.setText(bean.getUserGender());
-        }else{
-           name.setText(bean.getUserNiname());
-           address.setText(bean.getUserDetailAddr());}
-}
-    @Override
-    public CallBackPage doInBackground (String url){
-        if(url==urlC)
-        {HttpUtil httpUtilC = new HttpUtil(urlC);
-            myContentServiceImplC Service = new myContentServiceImplC();
-            return Service.getmyContentHeadInfC(new String(httpUtilC.getHttpData()));
-           }
-        else
-        { HttpUtil httpUtil = new HttpUtil(urlU);
-            myContentServiceImpl Service = new myContentServiceImpl();
-            return Service.getmyContentHeadInf(new String(httpUtil.getHttpData()));
+                    gender.setText(bean.getUserGender());
+                } else {
+                    name.setText(bean.getUserNiname());
+                    address.setText(bean.getUserDetailAddr());
+                }
             }
+
+            @Override
+            public CallBackPage doInBackground(String url) {
+                if (url == urlC) {
+                    HttpUtil httpUtilC = new HttpUtil(urlC);
+                    myContentServiceImplC Service = new myContentServiceImplC();
+                    return Service.getmyContentHeadInfC(new String(httpUtilC.getHttpData()));
+                } else {
+                    HttpUtil httpUtil = new HttpUtil(urlU);
+                    myContentServiceImpl Service = new myContentServiceImpl();
+            return Service.getmyContentHeadInf(new String(httpUtil.getHttpData()));
+        }
     }
 
+    public void onActivityResult(int requestCode, int resultCode,Intent data){
+        if(requestCode==request_code){
+            if (resultCode==RESULT_OK){
+                name.setText(data.getStringExtra("back"));
+            }
+        }
 
+   }
 
 }
