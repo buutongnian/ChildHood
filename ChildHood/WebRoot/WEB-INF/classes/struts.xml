@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+	<package name="struts2" extends="struts-default">
+		<!-- 配置各模块的Action内容 -->
+		<!-- <action name="login" class="loginAction">
+			<result name="login" type="redirect">/index.jsp</result>
+			<result name="error">/login.jsp</result>
+			<result name="input" type="redirect">/error.jsp</result>
+		</action>
+		
+		<action name="activityAdd" class="activityAddAction">
+			<result name="success" type="redirectAction">
+			<param name="actionName">activityTitle</param>
+			<param name="orgActType">${orgActType}</param>
+			</result>
+			<result name="error" type="redirect">/error.jsp</result>
+		</action> -->
+		
+		<action name="login" class="loginAction">
+			<result name="MessagePage" type="redirect">/return.jsp</result>
+			<result name="error" type="redirect">/error.jsp</result>
+		</action>
+		
+		<action name="gameHead" class="gameHeadAction">
+			<result name="MessagePage" type="redirect">/return.jsp</result>
+			<result name="error" type="redirect">/error.jsp</result>
+		</action>
+		
+		<action name="gameContent" class="gameContentAction">
+			<result name="MessagePage" type="redirect">/return.jsp</result>
+			<result name="error" type="redirect">/error.jsp</result>
+		</action>
+		
+		<action name="gameRank" class="gameRankAction">
+			<result name="MessagePage" type="redirect">/return.jsp</result>
+			<result name="error" type="redirect">/error.jsp</result>
+		</action>
+		
+		<action name="userRank" class="userRankAction">
+			<result name="MessagePage" type="redirect">/return.jsp</result>
+			<result name="error" type="redirect">/error.jsp</result>
+		</action>
+	</package>
+</struts>

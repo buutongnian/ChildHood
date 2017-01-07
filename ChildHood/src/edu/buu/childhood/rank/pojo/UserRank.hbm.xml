@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.rank.pojo.UserRank" table="V_RANK_USER">
+	<composite-id>
+		<key-property name="userName" column="USER_NAME"></key-property>
+		<key-property name="belongingArea" column="BELONGING_AREA"></key-property>
+		<key-property name="likeCount" column="LIKE_COUNT"></key-property>
+	</composite-id>
+	<many-to-one name="userRegInf" class="edu.buu.childhood.my.pojo.UserRegInf" column="USER_NAME" unique="true" insert="false" update="false" lazy="false"></many-to-one>
+	<many-to-one name="userInf" class="edu.buu.childhood.my.pojo.UserInf" column="USER_NAME" unique="true" insert="false" update="false" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

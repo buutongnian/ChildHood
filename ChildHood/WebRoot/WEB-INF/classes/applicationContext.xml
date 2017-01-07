@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+	<!-- 配置自动扫描的包 -->
+	<context:component-scan base-package="edu.buu.childhood"></context:component-scan>
+
+	<!-- 配置各模块的 beans -->
+	<!-- 配置LoginAction及LoginService -->
+	<bean id="loginAction" class="edu.buu.childhood.login.action.LoginAction" scope="prototype">
+		<property name="loginService" ref="loginService"></property>
+	</bean>
+	<bean id="loginService" class="edu.buu.childhood.login.service.LoginServiceImpl" scope="prototype"></bean>
+	<!-- 配置RegisterAction及RegisterService -->
+	<bean id="registerAction" class="edu.buu.childhood.login.action.RegisterAction" scope="prototype">
+		<property name="registerService" ref="registerService"></property>
+	</bean>
+	<bean id="registerService" class="edu.buu.childhood.login.service.RegisterServiceImpl" scope="prototype"></bean>
+	<!-- 配置GameHeadAction、GameContentAction及GameService -->
+	<bean id="gameHeadAction" class="edu.buu.childhood.game.action.GameHeadAction" scope="prototype">
+		<property name="gameService" ref="gameService"></property>
+	</bean>
+	<bean id="gameContentAction" class="edu.buu.childhood.game.action.GameContentAction" scope="prototype">
+		<property name="gameService" ref="gameService"></property>
+	</bean>
+	<bean id="gameService" class="edu.buu.childhood.game.service.GameServiceImpl" scope="prototype"></bean>
+	<!-- 配置gameRankAction以及RankService -->
+	<bean id="gameRankAction" class="edu.buu.childhood.rank.action.GameRankAction">
+		<property name="rankService" ref="rankService"></property>
+	</bean>
+	<bean id="userRankAction" class="edu.buu.childhood.rank.action.UserRankAction">
+		<property name="rankService" ref="rankService"></property>
+	</bean>
+	<bean id="rankService" class="edu.buu.childhood.rank.service.RankServiceImpl" scope="prototype"></bean>
+	
+	<!-- 配置Task及TaskDao，执行定时任务 -->
+	<bean id="loginStatusTask" class="edu.buu.childhood.login.task.LoginStatusTask" scope="singleton"></bean>
+	<bean id="taskDao" class="edu.buu.childhood.login.dao.TaskDaoImpl" scope="prototype"></bean>
+	<!-- 配置数据源 -->
+	<!-- 导入资源文件 -->
+	<context:property-placeholder location="classpath:db.properties" />
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="user" value="${jdbc.user}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="driverClass" value="${jdbc.driverClass}"></property>
+		<property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>
+		<property name="initialPoolSize" value="${jdbc.initialPoolSize}"></property>
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}"></property>
+	</bean>
+
+	<!-- 配置 hibernate 的 SessionFactory实例:通过 Spring 提供的 LocalSessionFactoryBean 
+		进行配置 -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<!-- 配置数据源属性 -->
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- 配置 hibernate 配置文件的位置及名称 -->
+		<property name="configLocation" value="classpath:hibernate.cfg.xml"></property>
+		<!-- 配置 hibernate 映射文件的位置及名称，可以使用通配符 -->
+		<property name="mappingResources">
+			<list>
+				<!-- <value>xxx\xxx\xxx\xxx\xxx.hbm.xml</value> -->	
+				<value>edu\buu\childhood\common\Area.hbm.xml</value>
+				<value>edu\buu\childhood\common\Province.hbm.xml</value>
+				<value>edu\buu\childhood\common\City.hbm.xml</value>
+				<value>edu\buu\childhood\common\District.hbm.xml</value>
+				<value>edu\buu\childhood\common\School.hbm.xml</value>
+				<value>edu\buu\childhood\common\Community.hbm.xml</value>
+				<value>edu\buu\childhood\common\GameAge.hbm.xml</value>
+				<value>edu\buu\childhood\common\GameMemNum.hbm.xml</value>
+				<value>edu\buu\childhood\common\GameType.hbm.xml</value>
+				<value>edu\buu\childhood\common\Grade.hbm.xml</value>
+				<value>edu\buu\childhood\common\Education.hbm.xml</value>
+				<value>edu\buu\childhood\game\pojo\GameHead.hbm.xml</value>
+				<value>edu\buu\childhood\game\pojo\GameContent.hbm.xml</value>
+				<value>edu\buu\childhood\login\pojo\User.hbm.xml</value>
+				<value>edu\buu\childhood\my\pojo\UserRegInf.hbm.xml</value>
+				<value>edu\buu\childhood\my\pojo\UserInf.hbm.xml</value>
+				<value>edu\buu\childhood\my\pojo\ChildInf.hbm.xml</value>
+				<value>edu\buu\childhood\my\pojo\ParentInf.hbm.xml</value>
+				<value>edu\buu\childhood\rank\pojo\GameRank.hbm.xml</value>
+				<value>edu\buu\childhood\rank\pojo\UserRank.hbm.xml</value>
+				<value>edu\buu\childhood\status\pojo\GameCanJoin.hbm.xml</value>
+				<value>edu\buu\childhood\status\pojo\GameStatus.hbm.xml</value>
+				<value>edu\buu\childhood\status\pojo\JoinedStatus.hbm.xml</value>
+				<value>edu\buu\childhood\status\pojo\UserCanJoin.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 配置 Spring 的声明式事务 -->
+	<!-- 1.配置事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- 2.配置事务属性，需要事务管理器 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="*" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- 3.配置事务切点，并把切点和事务属性关联起来 -->
+	<aop:config>
+		<!-- <aop:advisor pointcut="execution(* edu.buu.childhood.dao.xxx.*.*(..))"
+			advice-ref="txAdvice" /> -->
+			<aop:advisor pointcut="execution(* edu.buu.childhood.login.dao.*.*(..))" advice-ref="txAdvice"/>
+			<aop:advisor pointcut="execution(* edu.buu.childhood.game.dao.*.*(..))" advice-ref="txAdvice"/>
+			<aop:advisor pointcut="execution(* edu.buu.childhood.rank.dao.*.*(..))" advice-ref="txAdvice"/>
+	</aop:config>
+
+	<!-- 4.配置Task定时任务 -->
+    <!-- 配置方法调用任务工厂(XXXJobDetailFactoryBean) -->  
+    <bean name="simpleJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="Durability" value="true"/>   
+    	<property name="jobClass" value="edu.buu.childhood.login.task.LoginStatusTask"/>
+   		<property name="jobDataAsMap">
+      	  <map>
+      	      <entry key="timeout" value="5"/>
+      	      <entry key="taskDao">
+      	      	<ref bean="taskDao" />
+      	      </entry>
+     	   </map>
+   		</property>
+	</bean>
+	<!-- 配置任务调度触发器 -->
+	<bean id="simpleTrigger"  class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">  
+   		<property name="jobDetail" ref="simpleJobDetail" />  
+    	<property name="startDelay" value="1000" />  
+    	<property name="repeatInterval" value="300000" />  
+	</bean>
+	<!-- 配置Scheduler Factory -->
+	<bean  class="org.springframework.scheduling.quartz.SchedulerFactoryBean"> 
+        <property name="jobDetails">  
+            <list>  
+                <ref bean="simpleJobDetail" />  
+            </list>  
+        </property>  
+        <property name="triggers">  
+            <list>  
+                <ref bean="simpleTrigger" />  
+            </list>  
+        </property>  
+    </bean>
+</beans>

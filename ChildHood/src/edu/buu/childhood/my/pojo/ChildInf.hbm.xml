@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.my.pojo.ChildInf" table="T_SYS_CHILD_INF">
+		<id name="childInf" column="CHILD_INF">
+			<generator class="native" ></generator>
+		</id>
+		<!-- 注意：可更新字段更新前一定要先取出愿数据，存放在JavaBean中后再对相应JavaBean要修改字段进行赋值操作！ -->		
+		<property name="userName" column="USER_NAME" update="false"/>
+		<property name="childName" column="CHILD_NAME"/>
+		<property name="childSex" column="CHILD_SEX"/>
+		<property name="childBirthday" column="CHILD_BIRTHDAY"/>
+		<property name="educationCode" column="EDUCATION_CODE"/>
+		<property name="gradeCode" column="GRADE_CODE"/>
+		<property name="schoolCode" column="SCHOOL_CODE"/>
+	</class>
+</hibernate-mapping>
