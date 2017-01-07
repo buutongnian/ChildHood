@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="edu.buu.childhood.achvmt.pojo.Module" dynamic-update="true" table="T_ACHVMT_MODULE">
+		<id name="moduleId" column="MODULE_ID">
+			<generator class="identity"></generator>
+		</id>
+		<property name="moduleName" column="MODULE_NAME" />
+		<property name="moduleSynopsis" column="MODULE_SYNOPSIS" />
+	</class>
+</hibernate-mapping>

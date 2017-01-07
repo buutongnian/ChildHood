@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.my.pojo.User" dynamic-insert="true" dynamic-update="true" table="T_SYS_USER">
+		<id name="userName" column="USER_NAME">
+			<generator class="assigned" ></generator>
+		</id>
+		<!-- 注意：可更新字段更新前一定要先取出愿数据，存放在JavaBean中后再对相应JavaBean要修改字段进行赋值操作！ -->
+		<property name="userId" column="USER_ID" update="false" />
+		<property name="userTelNum" column="USER_TELNUM" update="false" />
+		<property name="userPwd" column="USER_PWD" />
+		<property name="regDate" column="REG_DATE" update="false" insert="false"/>
+		<property name="regLatitude" column="REG_LATITUDE" update="false"/>
+		<property name="regLongitude" column="REG_LONGITUDE" update="false"/>
+		<property name="userHeadImage" column="USER_HEADIMAGE" insert="false" />
+		<property name="userNickname" column="USER_NICKNAME"/>
+		<property name="lastLatitude" column="LAST_LATITUDE"/>
+		<property name="lastLongitude" column="LAST_LONGITUDE"/>
+		<property name="belongingArea" column="BELONGING_AREA" update="false"/>
+		<property name="belongingProvince" column="BELONGING_PROVINCE"/>
+		<property name="belongingCity" column="BELONGING_CITY"/>
+		<property name="belongingDistrict" column="BELONGING_DISTRICT"/>
+		<property name="community" column="COMMUNITY"/>
+		<property name="detailAddr" column="DETAIL_ADDR"/>
+		<property name="email" column="EMAIL"/>
+		<property name="achievementPoint" column="ACHIEVEMENT_POINT" insert="false" update="false"/>
+		<property name="userLevel" column="USER_LEVEL" insert="false" update="false"/>
+		<property name="loginStatus" column="LOGIN_STATUS"/>
+	</class>
+</hibernate-mapping>

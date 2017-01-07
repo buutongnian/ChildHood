@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.rank.pojo.StatusUserRankDetail" table="T_STATUS_USER_RANK_DETAIL">
+	<id name="detailId" column="DETAIL_ID">
+		<generator class="identity" ></generator>
+	</id>
+		<property name="userName" column="USER_NAME" />
+		<property name="likeUser" column="LIKE_USER" />
+		<property name="likeTime" column="LIKE_TIME" update="false" insert="false" />
+		<property name="access" column="ACCESS" update="false" />
+		<property name="gameId" column="GAME_ID" update="false" />
+	</class>
+</hibernate-mapping>

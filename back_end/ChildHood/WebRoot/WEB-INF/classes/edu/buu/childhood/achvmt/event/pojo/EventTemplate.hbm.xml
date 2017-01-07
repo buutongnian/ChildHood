@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.achvmt.event.pojo.EventTemplate" table="T_ACHVMT_EVENT_TEMPLATE">
+		<id name="templateId" column="TEMPLATE_ID">
+			<generator class="identity" ></generator>
+		</id>
+		<property name="templateCode" column="TEMPLATE_CODE"/>
+		<property name="templateName" column="TEMPLATE_NAME"/>
+		<property name="templateStr" column="TEMPLATE_STR"/>
+		<property name="templateParams" column="TEMPLATE_PARAMS"/>
+		<property name="templateModule" column="TEMPLATE_MODULE"/>
+		<property name="templateMopduleName" column="TEMPLATE_MODULE_NAME"/>
+	</class>
+</hibernate-mapping>

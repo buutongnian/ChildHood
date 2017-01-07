@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.login.pojo.UserLogin" table="T_SYS_USER">
+		<id name="userName" column="USER_NAME">
+			<generator class="assigned" ></generator>
+		</id>
+		<property name="userPwd" column="USER_PWD" insert="false" update="false"/>
+		<property name="loginStatus" column="LOGIN_STATUS"/>
+	</class>
+</hibernate-mapping>

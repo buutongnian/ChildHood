@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="edu.buu.childhood.achvmt.medal.pojo.Medal" table="T_ACHVMT_MEDAL">
+		<id name="medalId" column="MEDAL_ID">
+			<generator class="identity"></generator>
+		</id>
+		<property name="medalName" column="MEDAL_NAME" />
+		<property name="medalDescribe" column="MEDAL_DESCRIBE" />
+		<property name="achievementPoint" column="ACHIEVEMENT_POINT" />
+	</class>
+</hibernate-mapping>

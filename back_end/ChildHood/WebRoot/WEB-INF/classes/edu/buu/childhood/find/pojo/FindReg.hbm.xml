@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.find.pojo.FindReg" dynamic-insert="true" dynamic-update="true" table="T_FIND_REG">
+		<id name="userName" column="USER_NAME">
+			<generator class="assigned" ></generator>
+		</id>
+		<property name="age" column="AGE"/>
+		<property name="sex" type="java.lang.Character" column="SEX"/>
+		<property name="youngLatitude" column="YOUNG_LATITUDE"/>
+		<property name="youngLongitude" column="YOUNG_LONGITUDE"/>
+		<property name="youngNickname" column="YOUNG_NICKNAME"/>
+		<property name="youngRoad" column="YOUNG_ROAD"/>
+		<property name="message" column="MESSAGE"/>
+		<property name="enable" type="java.lang.Character" column="ENABLE"/>
+	</class>
+</hibernate-mapping>

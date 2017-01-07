@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.rank.pojo.LikeDetail" dynamic-update="true" table="V_USER_LIKE_DETAIL">
+	<composite-id>
+		<key-property name="access" column="ACCESS"></key-property>
+		<key-property name="userName" column="USER_NAME"></key-property>
+		<key-property name="userNickname" column="USER_NICKNAME"></key-property>
+		<key-property name="userHeadImage" column="USER_HEADIMAGE"></key-property>
+		<key-property name="likeTime" column="LIKE_TIME"></key-property>
+		<key-property name="likeUser" column="LIKE_USER"></key-property>
+	</composite-id>
+	</class>
+</hibernate-mapping>

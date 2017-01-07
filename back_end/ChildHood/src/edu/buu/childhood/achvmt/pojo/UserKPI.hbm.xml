@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.achvmt.pojo.UserKPI" table="V_ACHVMT_USER_KPI">
+	<composite-id>
+		<key-property name="userName" column="USER_NAME"></key-property>
+		<key-property name="userHeadImage" column="USER_HEADIMAGE"></key-property>
+		<key-property name="userNickname" column="USER_NICKNAME"></key-property>
+		<key-property name="belongingProvince" column="BELONGING_PROVINCE"></key-property>
+		<key-property name="belongingCity" column="BELONGING_CITY"></key-property>
+		<key-property name="achievementPoint" column="ACHIEVEMENT_POINT"></key-property>
+		<key-property name="userLevel" column="USER_LEVEL"></key-property>
+		<key-property name="levelName" column="LEVEL_NAME"></key-property>
+		<key-property name="currentLevelPoint" column="CURRENT_LEVEL_POINT"></key-property>
+		<key-property name="nextLevelPoint" column="NEXT_LEVEL_POINT"></key-property>
+		<key-property name="totalGameCount" column="TOTAL_GAME_COUNT"></key-property>
+		<key-property name="totalLikeCount" column="TOTAL_LIKE_COUNT"></key-property>
+		<key-property name="totalFoundGameCount" column="TOTAL_FOUND_GAME_COUNT"></key-property>
+		<key-property name="totalKindGameCount" column="TOTAL_KIND_GAME_COUNT"></key-property>
+	</composite-id>
+	</class>
+</hibernate-mapping>

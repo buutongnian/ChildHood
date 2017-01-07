@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.version.pojo.VersionBean" dynamic-update="true" table="T_PUB_VERSION">
+	<id name="versionId" column="VERSION_ID">
+		<generator class="identity" ></generator>
+	</id>
+		<property name="version" column="VERSION" />
+		<property name="modifyTime" column="MODIFY_TIME" insert="false" update="false" />
+		<property name="packageUrl" column="PACKAGE_URL" />
+		<property name="note" column="NOTE" />
+		<property name="system" column="SYSTEM" />
+		<property name="enable" type="java.lang.Character" column="ENABLE" />
+	</class>
+</hibernate-mapping>

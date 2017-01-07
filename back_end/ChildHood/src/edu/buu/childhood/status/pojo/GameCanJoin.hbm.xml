@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.status.pojo.GameCanJoin" table="V_STATUS_GAME_CANJOIN">
+	<composite-id>
+		<key-property name="gameId" column="GAME_ID"></key-property>
+		<key-property name="gameCode" column="GAME_CODE"></key-property>
+		<key-property name="gameIcon" column="GAME_ICON"></key-property>
+		<key-property name="gameTitle" column="GAME_TITLE"></key-property>
+		<key-property name="gameFounder" column="GAME_FOUNDER"></key-property>
+		<key-property name="founderNickname" column="USER_NICKNAME"></key-property>
+		<!-- <key-property name="foundTime" column="FOUND_TIME"></key-property> -->
+		<key-property name="gameLatitude" column="GAME_LATITUDE"></key-property>
+		<key-property name="gameLongitude" column="GAME_LONGITUDE"></key-property>
+		<key-property name="customCount" column="CUSTOM_COUNT"></key-property>
+		<key-property name="joinedCount" column="JOINED_COUNT"></key-property>
+	</composite-id>
+		<property name="startTime" column="START_TIME" />
+		<property name="customInf" column="CUSTOM_INF" />
+		<property name="gatherPlace" column="GATHER_PLACE" />
+	</class>
+</hibernate-mapping>
