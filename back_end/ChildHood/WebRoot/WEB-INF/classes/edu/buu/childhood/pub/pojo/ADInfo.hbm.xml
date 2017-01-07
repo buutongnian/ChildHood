@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="edu.buu.childhood.pub.pojo.ADInfo" dynamic-insert="true"
+		dynamic-update="true" table="T_PUB_AD">
+		<id name="adId" column="AD_ID">
+			<generator class="identity"></generator>
+		</id>
+		<property name="adName" column="AD_NAME" />
+		<property name="adInfo" column="AD_INFO" />
+		<property name="adImgUrl" column="AD_IMG_URL" />
+		<property name="adUrl" column="AD_URL" />
+		<property name="adPriority" column="AD_PRIORITY" />
+		<property name="adEnabled" column="AD_ENABLED" />
+	</class>
+</hibernate-mapping>

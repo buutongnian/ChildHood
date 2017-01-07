@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.achvmt.event.pojo.UserEventList" table="V_ACHVMT_USER_EVENT">
+	<composite-id>
+		<key-property name="userName" column="USER_NAME"></key-property>
+		<key-property name="eventDate" column="EVENT_DATE"></key-property>
+		<key-property name="templateStr" column="TEMPLATE_STR"></key-property>
+		<key-property name="eventParams" column="EVENT_PARAMS"></key-property>
+		<key-property name="day" column="DAY"></key-property>
+	</composite-id>
+	</class>
+</hibernate-mapping>

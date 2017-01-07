@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="edu.buu.childhood.achvmt.pojo.UserHistoryGameList"
+		table="V_USER_HISTORY_GAME_LIST">
+		<composite-id>
+			<key-property name="userName" column="USER_NAME"></key-property>
+			<key-property name="gameId" column="GAME_ID"></key-property>
+			<key-property name="gameCode" column="GAME_CODE"></key-property>
+			<key-property name="gameTitle" column="GAME_TITLE"></key-property>
+			<key-property name="gameIcon" column="GAME_ICON"></key-property>
+			<key-property name="gameFounder" column="GAME_FOUNDER"></key-property>
+			<key-property name="founderNickname" column="FOUNDER_NICKNAME"></key-property>
+		</composite-id>
+		<property name="startTime" column="START_TIME"></property>
+		<property name="finishTime" column="FINISH_TIME"></property>
+		<property name="gatherPlace" column="GATHER_PLACE"></property>
+		<property name="customInf" column="CUSTOM_INF"></property>
+		<property name="gameScore" column="GAME_SCORE"></property>
+		<property name="isScored" column="IS_SCORED"></property>
+	</class>
+</hibernate-mapping>

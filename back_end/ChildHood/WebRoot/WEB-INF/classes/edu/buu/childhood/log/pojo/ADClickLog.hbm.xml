@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="edu.buu.childhood.log.pojo.ADClickLog"
+		dynamic-update="true" table="T_SYS_LOG_AD_CLICK">
+		<id name="logId" column="LOG_ID">
+			<generator class="identity"></generator>
+		</id>
+		<property name="adId" column="AD_ID" />
+		<property name="clickTime" column="CLICK_TIME" insert="false"
+			update="false" />
+		<property name="userName" column="USER_NAME" />
+	</class>
+</hibernate-mapping>

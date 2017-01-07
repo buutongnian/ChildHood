@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.onekey.pojo.GameStatus" dynamic-update="true" table="T_STATUS_GAME">
+		<id name="gameId" column="GAME_ID">
+			<generator class="identity" ></generator>
+		</id>
+		<!-- 注意：可更新字段更新前一定要先取出原数据，存放在JavaBean中后再对相应JavaBean要修改字段进行赋值操作！ -->		
+		<property name="gameCode" column="GAME_CODE"/>
+		<property name="gameFounder" column="GAME_FOUNDER"/>
+		<property name="startTime" type="timestamp" column="START_TIME" update="false"/>
+		<property name="finishTime" column="FINISH_TIME"/>
+		<property name="gameLatitude" column="GAME_LATITUDE"/>
+		<property name="gameLongitude" column="GAME_LONGITUDE"/>
+		<property name="gatherPlace" column="GATHER_PLACE"/>
+		<property name="customInf" column="CUSTOM_INF"/>
+		<property name="customCount" type="java.lang.Integer" column="CUSTOM_COUNT"/>
+		<property name="gameStatus" column="GAME_STATUS" insert="false"/>
+	</class>
+</hibernate-mapping>

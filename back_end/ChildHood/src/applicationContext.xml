@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+	<!-- 配置自动扫描的包 -->
+	<context:component-scan base-package="edu.buu.childhood"></context:component-scan>
+
+	<!-- 配置各模块的 beans -->
+
+	<!-- 配置log模块 -->
+	<bean id="logService" class="edu.buu.childhood.log.service.LogServiceImpl"
+		scope="prototype"></bean>
+
+	<!-- 配置LoginAction及LoginService -->
+	<bean id="loginAction" class="edu.buu.childhood.login.action.LoginAction"
+		scope="prototype">
+		<property name="loginService" ref="loginService"></property>
+	</bean>
+	<bean id="logoutAction" class="edu.buu.childhood.login.action.LogoutAction"
+		scope="prototype">
+		<property name="loginService" ref="loginService"></property>
+	</bean>
+	<bean id="SMSLoginAction" class="edu.buu.childhood.login.action.SMSLoginAction"
+		scope="prototype">
+		<property name="loginService" ref="loginService"></property>
+		<property name="passwordService" ref="passwordService"></property>
+		<property name="registerService" ref="registerService"></property>
+		<property name="myService" ref="myService"></property>
+	</bean>
+	<bean id="loginService" class="edu.buu.childhood.login.service.LoginServiceImpl"
+		scope="prototype">
+		<constructor-arg index="0" ref="triggerService"></constructor-arg>
+	</bean>
+	<!-- 配置RegisterAction及RegisterService -->
+	<bean id="registerAction" class="edu.buu.childhood.login.action.RegisterAction"
+		scope="prototype">
+		<property name="passwordService" ref="passwordService"></property>
+		<property name="registerService" ref="registerService"></property>
+		<property name="myService" ref="myService"></property>
+	</bean>
+	<bean id="perfectInfoAction" class="edu.buu.childhood.login.action.PerfectInfoAction"
+		scope="prototype">
+		<property name="registerService" ref="registerService"></property>
+	</bean>
+	<bean id="isRegisteredAction" class="edu.buu.childhood.login.action.IsRegisteredAction"
+		scope="prototype">
+		<property name="registerService" ref="registerService"></property>
+	</bean>
+	<bean id="registerService" class="edu.buu.childhood.login.service.RegisterServiceImpl"
+		scope="prototype">
+		<constructor-arg index="0" ref="triggerService"></constructor-arg>
+	</bean>
+	<!-- 配置重置密码相关bean，包含发送验证码短信，验证以及重置密码接口 -->
+	<bean id="sendSmsAction" class="edu.buu.childhood.login.action.SendSmsAction"
+		scope="prototype">
+		<property name="passwordService" ref="passwordService"></property>
+	</bean>
+	<bean id="checkVcodeAction" class="edu.buu.childhood.login.action.CheckVcodeAction"
+		scope="prototype">
+		<property name="passwordService" ref="passwordService"></property>
+	</bean>
+	<bean id="resetPasswordAction" class="edu.buu.childhood.login.action.ResetPasswordAction"
+		scope="prototype">
+		<property name="passwordService" ref="passwordService"></property>
+	</bean>
+	<bean id="changePasswordAction" class="edu.buu.childhood.login.action.ChangePasswordAction"
+		scope="prototype">
+		<property name="passwordService" ref="passwordService"></property>
+	</bean>
+	<bean id="passwordService" class="edu.buu.childhood.login.service.PasswordServiceImpl"
+		scope="prototype"></bean>
+	<!-- 配置GameHeadAction、GameContentAction及GameService -->
+	<bean id="gameHeadAction" class="edu.buu.childhood.game.action.GameHeadAction"
+		scope="prototype">
+		<property name="gameService" ref="gameService"></property>
+	</bean>
+	<bean id="gameContentAction" class="edu.buu.childhood.game.action.GameContentAction"
+		scope="prototype">
+		<property name="gameService" ref="gameService"></property>
+	</bean>
+	<bean id="uniqueGameHeadAction" class="edu.buu.childhood.game.action.UniqueGameHeadAction"
+		scope="prototype">
+		<property name="gameService" ref="gameService"></property>
+	</bean>
+	<bean id="gameService" class="edu.buu.childhood.game.service.GameServiceImpl"
+		scope="prototype"></bean>
+	<!-- 配置gameRankAction以及RankService -->
+	<bean id="gameRankAction" class="edu.buu.childhood.rank.action.GameRankAction"
+		scope="prototype">
+		<property name="rankService" ref="rankService"></property>
+	</bean>
+	<bean id="userRankAction" class="edu.buu.childhood.rank.action.UserRankAction"
+		scope="prototype">
+		<property name="rankService" ref="rankService"></property>
+	</bean>
+	<bean id="likeUserAction" class="edu.buu.childhood.rank.action.LikeUserAction"
+		scope="prototype">
+		<property name="rankService" ref="rankService"></property>
+	</bean>
+	<bean id="getUserLikeListAction" class="edu.buu.childhood.rank.action.GetUserLikeListAction"
+		scope="prototype">
+		<property name="rankService" ref="rankService"></property>
+	</bean>
+	<bean id="rankService" class="edu.buu.childhood.rank.service.RankServiceImpl"
+		scope="prototype">
+		<constructor-arg index="0" ref="triggerService"></constructor-arg>
+	</bean>
+
+	<!-- 配置Status模块各Bean -->
+	<bean id="gameCanJoinAction" class="edu.buu.childhood.status.action.GameCanJoinAction"
+		scope="prototype">
+		<property name="statusService" ref="statusService"></property>
+	</bean>
+	<bean id="userCanInviteAction" class="edu.buu.childhood.status.action.UserCanInviteAction"
+		scope="prototype">
+		<property name="statusService" ref="statusService"></property>
+	</bean>
+	<bean id="amUserListAction" class="edu.buu.childhood.status.action.AMUserListAction"
+		scope="prototype">
+		<property name="statusService" ref="statusService"></property>
+	</bean>
+	<bean id="getUserInfoAction" class="edu.buu.childhood.status.action.GetUserInfoAction"
+		scope="prototype">
+		<property name="statusService" ref="statusService"></property>
+	</bean>
+	<bean id="getTeamMembersAction" class="edu.buu.childhood.status.action.GetTeamMembersAction"
+		scope="prototype">
+		<property name="statusService" ref="statusService"></property>
+	</bean>
+	<bean id="addFamilyGameAction" class="edu.buu.childhood.status.action.AddFamilyGameAction"
+		scope="prototype">
+		<property name="statusService" ref="statusService"></property>
+	</bean>
+	<bean id="statusService" class="edu.buu.childhood.status.service.StatusServiceImpl"
+		scope="prototype"></bean>
+
+	<!-- 配置Onekey模块各Bean -->
+	<bean id="changeGameInfoAction" class="edu.buu.childhood.onekey.action.ChangeGameInfoAction"
+		scope="prototype">
+		<property name="onekeyService" ref="onekeyService"></property>
+	</bean>
+	<bean id="finishGameAction" class="edu.buu.childhood.onekey.action.FinishGameAction"
+		scope="prototype">
+		<property name="onekeyService" ref="onekeyService"></property>
+	</bean>
+	<bean id="founderCancelGameAction" class="edu.buu.childhood.onekey.action.FounderCancelGameAction"
+		scope="prototype">
+		<property name="onekeyService" ref="onekeyService"></property>
+	</bean>
+	<bean id="joinGameAction" class="edu.buu.childhood.onekey.action.JoinGameAction"
+		scope="prototype">
+		<property name="onekeyService" ref="onekeyService"></property>
+	</bean>
+	<bean id="onekeyConveneAction" class="edu.buu.childhood.onekey.action.OnekeyConveneAction"
+		scope="prototype">
+		<property name="onekeyService" ref="onekeyService"></property>
+	</bean>
+	<bean id="scoreGameAction" class="edu.buu.childhood.onekey.action.ScoreGameAction"
+		scope="prototype">
+		<property name="onekeyService" ref="onekeyService"></property>
+	</bean>
+	<bean id="startGameAction" class="edu.buu.childhood.onekey.action.StartGameAction"
+		scope="prototype">
+		<property name="onekeyService" ref="onekeyService"></property>
+	</bean>
+	<bean id="userExitGameAction" class="edu.buu.childhood.onekey.action.UserExitGameAction"
+		scope="prototype">
+		<property name="onekeyService" ref="onekeyService"></property>
+	</bean>
+	<bean id="isInGameAction" class="edu.buu.childhood.onekey.action.IsInGameAction"
+		scope="prototype">
+		<property name="onekeyService" ref="onekeyService"></property>
+	</bean>
+	<bean id="getGameInfoAction" class="edu.buu.childhood.onekey.action.GetGameInfoAction"
+		scope="prototype">
+		<property name="onekeyService" ref="onekeyService"></property>
+	</bean>
+	<bean id="onekeyService" class="edu.buu.childhood.onekey.service.OnekeyServiceImpl"
+		scope="prototype">
+		<constructor-arg index="0" ref="triggerService"></constructor-arg>
+		<property name="statusService" ref="statusService"></property>
+		<property name="myService" ref="myService"></property>
+	</bean>
+	<!-- 配置my模块的action -->
+	<bean id="myInfAction" class="edu.buu.childhood.my.action.MyInfAction"
+		scope="prototype">
+		<property name="myService" ref="myService"></property>
+	</bean>
+	<bean id="changeUserInfAction" class="edu.buu.childhood.my.action.ChangeUserInfAction"
+		scope="prototype">
+		<property name="myService" ref="myService"></property>
+	</bean>
+	<bean id="changeChildInfAction" class="edu.buu.childhood.my.action.ChangeChildInfAction"
+		scope="prototype">
+		<property name="myService" ref="myService"></property>
+	</bean>
+	<bean id="childInfAction" class="edu.buu.childhood.my.action.ChildInfAction"
+		scope="prototype">
+		<property name="myService" ref="myService"></property>
+	</bean>
+	<bean id="uploadHeadImageAction" class="edu.buu.childhood.my.action.UploadHeadImageAction"
+		scope="prototype">
+		<property name="myService" ref="myService"></property>
+	</bean>
+	<bean id="setChildInfAction" class="edu.buu.childhood.my.action.SetChildInfAction"
+		scope="prototype">
+		<property name="myService" ref="myService"></property>
+	</bean>
+	<bean id="myService" class="edu.buu.childhood.my.service.MyServiceImpl"
+		scope="prototype"></bean>
+	<!-- 配置version模块的action -->
+	<bean id="addVersionAction" class="edu.buu.childhood.version.action.AddVersionAction"
+		scope="prototype">
+		<property name="versionService" ref="versionService"></property>
+	</bean>
+	<bean id="adminLoginAction" class="edu.buu.childhood.admin.action.AdminLoginAction"
+		scope="prototype">
+		<property name="loginService" ref="loginService"></property>
+	</bean>
+	<bean id="adminLogoutAction" class="edu.buu.childhood.admin.action.AdminLogoutAction"
+		scope="prototype"></bean>
+	<bean id="deleteVersionAction" class="edu.buu.childhood.version.action.DeleteVersionAction"
+		scope="prototype">
+		<property name="versionService" ref="versionService"></property>
+	</bean>
+	<bean id="queryVersionAction" class="edu.buu.childhood.version.action.QueryVersionAction"
+		scope="prototype">
+		<property name="versionService" ref="versionService"></property>
+	</bean>
+	<bean id="getLeastVersionAction" class="edu.buu.childhood.version.action.GetLeastVersionAction"
+		scope="prototype">
+		<property name="versionService" ref="versionService"></property>
+	</bean>
+	<bean id="updateVersionAction" class="edu.buu.childhood.version.action.UpdateVersionAction"
+		scope="prototype">
+		<property name="versionService" ref="versionService"></property>
+	</bean>
+	<bean id="versionService" class="edu.buu.childhood.version.service.VersionServiceImpl"
+		scope="prototype"></bean>
+	<!-- 配置find模块各Bean -->
+	<bean id="deleteFindInfoAction" class="edu.buu.childhood.find.action.DeleteFindInfoAction"
+		scope="prototype">
+		<property name="findService" ref="findService"></property>
+	</bean>
+	<bean id="findPartnerAction" class="edu.buu.childhood.find.action.FindPartnerAction"
+		scope="prototype">
+		<property name="findService" ref="findService"></property>
+	</bean>
+	<bean id="getFindInfoAction" class="edu.buu.childhood.find.action.GetFindInfoAction"
+		scope="prototype">
+		<property name="findService" ref="findService"></property>
+	</bean>
+	<bean id="getPartnerListAction" class="edu.buu.childhood.find.action.GetPartnerListAction"
+		scope="prototype">
+		<property name="findService" ref="findService"></property>
+	</bean>
+	<bean id="updateFindInfoAction" class="edu.buu.childhood.find.action.UpdateFindInfoAction"
+		scope="prototype">
+		<property name="findService" ref="findService"></property>
+	</bean>
+	<bean id="findService" class="edu.buu.childhood.find.service.FindServiceImpl"
+		scope="prototype"></bean>
+	<!-- 配置achvmt模块JavaBean -->
+	<bean id="getUserKPIAction" class="edu.buu.childhood.achvmt.action.GetUserKPIAction"
+		scope="prototype">
+		<property name="achvmtService" ref="achvmtService"></property>
+	</bean>
+	<bean id="getUserMedalListAction"
+		class="edu.buu.childhood.achvmt.medal.action.GetUserMedalListAction"
+		scope="prototype">
+		<property name="medalService" ref="medalService"></property>
+	</bean>
+	<bean id="getOtherUserMedalListAction"
+		class="edu.buu.childhood.achvmt.medal.action.GetOtherUserMedalListAction"
+		scope="prototype">
+		<property name="medalService" ref="medalService"></property>
+	</bean>
+	<bean id="getUserFootPrintAction"
+		class="edu.buu.childhood.achvmt.event.action.GetUserFootPrintAction"
+		scope="prototype">
+		<property name="eventService" ref="eventService"></property>
+	</bean>
+	<bean id="getUserGameListAction" class="edu.buu.childhood.achvmt.action.GetUserGameListAction"
+		scope="prototype">
+		<property name="achvmtService" ref="achvmtService"></property>
+	</bean>
+	<bean id="getOtherUserGameListAction"
+		class="edu.buu.childhood.achvmt.action.GetOtherUserGameListAction"
+		scope="prototype">
+		<property name="achvmtService" ref="achvmtService"></property>
+	</bean>
+	<bean id="getUserPersonalPageAction"
+		class="edu.buu.childhood.achvmt.action.GetUserPersonalPageAction"
+		scope="prototype">
+		<property name="achvmtService" ref="achvmtService"></property>
+		<property name="medalService" ref="medalService"></property>
+	</bean>
+	<bean id="triggerService" class="edu.buu.childhood.achvmt.service.TriggerServiceImpl"
+		scope="prototype"></bean>
+	<bean id="achvmtService" class="edu.buu.childhood.achvmt.service.AchvmtServiceImpl"
+		scope="prototype"></bean>
+	<bean id="medalService" class="edu.buu.childhood.achvmt.medal.service.MedalServiceImpl"
+		scope="prototype"></bean>
+	<bean id="eventService" class="edu.buu.childhood.achvmt.event.service.EventServiceImpl"
+		scope="prototype"></bean>
+	<!-- 配置feedback模块javaBean -->
+	<bean id="feedbackService" class="edu.buu.childhood.feedback.service.FeedbackServiceImpl"
+		scope="prototype">
+		<constructor-arg index="0" ref="triggerService"></constructor-arg>
+	</bean>
+	<bean id="feedbackAction" class="edu.buu.childhood.feedback.action.FeedbackAction"
+		scope="prototype">
+		<property name="feedbackService" ref="feedbackService"></property>
+	</bean>
+	<bean id="getFeedbackAction" class="edu.buu.childhood.feedback.action.GetFeedbackAction"
+		scope="prototype">
+		<property name="feedbackService" ref="feedbackService"></property>
+	</bean>
+	<bean id="feedbackDetailAction" class="edu.buu.childhood.feedback.action.FeedbackDetailAction"
+		scope="prototype">
+		<property name="feedbackService" ref="feedbackService"></property>
+	</bean>
+	<bean id="dealFeedbackAction" class="edu.buu.childhood.feedback.action.DealFeedbackAction"
+		scope="prototype">
+		<property name="feedbackService" ref="feedbackService"></property>
+	</bean>
+	<!-- 配置pub模块，包含广告等功能 -->
+	<bean id="getADListAction" class="edu.buu.childhood.pub.action.GetADListAction"
+		scope="prototype">
+		<property name="pubService" ref="pubService"></property>
+	</bean>
+	<bean id="clickADAction" class="edu.buu.childhood.pub.action.ClickADAction"
+		scope="prototype">
+	</bean>
+	<bean id="pubService" class="edu.buu.childhood.pub.service.PubServiceImpl"
+		scope="prototype">
+	</bean>
+
+	<!-- 配置TaskDao，定时任务使用 -->
+	<bean id="taskDao" class="edu.buu.childhood.login.dao.TaskDaoImpl"
+		scope="prototype"></bean>
+	<!-- <bean id="findDao" class="edu.buu.childhood.find.dao.FindDaoImpl" scope="prototype"></bean> -->
+
+	<!-- 配置数据源 -->
+	<!-- 导入资源文件 -->
+	<context:property-placeholder location="classpath:db.properties" />
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="user" value="${jdbc.user}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="driverClass" value="${jdbc.driverClass}"></property>
+		<property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>
+		<property name="initialPoolSize" value="${jdbc.initialPoolSize}"></property>
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}"></property>
+	</bean>
+
+	<!-- 配置 hibernate 的 SessionFactory实例:通过 Spring 提供的 LocalSessionFactoryBean 
+		进行配置 -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<!-- 配置数据源属性 -->
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- 配置 hibernate 配置文件的位置及名称 -->
+		<property name="configLocation" value="classpath:hibernate.cfg.xml"></property>
+		<!-- 配置 hibernate 映射文件的位置及名称，可以使用通配符 -->
+		<property name="mappingResources">
+			<list>
+				<!-- <value>xxx\xxx\xxx\xxx\xxx.hbm.xml</value> -->
+				<value>edu\buu\childhood\common\Area.hbm.xml</value>
+				<value>edu\buu\childhood\common\Province.hbm.xml</value>
+				<value>edu\buu\childhood\common\City.hbm.xml</value>
+				<value>edu\buu\childhood\common\District.hbm.xml</value>
+				<value>edu\buu\childhood\common\School.hbm.xml</value>
+				<value>edu\buu\childhood\common\Community.hbm.xml</value>
+				<value>edu\buu\childhood\common\GameAge.hbm.xml</value>
+				<value>edu\buu\childhood\common\GameMemNum.hbm.xml</value>
+				<value>edu\buu\childhood\common\GameType.hbm.xml</value>
+				<value>edu\buu\childhood\common\Grade.hbm.xml</value>
+				<value>edu\buu\childhood\common\Education.hbm.xml</value>
+				<value>edu\buu\childhood\find\pojo\FindReg.hbm.xml</value>
+				<value>edu\buu\childhood\find\pojo\FindResult.hbm.xml</value>
+				<value>edu\buu\childhood\game\pojo\GameHead.hbm.xml</value>
+				<value>edu\buu\childhood\game\pojo\GameContent.hbm.xml</value>
+				<value>edu\buu\childhood\game\pojo\GCVEntry.hbm.xml</value>
+				<value>edu\buu\childhood\game\pojo\UCVEntry.hbm.xml</value>
+				<value>edu\buu\childhood\login\pojo\UserLogin.hbm.xml</value>
+				<value>edu\buu\childhood\login\pojo\VCode.hbm.xml</value>
+				<value>edu\buu\childhood\my\pojo\User.hbm.xml</value>
+				<value>edu\buu\childhood\my\pojo\ChildInf.hbm.xml</value>
+				<value>edu\buu\childhood\onekey\pojo\GameStatus.hbm.xml</value>
+				<value>edu\buu\childhood\onekey\pojo\JoinedStatus.hbm.xml</value>
+				<value>edu\buu\childhood\rank\pojo\GameRank.hbm.xml</value>
+				<value>edu\buu\childhood\rank\pojo\StatusUserRank.hbm.xml</value>
+				<value>edu\buu\childhood\rank\pojo\StatusUserRankDetail.hbm.xml
+				</value>
+				<value>edu\buu\childhood\rank\pojo\LikeDetail.hbm.xml</value>
+				<value>edu\buu\childhood\status\pojo\GameCanJoin.hbm.xml</value>
+				<value>edu\buu\childhood\status\pojo\UserCanInvite.hbm.xml</value>
+				<value>edu\buu\childhood\status\pojo\FamilyGame.hbm.xml</value>
+				<value>edu\buu\childhood\achvmt\event\pojo\EventRules.hbm.xml
+				</value>
+				<value>edu\buu\childhood\achvmt\event\pojo\EventTemplate.hbm.xml
+				</value>
+				<value>edu\buu\childhood\achvmt\event\pojo\UserEvent.hbm.xml</value>
+				<value>edu\buu\childhood\achvmt\event\pojo\UserEventList.hbm.xml
+				</value>
+				<value>edu\buu\childhood\achvmt\medal\pojo\Medal.hbm.xml</value>
+				<value>edu\buu\childhood\achvmt\medal\pojo\UserMedal.hbm.xml</value>
+				<value>edu\buu\childhood\achvmt\medal\pojo\UserMedalList.hbm.xml
+				</value>
+				<value>edu\buu\childhood\achvmt\pojo\Module.hbm.xml</value>
+				<value>edu\buu\childhood\achvmt\pojo\UserKPI.hbm.xml</value>
+				<value>edu\buu\childhood\achvmt\pojo\UserHistoryGameList.hbm.xml
+				</value>
+				<value>edu\buu\childhood\version\pojo\VersionBean.hbm.xml</value>
+				<value>edu\buu\childhood\feedback\pojo\Feedback.hbm.xml</value>
+				<value>edu\buu\childhood\log\pojo\LoginLog.hbm.xml</value>
+				<value>edu\buu\childhood\log\pojo\ADCoveredLog.hbm.xml</value>
+				<value>edu\buu\childhood\log\pojo\ADClickLog.hbm.xml</value>
+				<value>edu\buu\childhood\pub\pojo\ADInfo.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 配置 Spring 的声明式事务 -->
+	<!-- 1.配置事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- 2.配置事务属性，需要事务管理器 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="query*" read-only="true" />
+			<tx:method name="*" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- 3.配置事务切点，并把切点和事务属性关联起来 -->
+	<aop:config>
+		<!-- <aop:advisor pointcut="execution(* edu.buu.childhood.dao.xxx.*.*(..))" 
+			advice-ref="txAdvice" /> -->
+		<aop:advisor pointcut="execution(* edu.buu.childhood.achvmt.dao.*.*(..))"
+			advice-ref="txAdvice" />
+		<aop:advisor pointcut="execution(* edu.buu.childhood.achvmt.event.dao.*.*(..))"
+			advice-ref="txAdvice" />
+		<aop:advisor pointcut="execution(* edu.buu.childhood.achvmt.medal.dao.*.*(..))"
+			advice-ref="txAdvice" />
+		<aop:advisor pointcut="execution(* edu.buu.childhood.find.dao.*.*(..))"
+			advice-ref="txAdvice" />
+		<aop:advisor pointcut="execution(* edu.buu.childhood.game.dao.*.*(..))"
+			advice-ref="txAdvice" />
+		<aop:advisor pointcut="execution(* edu.buu.childhood.login.dao.*.*(..))"
+			advice-ref="txAdvice" />
+		<aop:advisor pointcut="execution(* edu.buu.childhood.my.dao.*.*(..))"
+			advice-ref="txAdvice" />
+		<aop:advisor pointcut="execution(* edu.buu.childhood.onekey.dao.*.*(..))"
+			advice-ref="txAdvice" />
+		<aop:advisor pointcut="execution(* edu.buu.childhood.rank.dao.*.*(..))"
+			advice-ref="txAdvice" />
+		<aop:advisor pointcut="execution(* edu.buu.childhood.status.dao.*.*(..))"
+			advice-ref="txAdvice" />
+		<aop:advisor pointcut="execution(* edu.buu.childhood.version.dao.*.*(..))"
+			advice-ref="txAdvice" />
+		<aop:advisor pointcut="execution(* edu.buu.childhood.feedback.dao.*.*(..))"
+			advice-ref="txAdvice" />
+		<aop:advisor pointcut="execution(* edu.buu.childhood.log.dao.*.*(..))"
+			advice-ref="txAdvice" />
+		<aop:advisor pointcut="execution(* edu.buu.childhood.pub.dao.*.*(..))"
+			advice-ref="txAdvice" />
+	</aop:config>
+	<!-- 4.配置Task定时任务 -->
+	<!-- 配置方法调用任务工厂(XXXJobDetailFactoryBean) -->
+	<bean name="loginStatusTask" class="org.springframework.scheduling.quartz.JobDetailFactoryBean"> 
+		<property name="durability" value="true"/> <property name="jobClass" value="edu.buu.childhood.login.task.LoginStatusTask"/> 
+		<property name="jobDataAsMap"> <map> <entry key="timeout" value="5"/> <entry 
+		key="taskDao"> <ref bean="taskDao" /> </entry> </map> </property> </bean> 
+		<bean name="autoFinishGameTask" class="org.springframework.scheduling.quartz.JobDetailFactoryBean"> 
+		<property name="durability" value="true"/> <property name="jobClass" value="edu.buu.childhood.status.task.AutoFinishGameTask"/> 
+		<property name="jobDataAsMap"> <map> <entry key="timeout" value="0"/> <entry 
+		key="onekeyService"> <ref bean="onekeyService" /> </entry> </map> </property> 
+		</bean>
+	<!-- 配置任务调度触发器 -->
+	<bean id="loginStatusTaskTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean"> 
+		<property name="jobDetail" ref="loginStatusTask" /> <property name="startDelay" 
+		value="1000" /> <property name="repeatInterval" value="300000" /> </bean> 
+		<bean id="autoFinishGameTaskTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean"> 
+		<property name="jobDetail" ref="autoFinishGameTask" /> <property name="startDelay" 
+		value="1000" /> <property name="repeatInterval" value="300000" /> </bean>
+	<!-- 配置Scheduler Factory -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean"> 
+		<property name="jobDetails"> <list> <ref bean="loginStatusTask" /> <ref bean="autoFinishGameTask" 
+		/> </list> </property> <property name="triggers"> <list> <ref bean="loginStatusTaskTrigger" 
+		/> <ref bean="autoFinishGameTaskTrigger" /> </list> </property> </bean>
+</beans>

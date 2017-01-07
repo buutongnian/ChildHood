@@ -1,0 +1,9 @@
+.ctltable {
+	table-layout: fixed;
+}
+
+.ctltable td {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}

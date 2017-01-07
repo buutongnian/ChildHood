@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="edu.buu.childhood.status.pojo.FamilyGame" table="T_STATUS_FAMILY_GAME"
+		dynamic-update="true">
+		<id name="gameId" column="GAME_ID">
+			<generator class="identity"></generator>
+		</id>
+		<property name="userName" column="USER_NAME" />
+		<property name="gameCode" column="GAME_CODE" />
+		<property name="gameTime" column="GAME_TIME" />
+		<property name="insertTime" column="INSERT_TIME" insert="false"
+			update="false" />
+		<property name="gameNote" column="GAME_NOTE" />
+	</class>
+</hibernate-mapping>

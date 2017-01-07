@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.achvmt.event.pojo.EventRules" table="T_ACHVMT_EVENT_RULES">
+		<id name="ruleId" column="RULE_ID">
+			<generator class="identity" ></generator>
+		</id>
+		<property name="ruleName" column="RULE_NAME"/>
+		<property name="ruleSynopsis" column="RULE_SYNOPSIS"/>
+		<property name="ruleModule" column="RULE_MODULE"/>
+		<property name="ruleModuleName" column="RULE_MODULE_NAME"/>
+		<property name="ruleProcedure" column="RULE_PROCEDURE"/>
+		<property name="procedureHasarg" type="java.lang.Character" column="PROCEDURE_HASARG"/>
+		<property name="note" column="NOTE"/>
+		<property name="enable" type="java.lang.Character" column="ENABLE"/>
+	</class>
+</hibernate-mapping>

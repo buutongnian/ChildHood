@@ -1,0 +1,6 @@
+user=pushmaster
+password=123456
+service_name=127.0.0.1
+host=127.0.0.1
+port=5222
+resource=childhood

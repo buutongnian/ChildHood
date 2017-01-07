@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="edu.buu.childhood.feedback.pojo.Feedback"
+		dynamic-update="true" table="T_SYS_FEEDBACK">
+		<id name="feedbackId" column="FEEDBACK_ID">
+			<generator class="identity"></generator>
+		</id>
+		<property name="userName" column="USER_NAME" update="false" />
+		<property name="feedbackTime" column="FEEDBACK_TIME" insert="false"
+			update="false" />
+		<property name="feedbackContent" column="FEEDBACK_CONTENT"
+			update="false" />
+		<property name="feedbackModule" column="FEEDBACK_MODULE"
+			update="false" />
+		<property name="result" column="RESULT" insert="false" />
+		<property name="resultTime" column="RESULT_TIME" insert="false"
+			update="false" />
+		<property name="resultUser" column="RESULT_USER" insert="false" />
+		<property name="processible" column="PROCESSIBLE" insert="false" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="edu.buu.childhood.log.pojo.LoginLog" dynamic-update="true"
+		table="T_SYS_LOG_LOGIN">
+		<id name="logId" column="LOG_ID">
+			<generator class="identity"></generator>
+		</id>
+		<property name="userName" column="USER_NAME" />
+		<property name="loginLatitude" column="LOGIN_LATITUDE" />
+		<property name="loginLongitude" column="LOGIN_LONGITUDE" />
+		<property name="loginTime" column="LOGIN_TIME" insert="false"
+			update="false" />
+		<property name="loginIp" column="LOGIN_IP" />
+	</class>
+</hibernate-mapping>

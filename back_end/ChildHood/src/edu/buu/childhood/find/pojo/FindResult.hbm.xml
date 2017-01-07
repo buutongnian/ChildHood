@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.find.pojo.FindResult" table="V_FIND_RESULT">
+	<composite-id>
+		<key-property name="userName" column="USER_NAME"></key-property>
+		<key-property name="matchUser" column="MATCH_USER"></key-property>
+		<key-property name="age" column="AGE"></key-property>
+		<key-property name="sex" column="SEX"></key-property>
+		<key-property name="userHeadimage" column="USER_HEADIMAGE"></key-property>
+		<key-property name="currentCity" column="CURRENT_CITY"></key-property>
+	</composite-id>
+	<property name="youngNickname" column="YOUNG_NICKNAME"></property>
+	<property name="youngRoad" column="YOUNG_ROAD"></property>
+	<property name="message" column="MESSAGE"></property>
+	</class>
+</hibernate-mapping>

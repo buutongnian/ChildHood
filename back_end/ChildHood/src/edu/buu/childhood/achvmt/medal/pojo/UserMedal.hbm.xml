@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="edu.buu.childhood.achvmt.medal.pojo.UserMedal" table="T_ACHVMT_MEDAL">
+		<composite-id>
+			<key-property name="userName" column="USER_NAME"></key-property>
+			<key-property name="medalId" column="MEDAL_ID"></key-property>
+		</composite-id>
+		<property name="getDate" column="GET_DATE" />
+		<property name="enable" column="ENABLE" />
+	</class>
+</hibernate-mapping>

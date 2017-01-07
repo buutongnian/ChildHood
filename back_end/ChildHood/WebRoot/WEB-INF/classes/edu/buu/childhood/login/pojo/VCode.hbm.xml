@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="edu.buu.childhood.login.pojo.VCode" dynamic-update="true" table="T_SYS_VCODE">
+		<id name="vcodeId" column="VCODE_ID">
+			<generator class="identity" ></generator>
+		</id>
+		<property name="telnum" column="TELNUM" update="false"/>
+		<property name="generateTime" column="GENERATE_TIME" insert="false" update="false"/>
+		<property name="vcode" column="VCODE" update="false"/>
+		<property name="smsStatus" column="SMS_STATUS"/>
+		<property name="vcodeStatus" column="VCODE_STATUS"/>
+	</class>
+</hibernate-mapping>
