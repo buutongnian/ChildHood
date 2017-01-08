@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryDark">
+
+        <ImageView
+            style="@style/title_back"
+            android:src="@drawable/pre" />
+
+        <TextView
+            style="@style/title_text"
+            android:text="家长中心" />
+    </RelativeLayout>
+
+    <fragment
+        android:id="@+id/fragment_cycle_viewpager_content"
+        android:name="edu.buu.childhood.parent.ad.CycleViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <View style="@style/fullWidthLine" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/parent_layout_changePassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/parent_change_password" />
+
+        <Button
+            android:id="@+id/submit_game_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/parent_submit_game" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/parent_info_shield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:background="@drawable/parent_allow_play" />
+
+        <Button
+            android:id="@+id/findPartner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/find_partner" />
+    </LinearLayout>
+</LinearLayout>

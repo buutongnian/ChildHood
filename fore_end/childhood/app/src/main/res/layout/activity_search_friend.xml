@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="edu.buu.childhood.chat.activity.SearchFriendActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/search_friend_title"
+        style="@style/title">
+
+        <ImageView
+            android:id="@+id/search_friend_back"
+            style="@style/title_back"
+            android:src="@drawable/pre" />
+
+        <View
+            style="@style/VerticalLine_Short"
+            android:layout_alignRight="@+id/search_friend_back" />
+
+        <SearchView
+            android:id="@+id/search_friend_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="41dp"
+            android:iconifiedByDefault="false"
+            android:imeOptions="actionSearch"
+            android:queryHint="搜索" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/search_friend_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="该用户不存在"
+            android:textSize="46px"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/seach_friend_loding"
+            style="@style/customProgressBar"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

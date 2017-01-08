@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/baidumap_r1"
+        style="@style/title">
+
+        <ImageView
+            style="@style/title_back"
+            android:src="@drawable/pre" />
+
+        <TextView
+            style="@style/title_text"
+            android:text="一键呼唤" />
+
+    </RelativeLayout>
+
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/bmapView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/baidumap_r1"
+        android:clickable="true" />
+
+    <FrameLayout
+        android:id="@+id/onkey_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="38dp"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/onkey_search"/>
+    </FrameLayout>
+</RelativeLayout>

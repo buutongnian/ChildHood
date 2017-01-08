@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/my_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/changeAddress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimaryDark">
+
+            <ImageView
+                android:id="@+id/changeAddress_image"
+                style="@style/title_back"
+                android:src="@drawable/pre" />
+
+            <TextView
+                style="@style/title_text"
+                android:text="修改小区" />
+
+            <TextView
+                android:id="@+id/changeAddress_save"
+                style="@style/title_bar_image"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="14dp"
+                android:gravity="center"
+                android:text="保存"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/changeAddress_editText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/changeAddress_bar"
+        android:layout_marginTop="14dp"
+        android:background="@color/my_bar_color"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:textColor="#000000" />
+    　　
+    　　
+    　　
+</RelativeLayout>

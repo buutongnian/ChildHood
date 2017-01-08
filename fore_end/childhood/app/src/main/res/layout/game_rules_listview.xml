@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <RelativeLayout
+        android:id="@+id/game_rules_listview_rl1"
+        android:layout_width="match_parent"
+        android:layout_height="202dp" >
+
+        <TextView
+            android:id="@+id/game_rules_listview_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="人数"
+            android:textAlignment="center"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="4dp"
+            android:textSize="48px"
+            android:background="@drawable/game_textview_style"
+            android:padding="5dp"
+            android:textColor="#ffffff"
+            />
+        <TextView
+            android:layout_below="@+id/game_rules_listview_num"
+            android:id="@+id/game_rules_listview_old"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="年龄段"
+            android:textAlignment="center"
+            android:padding="5dp"
+            android:layout_marginLeft="12dp"
+            android:textSize="36px"
+            android:background="@drawable/game_textview_style"
+            android:textColor="#ffffff"/>
+
+        <TextView
+            android:id="@+id/game_rules_listview_conent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:text="游戏简介"
+            android:textSize="45px"
+            android:textColor="#000000"/>
+
+
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

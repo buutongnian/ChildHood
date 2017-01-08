@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rank_background"
+    >
+    <RelativeLayout
+        android:id="@+id/ranking_gamelist__r1"
+        style="@style/title">
+
+        <TextView
+            style="@style/title_text"
+            android:text="排行榜" />
+
+    </RelativeLayout>
+    <RadioGroup
+        android:id="@+id/function_menu_rg"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="#f8f8f6"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/function_menu_rg_game"
+            style="@style/tab_menu_item"
+            android:text="人气孩子王" />
+        <!--android:drawableTop="@drawable/tab_menu_channel"-->
+        <RadioButton
+            android:id="@+id/function_menu_rg_person"
+            style="@style/tab_menu_item"
+            android:text="游戏排行" />
+        <!--android:drawableTop="@drawable/tab_menu_channel"-->
+
+           </RadioGroup>
+           <android.support.v4.view.ViewPager
+               android:id="@+id/function_menu_vpager"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_below="@+id/ranking_gamelist__r1"
+               android:layout_above="@id/function_menu_rg"
+               />
+       </RelativeLayout>

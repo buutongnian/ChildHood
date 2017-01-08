@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_background">
+
+    <RadioGroup
+        android:id="@+id/main_baidu_rg"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/my_background"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/main_baidu_rg_chat"
+            style="@style/tab_menu_item"
+            android:text="我的队伍"
+            android:visibility="gone"
+            />
+        <!--android:drawableTop="@drawable/tab_menu_channel"-->
+        <RadioButton
+            android:id="@+id/main_baidu_rg_map"
+            style="@style/tab_menu_item"
+
+            android:text="一键呼唤" />
+        <!--android:drawableTop="@drawable/tab_menu_channel"-->
+        <RadioButton
+            android:id="@+id/main_baidu_rg_info"
+            style="@style/tab_menu_item"
+            android:text="邀请列表" />
+        <!--android:drawableTop="@drawable/tab_menu_channel"-->
+    </RadioGroup>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
+
+    <FrameLayout
+        android:id="@+id/main_baidu_fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/main_baidu_rg" />
+</RelativeLayout>

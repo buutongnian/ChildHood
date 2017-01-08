@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_background">
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimaryDark">
+
+        <ImageView
+            style="@style/title_back"
+            android:src="@drawable/pre" />
+
+        <TextView
+            style="@style/title_text"
+            android:text="寻找童年小伙伴" />
+
+        <Button
+            android:id="@+id/findPartner_delete"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="14dp"
+            android:background="@drawable/dots" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/baidumap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title">
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/bmapView"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:clickable="true" />
+        <!--android:layout_below="@+id/baiduMapFindGame"-->
+        <ImageView
+            android:id="@+id/smallLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/sc_map_pin" />
+    </FrameLayout>
+
+
+
+    <ImageView
+        android:id="@+id/findPartnerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/find" />
+
+    <ImageView
+        android:id="@+id/netError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/error"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/baidumap"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/my_bar_color"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/findPartner_Ltext"
+                android:text="姓　　名:" />
+
+            <EditText
+                android:id="@+id/findPartnerName"
+                style="@style/findPartner_Rtext"
+                android:background="@drawable/login_yuanjiao"
+                android:hint="儿时昵称"
+                android:textColorHint="#999999" />
+        </LinearLayout>
+
+        <View style="@style/PersonalLine" />
+
+        <LinearLayout
+            android:id="@+id/SelectSex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/my_bar_color"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/findPartner_Ltext"
+                android:text="性　　别:" />
+
+            <EditText
+                android:id="@+id/findPartnerSex"
+                style="@style/findPartner_Rtext"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:enabled="false"
+                android:hint="选择性别"
+                android:textColorHint="#999999" />
+        </LinearLayout>
+
+        <View style="@style/PersonalLine" />
+
+        <LinearLayout
+            android:id="@+id/dateSelect"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/my_bar_color"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/findPartner_Ltext"
+                android:layout_gravity="center_vertical"
+                android:text="出生年份:" />
+
+            <TextView
+                android:id="@+id/get_parter_time"
+                style="@style/findPartner_Rtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="选择出生日期" />
+        </LinearLayout>
+
+        <View style="@style/PersonalLine" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/my_bar_color"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/findPartner_Ltext"
+                android:text="老街旧名:" />
+
+            <EditText
+                android:id="@+id/findPartnerOldStreet"
+                style="@style/findPartner_Rtext"
+                android:background="@drawable/login_yuanjiao"
+                android:hint="儿时玩耍地点"
+                android:textColorHint="#999999" />
+        </LinearLayout>
+
+        <View style="@style/PersonalLine" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/my_bar_color"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/findPartner_Ltext"
+                android:text="想说的话:" />
+
+            <EditText
+                android:id="@+id/findPartnerWantToSay"
+                style="@style/findPartner_Rtext"
+                android:background="@drawable/login_yuanjiao"
+                android:hint="一句话留言"
+                android:textColorHint="#999999" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

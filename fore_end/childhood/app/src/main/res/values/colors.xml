@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#00bafa</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffff</color>
+    <!--my界面的颜色设置-->
+    <color name="my_bar_color">#f8f8f8</color>
+    <color name="my_background">#eeeeee</color>
+    <color name="listview_item">#ffffff</color>
+    <!--game中spinner中按下和非按下颜色-->
+    <color name="spinner_green">#f0eff5</color>
+    <color name="spinner_light_green">#f8f8f8</color>
+    <color name="black">#000000</color>
+    <color name="send_blue">#12b7f5</color>
+    <color name="send_before_gray">#dddee2</color>
+    <color name="common_bg">#fcfcfc</color>
+    <color name="common_top_bar_blue">#22292c</color>
+    <color name="light">#ffffff</color>
+</resources>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainpage">
+
+    <LinearLayout
+        android:id="@+id/main_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimaryDark">
+
+            <TextView
+                style="@style/title_text"
+                android:text="@string/main_title_name" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/main_star_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/main_title"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/main_star" />
+
+    <ImageView
+        android:id="@+id/main_star_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/main_title"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/main_star" />
+
+    <ImageView
+        android:id="@+id/main_star_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/main_title"
+        android:layout_marginRight="140dp"
+        android:layout_marginTop="78dp"
+        android:background="@drawable/main_star" />
+
+    <ImageView
+        android:id="@+id/main_star_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/main_title"
+        android:layout_marginRight="184dp"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/main_star" />
+
+    <ImageView
+        android:id="@+id/main_star_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/main_title"
+        android:layout_marginRight="264dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/main_star" />
+
+    <ImageView
+        android:id="@+id/main_star_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/main_title"
+        android:layout_marginRight="230dp"
+        android:layout_marginTop="98dp"
+        android:background="@drawable/main_star" />
+
+    <ImageView
+        android:id="@+id/main_star_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/main_title"
+        android:layout_marginRight="170dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/main_star" />
+
+    <ImageView
+        android:id="@+id/main_star_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/main_title"
+        android:layout_marginRight="200dp"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/main_star" />
+
+    <ImageView
+        android:id="@+id/main_star_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/main_title"
+        android:layout_marginRight="120dp"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/main_star" />
+
+    <ImageView
+        android:id="@+id/main_star_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/main_title"
+        android:layout_marginRight="130dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/main_star" />
+
+    <ImageView
+        android:id="@+id/main_meteor_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/main_title"
+        android:layout_marginRight="180dp"
+        android:background="@drawable/main_meteor" />
+
+    <ImageView
+        android:id="@+id/main_meteor_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/main_title"
+        android:layout_marginRight="240dp"
+        android:background="@drawable/main_meteor2" />
+
+    <ImageView
+        android:id="@+id/main_meteor_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/main_title"
+        android:layout_marginRight="210dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/main_meteor3" />
+
+    <ImageButton
+        android:id="@+id/main_btn_achievement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/main_nav"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/achievement_icon" />
+
+    <LinearLayout
+        android:id="@+id/main_nav"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/main_btn_game"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_weight="1"
+            android:background="@drawable/game_rule"
+            android:onClick="shareclick" />
+
+        <Button
+            android:id="@+id/main_btn_onekey_convene"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_weight="1"
+            android:background="@drawable/one_key"
+            android:onClick="gameClick" />
+
+        <Button
+            android:id="@+id/main_btn_forum"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_weight="1"
+            android:background="@drawable/community"
+            android:onClick="dateCclick" />
+
+        <Button
+            android:id="@+id/main_btn_rank"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_weight="1"
+            android:background="@drawable/rank"
+            android:onClick="mapClick" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/main_btn_friends"
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:layout_weight="1"
+                android:background="@drawable/partner"
+                android:onClick="myClick" />
+
+            <ImageView
+                android:id="@+id/main_message_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="41dp"
+                android:background="@drawable/shape_red_dot"
+                android:visibility="gone" />
+        </FrameLayout>
+
+
+        <Button
+            android:id="@+id/main_btn_my"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_weight="1"
+            android:background="@drawable/wo"
+            android:onClick="myClick" />
+    </LinearLayout>
+</RelativeLayout>

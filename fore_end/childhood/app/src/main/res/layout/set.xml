@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/set_myr1"
+        style="@style/title">
+
+        <ImageView
+            style="@style/title_back"
+            android:src="@drawable/pre" />
+
+        <TextView
+            style="@style/title_text"
+            android:text="设置" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/setUpdate"
+        style="@style/my_r_layout"
+        android:layout_marginTop="15dp">
+
+        <ImageView
+            style="@style/my_r_image_left"
+            android:src="@drawable/update" />
+
+        <TextView
+            style="@style/my_l_text"
+            android:text="检查更新" />
+
+        <ImageView
+            style="@style/my_r_image_right"
+            android:src="@drawable/next_hei" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/set_feedback"
+        style="@style/my_r_layout"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            style="@style/my_r_image_left"
+            android:src="@drawable/update" />
+
+        <TextView
+            style="@style/my_l_text"
+            android:text="信息反馈" />
+
+        <ImageView
+            style="@style/my_r_image_right"
+            android:src="@drawable/next_hei" />
+    </RelativeLayout>
+
+    <View style="@style/PersonalLine" />
+
+    <RelativeLayout
+        android:id="@+id/setAboutUs"
+        style="@style/my_r_layout">
+
+        <ImageView
+            style="@style/my_r_image_left"
+            android:src="@drawable/about_wo" />
+
+        <TextView
+            style="@style/my_l_text"
+            android:text="关于我们" />
+
+        <ImageView
+            style="@style/my_r_image_right"
+            android:src="@drawable/next_hei" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/setLogin"
+        style="@style/my_r_layout"
+        android:layout_below="@+id/my_parent"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            style="@style/my_r_image_left"
+            android:src="@drawable/parent_interface" />
+
+        <TextView
+            style="@style/my_l_text"
+            android:text="登录" />
+
+        <ImageView
+            style="@style/my_r_image_right"
+            android:src="@drawable/next_hei" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/set_exit"
+        style="@style/my_r_layout"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="退出登录"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+</LinearLayout>

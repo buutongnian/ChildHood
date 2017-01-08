@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_background">
+
+    <LinearLayout
+        android:id="@+id/parise_img_li"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/dialog_game_image" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/game_name_parise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/parise_img_li"
+        android:layout_marginTop="12dp"
+        android:layout_weight="1"
+        android:background="@color/listview_item"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="为游戏评分"
+                android:textColor="#000000"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/game"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="@color/listview_item">
+
+            <TextView
+                android:id="@+id/gameName"
+                style="@style/dialog_model_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+
+                android:layout_marginLeft="20dp"
+                android:text="游戏名"
+                android:textSize="19sp" />
+
+            <RatingBar
+                android:id="@+id/parise_ratingbar"
+                style="@style/ratingbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@+id/gameName"
+                android:numStars="5"
+                android:stepSize="1" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/game_name_parise"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_weight="1"
+        android:background="@color/listview_item"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="为小伙伴点赞"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eeeeee" />
+
+        <ListView
+            android:id="@+id/parise_listview"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginLeft="20dp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="2dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/parise_ok"
+            style="@style/dialog_model_buttonOk"
+            android:layout_width="90dp"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_circle"
+            android:gravity="center"
+            android:text="确定" />
+
+        <Button
+            android:id="@+id/parise_cancle"
+            style="@style/dialog_model_buttonOk"
+            android:layout_width="90dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/btn_circle"
+            android:text="取消" />
+    </LinearLayout>
+</RelativeLayout>

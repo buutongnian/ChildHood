@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+
+        <RelativeLayout
+            android:id="@+id/chatTeamCreat_r1"
+            style="@style/title">
+
+            <LinearLayout
+                android:id="@+id/chatTeamCreat_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingRight="14dp"
+                android:gravity="center">
+                <ImageView
+                    style="@style/title_back"
+                    android:src="@drawable/pre" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/title_text"
+                android:text="赞" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <edu.buu.childhood.game.refresh.AutoListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:divider="@null"
+            android:headerDividersEnabled="false"
+            android:footerDividersEnabled="false"
+            android:layout_height="wrap_content">
+
+        </edu.buu.childhood.game.refresh.AutoListView>
+
+        <TextView
+            android:id="@+id/praise_prompt"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="你还没有人为你点赞，赶快去玩游戏吧!"
+            android:textColor="#000000" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/chat_team_create_liner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/chatTeamCreat_r1"
+            style="@style/title"
+            android:layout_weight="1">
+
+            <ImageView
+                style="@style/title_back"
+                android:src="@drawable/pre" />
+
+            <TextView
+                style="@style/title_text"
+                android:text="队伍信息" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/game_detail" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chat_team_create_liner"
+        android:layout_weight="1"
+        android:background="@color/my_bar_color">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp">
+
+                <TextView
+                    style="@style/dialog_model_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="游戏名称:  " />
+
+                <TextView
+                    android:id="@+id/chat_team_create_gameName"
+                    style="@style/dialog_model_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="*****" />
+            </LinearLayout>
+
+            <View
+                style="@style/PersonalLine"
+                android:focusable="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp">
+
+                <TextView
+                    style="@style/dialog_model_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="发  起  人:  " />
+
+                <TextView
+                    android:id="@+id/chat_team_create_gameFounder"
+                    style="@style/dialog_model_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="*****" />
+            </LinearLayout>
+
+            <View style="@style/PersonalLine" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp">
+
+                <TextView
+                    style="@style/dialog_model_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="游戏地点:  " />
+
+                <TextView
+                    android:id="@+id/chat_team_create_gamePlace"
+                    style="@style/dialog_model_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="*****" />
+            </LinearLayout>
+
+            <View style="@style/PersonalLine" />
+
+            <LinearLayout
+                android:id="@+id/chatTeamCreat_teamername"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp"
+                android:focusable="false">
+
+                <TextView
+                    style="@style/dialog_model_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="队员信息:  " />
+
+                <TextView
+                    android:id="@+id/chat_team_create_gameMembers"
+                    style="@style/dialog_model_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="*****" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginLeft="160dp"
+                    android:src="@drawable/next" />
+            </LinearLayout>
+
+            <View style="@style/PersonalLine" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@color/my_bar_color"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/dialog_model_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="游戏简介：" />
+
+                <TextView
+                    android:id="@+id/chat_team_create_gameSynopsis"
+                    style="@style/dialog_model_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="*****" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/chatTeamCreateStartGame"
+            style="@style/dialog_model_text"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_circle"
+            android:text="开始游戏"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/chatTeamCreateDissolveGame"
+            style="@style/dialog_model_text"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_circle"
+            android:text="解散游戏"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/chatTeamCreateEndGame"
+            style="@style/dialog_model_text"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_circle"
+            android:text="结束游戏"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/chatTeamCreateExitGame"
+            style="@style/dialog_model_text"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_circle"
+            android:text="退出游戏"
+            android:visibility="visible" />
+    </LinearLayout>
+</LinearLayout>

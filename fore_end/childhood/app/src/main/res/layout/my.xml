@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/my_myr1"
+        style="@style/title">
+
+        <ImageView
+            style="@style/title_back"
+            android:src="@drawable/pre" />
+
+        <TextView
+            style="@style/title_text"
+            android:text="@string/my_title_name" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/my_block_user_info"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/my_bar_color">
+
+        <ImageView
+            android:id="@+id/my_info_image"
+            style="@style/my_title_image"
+            android:src="@drawable/touxiang" />
+
+        <LinearLayout
+            android:id="@+id/my_user_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/my_info_image"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/my_user_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="童年"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="童年号："
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/my_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="童年号"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/my_login_register"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="14dp"
+            android:layout_toRightOf="@+id/my_info_image">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="14dp"
+                android:text="登录/注册"
+                android:textColor="@color/black" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/my_myr4"
+        style="@style/my_r_layout"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            style="@style/my_r_image_left"
+            android:src="@drawable/grade" />
+
+        <TextView
+            style="@style/my_l_text"
+            android:text="我的成就" />
+
+        <ImageView
+            style="@style/my_r_image_right"
+            android:src="@drawable/next_hei" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/my_parent_center"
+        style="@style/my_r_layout"
+        android:layout_below="@+id/my_myr4"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            style="@style/my_r_image_left"
+            android:src="@drawable/parent_interface" />
+
+        <TextView
+            style="@style/my_l_text"
+            android:text="家长中心" />
+
+        <ImageView
+            style="@style/my_r_image_right"
+            android:src="@drawable/next_hei" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/my_forum"
+        style="@style/my_r_layout"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            style="@style/my_r_image_left"
+            android:src="@drawable/icon_forum" />
+
+        <TextView
+            style="@style/my_l_text"
+            android:text="社区" />
+
+        <ImageView
+            style="@style/my_r_image_right"
+            android:src="@drawable/next_hei" />
+    </RelativeLayout>
+
+    <View style="@style/PersonalLine" />
+
+    <RelativeLayout
+        android:id="@+id/mySet"
+        style="@style/my_r_layout"
+        android:layout_below="@+id/my_login">
+
+        <ImageView
+            style="@style/my_r_image_left"
+            android:src="@drawable/icon_set" />
+
+        <TextView
+            style="@style/my_l_text"
+            android:text="设置" />
+
+        <ImageView
+            style="@style/my_r_image_right"
+            android:src="@drawable/next_hei" />
+    </RelativeLayout>
+
+</LinearLayout>

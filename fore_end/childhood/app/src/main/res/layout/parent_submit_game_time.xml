@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_background"
+    android:orientation="vertical">
+
+    <RelativeLayout style="@style/title">
+
+        <ImageView
+            style="@style/title_back"
+            android:src="@drawable/pre" />
+
+        <TextView
+            style="@style/title_text"
+            android:text="亲子时光" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/game_detail" />
+
+    <TextView
+        android:id="@+id/parent_submit_game_code"
+        style="@style/parent_submit_game_time"
+        android:visibility="gone" />
+
+    <View style="@style/PersonalLine" />
+
+    <TextView
+        android:id="@+id/pu_select_game_tv"
+        style="@style/parent_submit_game_time"
+        android:hint="游戏名称"
+        android:textSize="18dp" />
+
+    <View style="@style/PersonalLine" />
+
+    <TextView
+        android:id="@+id/pu_game_time_tv"
+        style="@style/parent_submit_game_time"
+        android:hint="游戏时间"
+        android:textSize="18dp" />
+
+    <View style="@style/PersonalLine" />
+
+    <EditText
+        android:id="@+id/parent_submit_game_game_note"
+        style="@style/parent_submit_game_time"
+        android:layout_height="100dp"
+        android:gravity="start"
+        android:hint="记录宝贝表现…" />
+
+    <View style="@style/PersonalLine" />
+
+    <Button
+        android:id="@+id/parent_submit_game_time_btn1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_background"
+        android:text="提交"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+</LinearLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/my_content_r1"
+        style="@style/title">
+
+        <ImageView
+            style="@style/title_back"
+            android:src="@drawable/pre" />
+
+        <TextView
+            style="@style/title_text"
+            android:text="个人信息" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/my_content_r2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/my_content_r1"
+        android:layout_marginTop="10dp"
+        android:background="@color/my_bar_color">
+
+        <ImageView
+            android:id="@+id/my_content_image"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/touxiang" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="头像"
+            android:textColor="#000000"
+            android:textSize="48px" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/my_content_r3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/my_content_r2"
+        android:layout_marginTop="22dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/my_content_name"
+            style="@style/my_r_layout">
+
+            <TextView
+                style="@style/my_content_l_text"
+                android:paddingLeft="10dp"
+                android:text="昵称"
+                android:textSize="48px" />
+
+            <TextView
+                android:id="@+id/my_content_inName"
+                style="@style/my_content_r_text"
+                android:layout_alignRight="@+id/my_content_image2"
+                android:layout_marginRight="30dp"
+                android:text="昵称" />
+
+            <ImageView
+                android:id="@+id/my_content_image2"
+                style="@style/my_r_image_right"
+                android:src="@drawable/next_hei" />
+        </RelativeLayout>
+
+        <View style="@style/PersonalLine" />
+
+        <RelativeLayout
+            android:id="@+id/my_content_phonenumber_relative"
+            style="@style/my_r_layout">
+
+            <TextView
+                style="@style/my_content_l_text"
+                android:paddingLeft="10dp"
+                android:text="手机号码"
+                android:textSize="48px" />
+
+            <TextView
+                android:id="@+id/my_content_phonenumber"
+                style="@style/my_content_r_text"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="40dp"
+                android:paddingLeft="10dp"
+                android:text="手机" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/my_content_r4"
+        style="@style/my_r_layout"
+        android:layout_below="@+id/my_content_r3"
+        android:layout_marginTop="22dp">
+
+        <TextView
+            style="@style/my_content_l_text"
+            android:paddingLeft="10dp"
+            android:text="小区"
+            android:textSize="48px" />
+
+        <TextView
+            android:id="@+id/my_content_address"
+            style="@style/my_content_r_text"
+            android:layout_alignRight="@+id/my_content_image5"
+            android:layout_marginRight="30dp"
+            android:paddingLeft="10dp"
+            android:text="小区" />
+
+        <ImageView
+            android:id="@+id/my_content_image5"
+            style="@style/my_r_image_right"
+            android:src="@drawable/next_hei" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

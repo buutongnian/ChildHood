@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eaeff3">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="185dp"
+        android:background="@drawable/achievement_bg">
+
+        <TextView
+            android:id="@+id/partnerInfoNi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/touxiang"
+            android:layout_centerHorizontal="true"
+            android:text="石嘉铭" />
+
+        <TextView
+            android:id="@+id/gameLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/partnerInfoNi"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:text="游戏大师"
+            android:textSize="20dp" />
+
+        <FrameLayout
+            android:id="@+id/touxiang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:id="@+id/touxiang_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/achi_touxiang_bg" />
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="38dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/touxiang" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/praise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/achievement_parise"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingRight="2dp"
+            android:paddingLeft="1dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/parise_persion"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="123"
+                android:layout_marginLeft="2dp"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="@drawable/achi_bar"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/achi_start" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="Lv5"
+            android:textColor="#ffffff" />
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="@style/ProgressBar_Mini"
+            android:layout_width="229dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:progress="90" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="120/320"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:textColor="#ffffff"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/game_rule"
+            android:layout_margin="10dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/game_rule"
+            android:layout_margin="10dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/game_rule"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/my_bar_color">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    style="@style/getPartner_text"
+                    android:text="所在城市:"
+                    />
+                <TextView
+                    android:id="@+id/partnerInfoProvince"
+                    android:layout_marginLeft="10dp"
+                    style="@style/getPartner_text"
+                    android:text="北京"
+                    />
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/getPartner_text"
+                    android:text="省"
+                    />
+                <TextView
+                    android:id="@+id/partnerInfoCity"
+                    android:layout_marginLeft="10dp"
+                    style="@style/getPartner_text"
+                    android:text="北京"
+                    />
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/getPartner_text"
+                    android:text="市"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="19dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/my_bar_color">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    style="@style/getPartner_text"
+                    android:text="他（她）的等级:"
+                    />
+                <TextView
+                    android:id="@+id/partnerInfoRank"
+                    android:layout_marginLeft="10dp"
+                    style="@style/getPartner_text"
+                    android:text="0"
+                    />
+            </LinearLayout>
+            <View style="@style/PersonalLine" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    style="@style/getPartner_text"
+                    android:text="他（她）的成就:"
+                    />
+                <TextView
+                    android:id="@+id/partnerInfoAchievement"
+                    android:layout_marginLeft="10dp"
+                    style="@style/getPartner_text"
+                    android:text="0"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        </LinearLayout>
+
+
+</LinearLayout>

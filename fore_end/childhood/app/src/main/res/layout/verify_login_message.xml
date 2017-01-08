@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_background"
+    android:orientation="vertical">
+
+    <RelativeLayout style="@style/title">
+
+        <ImageView
+            style="@style/title_back"
+            android:src="@drawable/pre" />
+
+        <TextView
+            style="@style/title_text"
+            android:text="短信登录" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/SMSlogin_phone_num"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="#ffffff"
+        android:hint="手机号"
+        android:inputType="number"
+        android:paddingLeft="20dp"
+        android:textSize="18dp" />
+
+    <View style="@style/PersonalLine" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#ffffff">
+
+        <EditText
+            android:id="@+id/SMSlogin_vcode"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="20dp"
+            android:background="#ffffff"
+            android:hint="请输入验证码"
+            android:inputType="number"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/SMSlogin_send_sms"
+            android:layout_width="82dp"
+            android:layout_height="39dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="获取验证码"
+            android:textColor="#ffffff" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/SMSlogin_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/login" />
+
+
+</LinearLayout>

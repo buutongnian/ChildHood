@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/register_actionbar"
+        style="@style/title">
+
+        <ImageView
+            style="@style/title_back"
+            android:src="@drawable/pre" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/title_text"
+            android:text="完善个人信息" />
+
+        <TextView
+            android:id="@+id/perfect_skip"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="跳过"
+            android:textColor="#ffffff"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="6dp"
+        android:text="所在地" />
+
+    <LinearLayout
+        android:id="@+id/register_spinnerL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_secretBar"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/register_spinner1"
+            android:layout_width="360dp"
+            android:layout_height="46dp"
+            android:layout_weight="1"
+            android:background="@drawable/gamerule_spinner_selector"
+            android:dropDownVerticalOffset="48dp"
+            android:dropDownWidth="400dp"
+            android:spinnerMode="dropdown" />
+
+        <Spinner
+            android:id="@+id/register_spinner2"
+            android:layout_width="360dp"
+            android:layout_height="46dp"
+            android:layout_weight="1"
+            android:background="@drawable/gamerule_spinner_selector1"
+            android:dropDownVerticalOffset="48dp"
+            android:dropDownWidth="400dp"
+            android:spinnerMode="dropdown" />
+
+        <Spinner
+            android:id="@+id/register_spinner3"
+            android:layout_width="360dp"
+            android:layout_height="46dp"
+            android:layout_weight="1"
+            android:background="@drawable/gamerule_spinner_selector2"
+            android:dropDownVerticalOffset="48dp"
+            android:dropDownWidth="400dp"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/register_userNickName"
+        style="@style/registerEditStyle"
+        android:layout_marginTop="24dp"
+        android:hint="昵称" />
+
+    <View style="@style/registerLine" />
+
+    <EditText
+        android:id="@+id/register_password"
+        style="@style/registerEditStyle"
+        android:hint="密码"
+        android:inputType="textPassword" />
+
+    <View style="@style/registerLine" />
+
+    <EditText
+        android:id="@+id/registerMakeSure"
+        style="@style/registerEditStyle"
+        android:hint="确认密码"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/register_community"
+        style="@style/registerEditStyle"
+        android:layout_marginTop="25dp"
+        android:hint="小区" />
+
+    <View style="@style/registerLine" />
+
+    <EditText
+        android:id="@+id/register_email"
+        style="@style/registerEditStyle"
+        android:hint="邮箱" />
+
+    <Button
+        android:id="@+id/registerFinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/finish" />
+
+</LinearLayout>

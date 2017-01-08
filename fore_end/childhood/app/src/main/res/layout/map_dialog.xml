@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="253dp"
+    android:layout_height="470dp"
+    android:background="@drawable/dialog_yuanjiao"
+    android:clickable="true">
+
+    <ImageView
+        android:id="@+id/map_dialog_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_weight="1"
+        android:src="@drawable/dialog_game_image" />
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/map_dialog_img"
+        android:layout_marginTop="12dp"
+        android:layout_weight="1"
+        android:background="@color/listview_item"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/map_dialog_game"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginLeft="20dp"
+
+            android:onClick="onClickGame">
+
+            <TextView
+                style="@style/dialog_model_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="游 戏 名 称: " />
+
+            <TextView
+                android:id="@+id/map_dialog_game_text"
+                style="@style/dialog_model_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:hint=" 请选择游戏" />
+
+            <TextView
+                android:id="@+id/map_dialog_gamecode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <View style="@style/dialogLine" />
+
+        <LinearLayout
+            android:id="@+id/map_dialog_playsite"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginLeft="20dp">
+
+            <TextView
+                style="@style/dialog_model_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="玩 耍 地 点:  " />
+
+            <EditText
+                android:id="@+id/map_dialog_playPlace"
+                style="@style/dialog_model_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:hint="请填写游戏地点" />
+        </LinearLayout>
+
+        <View style="@style/dialogLine" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginLeft="20dp">
+
+            <TextView
+                style="@style/dialog_model_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="参 与 人 数:  " />
+
+            <EditText
+                android:id="@+id/map_dialog_peopleCount"
+                style="@style/dialog_model_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:hint="希望的玩家数" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:background="@color/my_background" />
+
+        <LinearLayout
+            android:id="@+id/map_dialog_defingame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_marginLeft="20dp">
+
+            <TextView
+                style="@style/dialog_model_text"
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+
+                android:text="自定义游戏:  " />
+
+            <EditText
+                android:id="@+id/map_dialog_customInfo"
+                style="@style/dialog_model_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="自定义游戏信息" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#ffd0d0d0" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60.0dip"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/map_dialog_positiveButton"
+            style="@style/dialog_model_buttonOk"
+            android:layout_width="90dp"
+            android:layout_height="40.0dip"
+            android:background="@color/my_bar_color"
+            android:gravity="center"
+            android:text="开始" />
+
+        <Button
+            android:id="@+id/map_dialog_negativeButton"
+            style="@style/dialog_model_buttonCancel"
+            android:layout_width="90dp"
+            android:layout_height="40.0dip"
+            android:layout_marginLeft="20.0dip"
+            android:background="@color/my_bar_color"
+            android:gravity="center"
+            android:text="取消" />
+    </LinearLayout>
+</RelativeLayout>

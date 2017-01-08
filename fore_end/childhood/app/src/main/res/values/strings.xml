@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">童年</string>
+    <!--actionbar name-->
+    <string name="main_title_name">童年</string>
+    <string name="my_title_name">我</string>
+    <string name="my_content_title_name">个人信息</string>
+    <string name="about_us">关于我们</string>
+    <!-- 自定义组件 -->
+    <string name="pull_to_refresh">下拉可以刷新</string>
+    <string name="release_to_refresh">松开可以刷新</string>
+    <string name="lastUpdateTime">最近更新：%s</string>
+    <string name="load_full">已加载全部</string>
+    <string name="no_data">暂无数据</string>
+    <string name="more">加载中</string>
+
+    <!-- 消除警告，可忽略 -->
+    <string name="d">图片描述</string>
+    <string-array name="gender_array">
+        <item>女</item>
+        <item>男</item>
+    </string-array>
+    <!-- chatroom-->
+    <item name="Tag_APP" type="id"></item>
+    <item name="Tag_Book" type="id"></item>
+    <item name="Tag_Middle" type="id"></item>
+    <item name="Tag_track_adapter_Day" type="id"/>
+    <item name="Tag_track_adapter_message" type="id"/>
+</resources>

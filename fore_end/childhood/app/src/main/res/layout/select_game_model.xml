@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_bar_color">
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="40dp">
+  <TextView
+      android:id="@+id/select_game_text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="游戏名称"
+      android:layout_marginLeft="10dp"
+      android:layout_centerVertical="true"
+      android:layout_alignParentLeft="true"
+      android:textSize="48px"/>
+  <TextView
+      android:id="@+id/select_game_code"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:textSize="48px"
+      android:text="0"
+      android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/select_game_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/unselect_icon"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+      />
+  </RelativeLayout>
+</LinearLayout>

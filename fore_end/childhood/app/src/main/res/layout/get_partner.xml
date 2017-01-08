@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/get_partner_r1"
+        style="@style/title">
+        <ImageView
+            style="@style/title_back"
+            android:src="@drawable/pre"/>
+        <TextView
+            style="@style/title_text"
+            android:text="小伙伴信息" />
+
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/get_partner_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+
+</LinearLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:background="@color/my_bar_color">
+
+        <ImageView
+            android:id="@+id/new_message_model_im"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/touxiang" />
+
+        <LinearLayout
+            android:id="@+id/new_message_model_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/new_message_model_im"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/new_message_model_model_textview1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:text="来自***的邀请信息"
+                android:textColor="#000000"
+                android:textSize="42px" />
+
+            <TextView
+                android:id="@+id/new_message_model_model_textview2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="游戏名称"
+                android:textColor="#c9c9c9"
+                android:textSize="22dp" />
+            <TextView
+                android:id="@+id/new_message_model_gameid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/new_message_model_model_button"
+            android:layout_width="45dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/newmessage_yuanjiao"
+            android:focusable="false"
+            android:text="添加"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/new_message_model_model_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="180dp"
+            android:layout_toRightOf="@+id/new_message_model_ll"
+            android:text="已添加"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/new_message_model_im"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="35dp"
+                android:textSize="18dp"
+                android:text="游戏地点:" />
+
+            <TextView
+                android:id="@+id/gameIntroduction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="***"
+                android:textColor="#c9c9c9"
+                android:layout_marginLeft="10dp"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

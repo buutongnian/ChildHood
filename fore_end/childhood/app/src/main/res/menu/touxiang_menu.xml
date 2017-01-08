@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_camera"
+        android:orderInCategory="1"
+        android:title="拍照"/>
+    <item
+        android:id="@+id/menu_album"
+        android:orderInCategory="2"
+        android:title="从手机相册中选择"/>
+    <item
+        android:id="@+id/menu_save"
+        android:orderInCategory="3"
+        android:title="保存图片"/>
+</menu>

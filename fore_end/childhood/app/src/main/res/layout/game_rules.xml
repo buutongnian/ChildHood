@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:id="@+id/game_bar_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimaryDark">
+
+            <ImageView
+                style="@style/title_back"
+                android:src="@drawable/pre" />
+
+            <TextView
+                android:id="@+id/game_rules_title_text"
+                style="@style/title_text"
+                android:text="@string/main_title_name"
+               />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/game_filtrate_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/game_bar_linearlayout"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/game_spinner1"
+            android:layout_width="360dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:background="@drawable/gamerule_spinner_selector"
+            android:dropDownVerticalOffset="38dp"
+            android:dropDownWidth="400dp"
+            android:spinnerMode="dropdown" />
+
+        <Spinner
+            android:id="@+id/game_spinner2"
+            android:layout_width="360dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:background="@drawable/gamerule_spinner_selector1"
+            android:dropDownVerticalOffset="38dp"
+            android:dropDownWidth="360dp"
+            android:spinnerMode="dropdown" />
+
+        <Spinner
+            android:id="@+id/game_spinner3"
+            android:layout_width="360dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:background="@drawable/gamerule_spinner_selector2"
+            android:dropDownVerticalOffset="38dp"
+            android:dropDownWidth="400dp"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+
+    <edu.buu.childhood.game.refresh.AutoListView
+        android:id="@+id/autolistview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/game_filtrate_linearlayout"
+        />
+
+    <ImageView
+        android:id="@+id/game_rules_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/error"
+        android:visibility="gone"/>
+</RelativeLayout>
